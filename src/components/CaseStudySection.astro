@@ -5,67 +5,88 @@ export interface Props {
   description: string;
   imageLeft?: boolean;
   bgColor?: string;
+  backgroundImage?: string;
+  gradientColor?: 'white' | 'black';
 }
 
-const { title, subtitle, description, imageLeft = true, bgColor = "bg-plum-charcoal-50" } = Astro.props;
+const { title, subtitle, description, imageLeft = true, bgColor = "bg-plum-charcoal-50", backgroundImage, gradientColor = 'black' } = Astro.props;
+
+// Determine text colors based on gradient color
+const textColors = gradientColor === 'white' ? {
+  label: 'text-plum-charcoal-600',
+  title: 'text-plum-charcoal-900',
+  subtitle: 'text-plum-charcoal-600',
+  description: 'text-plum-charcoal-600',
+  button: 'bg-plum-charcoal-800 text-white hover:bg-plum-charcoal-900'
+} : {
+  label: 'text-white',
+  title: 'text-white',
+  subtitle: 'text-white',
+  description: 'text-white',
+  button: 'bg-white text-plum-charcoal-900 hover:bg-gray-100'
+};
 ---
 
-<section class={`full-page-section h-screen flex items-center justify-center ${bgColor} relative overflow-hidden`} data-section-type="case-study">
-  <!-- Background image space - will be added later -->
-  <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent z-0"></div>
+<section class={`full-page-section h-screen flex items-center justify-center ${bgColor} relative`} data-section-type="case-study">
+  <!-- Background image -->
+  {backgroundImage && (
+    <div 
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+      style={`background-image: url(${backgroundImage})`}
+    ></div>
+  )}
+  
+  <!-- Text background box - positioned relative to page edge -->
+  <div class={`absolute ${imageLeft ? 'left-0' : 'right-0'} top-1/2 transform -translate-y-1/2 ${gradientColor === 'white' ? 'bg-white/20' : 'bg-black/20'} backdrop-blur-lg rounded-lg shadow-2xl`} style="width: 50%; height: 60%; box-shadow: 0 0 40px rgba(0,0,0,0.3);"></div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+  <div class="max-w-7xl mx-auto px-1 sm:px-2 lg:px-4 py-16 relative z-10">
     <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${imageLeft ? '' : 'lg:grid-flow-col-dense'}`}>
 
       <!-- Content Side -->
-      <div class={`${imageLeft ? 'lg:order-1' : 'lg:order-2'} space-y-6`}>
-        <div class="text-sm font-medium text-plum-charcoal-600 uppercase tracking-wider">
-          Case Study
-        </div>
+      <div class={`${imageLeft ? 'lg:order-1' : 'lg:order-2'} space-y-6 relative z-20`}>
+        <!-- Text content -->
+        <div class="relative z-30 space-y-8 p-8">
+          <div class={`text-sm font-medium ${textColors.label} uppercase tracking-wider`}>
+            Case Study
+          </div>
 
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-light text-plum-charcoal-900 leading-tight">
-          {title}
-        </h2>
+          <h2 class={`text-4xl md:text-5xl lg:text-6xl font-light ${textColors.title} leading-tight`}>
+            {title}
+          </h2>
 
-        <h3 class="text-xl md:text-2xl text-plum-charcoal-600 font-light">
-          {subtitle}
-        </h3>
+          <h3 class={`text-xl md:text-2xl ${textColors.subtitle} font-light`}>
+            {subtitle}
+          </h3>
 
-        <p class="text-lg text-plum-charcoal-600 leading-relaxed">
-          {description}
-        </p>
+          <p class={`${textColors.description} leading-relaxed`}>
+            {description}
+          </p>
 
-        <div class="pt-4">
-          <a href="#contact" class="bg-plum-charcoal-800 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-plum-charcoal-900 transition-all duration-300 transform hover:scale-105">
-            Read case study
-          </a>
+          <div class="pt-8">
+            <a href="#contact" class={`${textColors.button} px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105`}>
+              Read case study
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- Image/Space Side -->
+      <!-- Empty space for visual balance - background image shows through -->
       <div class={`${imageLeft ? 'lg:order-2' : 'lg:order-1'} relative`}>
-        <div class="w-full h-96 bg-gradient-to-br from-plum-charcoal-200 to-plum-charcoal-300 rounded-lg flex items-center justify-center">
-          <div class="text-plum-charcoal-600 text-center">
-            <svg class="w-24 h-24 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-            <p class="text-sm">Case Study Image</p>
-          </div>
-        </div>
+        <!-- This div is intentionally empty to let the background image show through -->
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  import { SectionAnimator } from '../utils/animations.js';
+  // import { SectionAnimator } from '../utils/animations.js';
   
   // Initialize animation when component loads
-  document.addEventListener('DOMContentLoaded', () => {
-    const section = document.querySelector('[data-section-type="case-study"]');
-    if (section) {
-      const animator = new SectionAnimator();
-      animator.initializeSection(section, 'case-study');
-    }
-  });
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   const section = document.querySelector('[data-section-type="case-study"]');
+  //   if (section) {
+  //     const animator = new SectionAnimator();
+  //     animator.initializeSection(section, 'case-study');
+  //   }
+  // });
 </script> 

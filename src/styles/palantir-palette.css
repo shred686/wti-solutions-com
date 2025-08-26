@@ -1,0 +1,293 @@
+/* WTI Solutions - Palantir-Inspired Color Palette */
+
+/* Primary Blues - Inspired by Palantir's blue cubes */
+:root {
+  /* Electric Blue - Muted bright blue */
+  --electric-blue-50: #f0f9ff;
+  --electric-blue-100: #e0f2fe;
+  --electric-blue-200: #bae6fd;
+  --electric-blue-300: #7dd3fc;
+  --electric-blue-400: #38bdf8;
+  --electric-blue-500: #0ea5e9;
+  --electric-blue-600: #0284c7;
+  --electric-blue-700: #0369a1;
+  --electric-blue-800: #075985;
+  --electric-blue-900: #0c4a6e;
+  --electric-blue-950: #082f49;
+
+  /* Medium Blue - Muted primary blue */
+  --medium-blue-50: #eff6ff;
+  --medium-blue-100: #dbeafe;
+  --medium-blue-200: #bfdbfe;
+  --medium-blue-300: #93c5fd;
+  --medium-blue-400: #60a5fa;
+  --medium-blue-500: #3b82f6;
+  --medium-blue-600: #2563eb;
+  --medium-blue-700: #1d4ed8;
+  --medium-blue-800: #1e40af;
+  --medium-blue-900: #1e3a8a;
+  --medium-blue-950: #172554;
+
+  /* Deep Blue - Muted darker blue */
+  --deep-blue-50: #f1f5f9;
+  --deep-blue-100: #e2e8f0;
+  --deep-blue-200: #cbd5e1;
+  --deep-blue-300: #94a3b8;
+  --deep-blue-400: #64748b;
+  --deep-blue-500: #475569;
+  --deep-blue-600: #334155;
+  --deep-blue-700: #1e293b;
+  --deep-blue-800: #0f172a;
+  --deep-blue-900: #020617;
+  --deep-blue-950: #000000;
+
+  /* Navy Blue - Muted very dark blue */
+  --navy-blue-50: #f8fafc;
+  --navy-blue-100: #f1f5f9;
+  --navy-blue-200: #e2e8f0;
+  --navy-blue-300: #cbd5e1;
+  --navy-blue-400: #94a3b8;
+  --navy-blue-500: #64748b;
+  --navy-blue-600: #475569;
+  --navy-blue-700: #334155;
+  --navy-blue-800: #1e293b;
+  --navy-blue-900: #0f172a;
+  --navy-blue-950: #020617;
+}
+
+/* Primary Purples - Inspired by Palantir's purple cubes */
+:root {
+  /* Medium Purple - Muted primary purple */
+  --medium-purple-50: #faf5ff;
+  --medium-purple-100: #f3e8ff;
+  --medium-purple-200: #e9d5ff;
+  --medium-purple-300: #d8b4fe;
+  --medium-purple-400: #c084fc;
+  --medium-purple-500: #a855f7;
+  --medium-purple-600: #9333ea;
+  --medium-purple-700: #7c3aed;
+  --medium-purple-800: #6b21a8;
+  --medium-purple-900: #581c87;
+  --medium-purple-950: #3b0764;
+
+  /* Deep Purple - Muted darker purple */
+  --deep-purple-50: #faf5ff;
+  --deep-purple-100: #f3e8ff;
+  --deep-purple-200: #e9d5ff;
+  --deep-purple-300: #d8b4fe;
+  --deep-purple-400: #c084fc;
+  --deep-purple-500: #a855f7;
+  --deep-purple-600: #9333ea;
+  --deep-purple-700: #7c3aed;
+  --deep-purple-800: #6b21a8;
+  --deep-purple-900: #581c87;
+  --deep-purple-950: #3b0764;
+
+  /* Violet Purple - Muted blue-purple hybrid */
+  --violet-purple-50: #f5f3ff;
+  --violet-purple-100: #ede9fe;
+  --violet-purple-200: #ddd6fe;
+  --violet-purple-300: #c4b5fd;
+  --violet-purple-400: #a78bfa;
+  --violet-purple-500: #8b5cf6;
+  --violet-purple-600: #7c3aed;
+  --violet-purple-700: #6d28d9;
+  --violet-purple-800: #5b21b6;
+  --violet-purple-900: #4c1d95;
+  --violet-purple-950: #2e1065;
+
+  /* Indigo Purple - Muted blue-purple transition */
+  --indigo-purple-50: #eef2ff;
+  --indigo-purple-100: #e0e7ff;
+  --indigo-purple-200: #c7d2fe;
+  --indigo-purple-300: #a5b4fc;
+  --indigo-purple-400: #818cf8;
+  --indigo-purple-500: #6366f1;
+  --indigo-purple-600: #4f46e5;
+  --indigo-purple-700: #4338ca;
+  --indigo-purple-800: #3730a3;
+  --indigo-purple-900: #312e81;
+  --indigo-purple-950: #1e1b4b;
+}
+
+/* High-Tech Grays - Dark background colors */
+:root {
+  /* Dark Gray - Primary background */
+  --dark-gray-50: #f9fafb;
+  --dark-gray-100: #f3f4f6;
+  --dark-gray-200: #e5e7eb;
+  --dark-gray-300: #d1d5db;
+  --dark-gray-400: #9ca3af;
+  --dark-gray-500: #6b7280;
+  --dark-gray-600: #4b5563;
+  --dark-gray-700: #374151;
+  --dark-gray-800: #1f2937;
+  --dark-gray-900: #111827;
+  --dark-gray-950: #030712;
+
+  /* Charcoal Gray - Secondary background */
+  --charcoal-gray-50: #f8fafc;
+  --charcoal-gray-100: #f1f5f9;
+  --charcoal-gray-200: #e2e8f0;
+  --charcoal-gray-300: #cbd5e1;
+  --charcoal-gray-400: #94a3b8;
+  --charcoal-gray-500: #64748b;
+  --charcoal-gray-600: #475569;
+  --charcoal-gray-700: #334155;
+  --charcoal-gray-800: #1e293b;
+  --charcoal-gray-900: #0f172a;
+  --charcoal-gray-950: #020617;
+
+  /* Slate Gray - Tertiary background */
+  --slate-gray-50: #f8fafc;
+  --slate-gray-100: #f1f5f9;
+  --slate-gray-200: #e2e8f0;
+  --slate-gray-300: #cbd5e1;
+  --slate-gray-400: #94a3b8;
+  --slate-gray-500: #64748b;
+  --slate-gray-600: #475569;
+  --slate-gray-700: #334155;
+  --slate-gray-800: #1e293b;
+  --slate-gray-900: #0f172a;
+  --slate-gray-950: #020617;
+
+  /* Zinc Gray - Neutral gray */
+  --zinc-gray-50: #fafafa;
+  --zinc-gray-100: #f4f4f5;
+  --zinc-gray-200: #e4e4e7;
+  --zinc-gray-300: #d4d4d8;
+  --zinc-gray-400: #a1a1aa;
+  --zinc-gray-500: #71717a;
+  --zinc-gray-600: #52525b;
+  --zinc-gray-700: #3f3f46;
+  --zinc-gray-800: #27272a;
+  --zinc-gray-900: #18181b;
+  --zinc-gray-950: #09090b;
+}
+
+/* Accent Colors - Muted highlights */
+:root {
+  /* Electric Blue Accent - Muted cyan */
+  --electric-accent-50: #f0f9ff;
+  --electric-accent-100: #e0f2fe;
+  --electric-accent-200: #bae6fd;
+  --electric-accent-300: #7dd3fc;
+  --electric-accent-400: #38bdf8;
+  --electric-accent-500: #0ea5e9;
+  --electric-accent-600: #0284c7;
+  --electric-accent-700: #0369a1;
+  --electric-accent-800: #075985;
+  --electric-accent-900: #0c4a6e;
+  --electric-accent-950: #082f49;
+
+  /* Teal Accent - Muted blue-green */
+  --teal-accent-50: #f0fdfa;
+  --teal-accent-100: #ccfbf1;
+  --teal-accent-200: #99f6e4;
+  --teal-accent-300: #5eead4;
+  --teal-accent-400: #2dd4bf;
+  --teal-accent-500: #14b8a6;
+  --teal-accent-600: #0d9488;
+  --teal-accent-700: #0f766e;
+  --teal-accent-800: #115e59;
+  --teal-accent-900: #134e4a;
+  --teal-accent-950: #042f2e;
+
+  /* Emerald Accent - Muted green */
+  --emerald-accent-50: #f0fdf4;
+  --emerald-accent-100: #dcfce7;
+  --emerald-accent-200: #bbf7d0;
+  --emerald-accent-300: #86efac;
+  --emerald-accent-400: #4ade80;
+  --emerald-accent-500: #22c55e;
+  --emerald-accent-600: #16a34a;
+  --emerald-accent-700: #15803d;
+  --emerald-accent-800: #166534;
+  --emerald-accent-900: #14532d;
+  --emerald-accent-950: #052e16;
+
+  /* Amber Accent - Muted warm highlight */
+  --amber-accent-50: #fffbeb;
+  --amber-accent-100: #fef3c7;
+  --amber-accent-200: #fde68a;
+  --amber-accent-300: #fcd34d;
+  --amber-accent-400: #fbbf24;
+  --amber-accent-500: #f59e0b;
+  --amber-accent-600: #d97706;
+  --amber-accent-700: #b45309;
+  --amber-accent-800: #92400e;
+  --amber-accent-900: #78350f;
+  --amber-accent-950: #451a03;
+}
+
+/* Utility Classes for Palantir Palette */
+/* Electric Blue Utilities */
+.text-electric-blue { color: var(--electric-blue-600); }
+.bg-electric-blue { background-color: var(--electric-blue-600); }
+.border-electric-blue { border-color: var(--electric-blue-600); }
+
+/* Medium Blue Utilities */
+.text-medium-blue { color: var(--medium-blue-600); }
+.bg-medium-blue { background-color: var(--medium-blue-600); }
+.border-medium-blue { border-color: var(--medium-blue-600); }
+
+/* Medium Purple Utilities */
+.text-medium-purple { color: var(--medium-purple-600); }
+.bg-medium-purple { background-color: var(--medium-purple-600); }
+.border-medium-purple { border-color: var(--medium-purple-600); }
+
+/* Electric Accent Utilities */
+.text-electric-accent { color: var(--electric-accent-500); }
+.bg-electric-accent { background-color: var(--electric-accent-500); }
+.border-electric-accent { border-color: var(--electric-accent-500); }
+
+/* Dark Gray Utilities */
+.text-dark-gray { color: var(--dark-gray-800); }
+.bg-dark-gray { background-color: var(--dark-gray-800); }
+.border-dark-gray { border-color: var(--dark-gray-800); }
+
+/* Gradient Utilities */
+.bg-gradient-blue-purple {
+  background: linear-gradient(135deg, var(--medium-blue-600) 0%, var(--medium-purple-600) 100%);
+}
+
+.bg-gradient-electric-dark {
+  background: linear-gradient(135deg, var(--electric-accent-500) 0%, var(--dark-gray-800) 100%);
+}
+
+.bg-gradient-purple-gray {
+  background: linear-gradient(135deg, var(--medium-purple-600) 0%, var(--charcoal-gray-700) 100%);
+}
+
+/* Hover States */
+.hover-electric-blue:hover { background-color: var(--electric-blue-700); }
+.hover-medium-blue:hover { background-color: var(--medium-blue-700); }
+.hover-medium-purple:hover { background-color: var(--medium-purple-700); }
+.hover-electric-accent:hover { background-color: var(--electric-accent-600); }
+
+/* Primary Hues - User's Preferred Gradient Combinations */
+:root {
+  /* Primary Electric Blue Gradient */
+  --primary-electric-gradient: linear-gradient(135deg, var(--electric-blue-700) 0%, var(--electric-blue-900) 100%);
+  
+  /* Primary Zinc Gray Gradient */
+  --primary-zinc-gradient: linear-gradient(135deg, var(--zinc-gray-500) 0%, var(--zinc-gray-700) 100%);
+}
+
+/* Primary Hue Utility Classes */
+.bg-primary-electric-gradient {
+  background: var(--primary-electric-gradient);
+}
+
+.bg-primary-zinc-gradient {
+  background: var(--primary-zinc-gradient);
+}
+
+/* Individual Color Combinations for Flexibility */
+.bg-electric-700-to-900 {
+  background: linear-gradient(135deg, var(--electric-blue-700) 0%, var(--electric-blue-900) 100%);
+}
+
+.bg-zinc-500-to-700 {
+  background: linear-gradient(135deg, var(--zinc-gray-500) 0%, var(--zinc-gray-700) 100%);
+} 

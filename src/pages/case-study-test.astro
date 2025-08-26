@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CaseStudySection from '../components/CaseStudySection.astro';
+
+// AI Neural Network case study content
+const caseStudyData = [
+  {
+    id: 1,
+    title: "AI and Predictive Analytics",
+    subtitle: "Advanced AI and Machine Learning Solutions",
+    description: "WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges.",
+    imageLeft: true,
+    backgroundImage: "/src/assets/ai-images/1000_F_171279859_qHTFEdfjfnYUQyF3dJ0sqZQBsVtDVGWC.jpg",
+    gradientColor: 'black'
+  },
+  {
+    id: 2,
+    title: "AI and Predictive Analytics",
+    subtitle: "Advanced AI and Machine Learning Solutions",
+    description: "WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges.",
+    imageLeft: false,
+    backgroundImage: "/src/assets/ai-images/1000_F_289342493_OTu2uGh0PAvuYNRI095c9hER9ve282AM.jpg",
+    gradientColor: 'white'
+  },
+  {
+    id: 3,
+    title: "AI and Predictive Analytics",
+    subtitle: "Advanced AI and Machine Learning Solutions",
+    description: "WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges.",
+    imageLeft: false,
+    backgroundImage: "/src/assets/ai-images/1000_F_381437487_AhNBfuWAwHnuvjNRyNXwNlS47FS2rQ1s.jpg",
+    gradientColor: 'black'
+  },
+  {
+    id: 4,
+    title: "AI and Predictive Analytics",
+    subtitle: "Advanced AI and Machine Learning Solutions",
+    description: "WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges.",
+    imageLeft: false,
+    backgroundImage: "/src/assets/ai-images/1000_F_319687122_2Ijg4VcLSeRCmqMvFAwf3YXAqgAM9861.jpg",
+    gradientColor: 'black'
+  },
+  {
+    id: 5,
+    title: "AI and Predictive Analytics",
+    subtitle: "Advanced AI and Machine Learning Solutions",
+    description: "WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges.",
+    imageLeft: false,
+    backgroundImage: "/src/assets/ai-images/1000_F_381457258_CC5WIuj9hhacVvqzUMIfcd8shwHMbdBd.jpg",
+    gradientColor: 'black'
+  },
+  {
+    id: 6,
+    title: "AI and Predictive Analytics",
+    subtitle: "Advanced AI and Machine Learning Solutions",
+    description: "WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges.",
+    imageLeft: false,
+    backgroundImage: "/src/assets/ai-images/1000_F_495816918_vddROnptfTgQtAYsBm4XNfLlugzjue14.jpg",
+    gradientColor: 'black'
+  },
+  {
+    id: 7,
+    title: "AI and Predictive Analytics",
+    subtitle: "Advanced AI and Machine Learning Solutions",
+    description: "WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges.",
+    imageLeft: true,
+    backgroundImage: "/src/assets/ai-images/1000_F_617328247_ERluHDRwhHfeSaVEyie79AB1zmXnq74Y.jpg",
+    gradientColor: 'black'
+  }
+];
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content="Astro" />
+		<meta name="description" content="Case Study Section Test - AI Neural Networks - WTI Solutions" />
+		<title>Case Study Test - AI Neural Networks - WTI Solutions</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/src/styles/charcoal-palette.css">
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="font-inter antialiased bg-white text-gray-900">
+		<!-- Navigation Header -->
+		<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex justify-between items-center h-16">
+					<div class="flex items-center">
+						<h1 class="text-xl font-semibold text-gray-900">Case Study Test - AI Neural Networks</h1>
+					</div>
+					<nav class="flex space-x-8">
+						<a href="#case-studies" class="text-gray-600 hover:text-gray-900 transition-colors">View All</a>
+						<a href="/test" class="text-gray-600 hover:text-gray-900 transition-colors">Color Palette</a>
+						<a href="/" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<main class="pt-16">
+			<!-- Introduction Section -->
+			<section class="bg-gradient-to-br from-plum-charcoal-50 to-blue-charcoal-50 py-20">
+				<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+					<h2 class="text-4xl md:text-5xl font-light text-plum-charcoal-900 mb-6">
+						AI Neural Network Case Studies
+					</h2>
+					<p class="text-plum-charcoal-600 leading-relaxed">
+						Explore our comprehensive portfolio of AI and neural network solutions. Each case study showcases different aspects of our expertise, from optimization to deployment, all with unique AI-generated background imagery.
+					</p>
+					<div class="mt-8 text-sm text-plum-charcoal-500">
+						<p>Scroll down to view each case study with its unique background image and gradient overlay</p>
+						<p class="mt-2"><strong>Note:</strong> "Deep Learning Architecture" uses white gradient, others use black gradient</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Case Studies -->
+			<div id="case-studies">
+				{caseStudyData.map((caseStudy, index) => (
+					<div class={`relative ${index === 0 ? 'first-case-study' : ''}`}>
+						<CaseStudySection
+							title={caseStudy.title}
+							subtitle={caseStudy.subtitle}
+							description={caseStudy.description}
+							imageLeft={caseStudy.imageLeft}
+							backgroundImage={caseStudy.backgroundImage}
+							gradientColor={caseStudy.gradientColor}
+						/>
+						<!-- Section Indicator -->
+						<div class="absolute top-4 right-4 z-20 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm font-medium">
+							{index + 1} of {caseStudyData.length}
+						</div>
+					</div>
+				))}
+			</div>
+
+			<style>
+				.first-case-study h2,
+				.first-case-study h3,
+				.first-case-study p,
+				.first-case-study a {
+					opacity: 1 !important;
+					visibility: visible !important;
+					color: white !important;
+				}
+			</style>
+
+			<!-- Summary Section -->
+			<section class="bg-plum-charcoal-900 text-white py-20">
+				<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+					<h2 class="text-3xl md:text-4xl font-light mb-6">
+						Ready to Transform Your AI Strategy?
+					</h2>
+					<p class="text-gray-300 leading-relaxed mb-8">
+						Our expertise spans the entire AI development lifecycle, from initial concept to production deployment. Let's discuss how we can help you achieve your AI goals.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+						<a href="#contact" class="bg-white text-plum-charcoal-900 px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition-all duration-300">
+							Get Started
+						</a>
+						<a href="/" class="border border-white text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-white hover:text-plum-charcoal-900 transition-all duration-300">
+							Learn More
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-plum-charcoal-950 text-gray-400 py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center">
+					<p class="text-sm">
+						© 2024 WTI Solutions. All rights reserved. | 
+						<a href="/test" class="hover:text-white transition-colors">Color Palette</a> | 
+						<a href="/case-study-test" class="hover:text-white transition-colors">Case Study Test</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html> 

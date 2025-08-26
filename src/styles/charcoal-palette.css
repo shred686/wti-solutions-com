@@ -1,5 +1,10 @@
 /* WTI Solutions - Charcoal Color Palette */
 
+/* Global paragraph font size */
+p {
+  font-size: 16px;
+}
+
 /* FAVORITES - Keep these */
 :root {
   /* Neutral Charcoal */
@@ -232,4 +237,31 @@
 .border-charcoal-midnight { border-color: var(--midnight-charcoal-900); }
 .border-charcoal-carbon { border-color: var(--carbon-charcoal-900); }
 .border-charcoal-obsidian { border-color: var(--obsidian-charcoal-900); }
-.border-charcoal-abyss { border-color: var(--abyss-charcoal-900); } 
+.border-charcoal-abyss { border-color: var(--abyss-charcoal-900); }
+
+/* Primary Hues - User's Preferred Gradient Combinations */
+:root {
+  /* Primary Electric Blue Gradient */
+  --primary-electric-gradient: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+  
+  /* Primary Zinc Gray Gradient */
+  --primary-zinc-gradient: linear-gradient(135deg, #71717a 0%, #3f3f46 100%);
+}
+
+/* Primary Hue Utility Classes */
+.bg-primary-electric-gradient {
+  background: var(--primary-electric-gradient);
+}
+
+.bg-primary-zinc-gradient {
+  background: var(--primary-zinc-gradient);
+}
+
+/* Individual Color Combinations for Flexibility */
+.bg-electric-700-to-900 {
+  background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+}
+
+.bg-zinc-500-to-700 {
+  background: linear-gradient(135deg, #71717a 0%, #3f3f46 100%);
+} 
