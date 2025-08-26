@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-white">
+<section class="full-page-section h-screen flex items-center justify-center bg-white" data-section-type="capabilities">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="text-center mb-16">
       <h2 class="text-5xl md:text-6xl font-light text-slate-charcoal-900 mb-6">
@@ -32,14 +32,14 @@
       <div class="bg-slate-charcoal-50 p-8 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-shadow duration-300">
         <div class="w-16 h-16 bg-slate-charcoal-800 rounded-lg mx-auto mb-6 flex items-center justify-center">
           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
           </svg>
         </div>
         <h3 class="text-2xl font-medium text-slate-charcoal-900 mb-4 text-center">
           Knowledge Graphs
         </h3>
         <p class="text-slate-charcoal-600 text-center leading-relaxed">
-          Ontologies and graph databases that create semantic relationships between data points, enabling advanced search and discovery capabilities.
+          Ontologies and graph databases that create semantic relationships between data entities, enabling advanced reasoning and discovery capabilities.
         </p>
       </div>
 
@@ -47,14 +47,14 @@
       <div class="bg-slate-charcoal-50 p-8 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-shadow duration-300">
         <div class="w-16 h-16 bg-slate-charcoal-800 rounded-lg mx-auto mb-6 flex items-center justify-center">
           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
           </svg>
         </div>
         <h3 class="text-2xl font-medium text-slate-charcoal-900 mb-4 text-center">
-          Battlefield Management
+          Data Security
         </h3>
         <p class="text-slate-charcoal-600 text-center leading-relaxed">
-          Command, Control, and Communications (C3BM) systems that provide real-time situational awareness and decision support for defense operations.
+          Comprehensive security frameworks and encryption protocols that protect sensitive data while maintaining accessibility for authorized users.
         </p>
       </div>
 
@@ -62,16 +62,29 @@
       <div class="bg-slate-charcoal-50 p-8 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-shadow duration-300">
         <div class="w-16 h-16 bg-slate-charcoal-800 rounded-lg mx-auto mb-6 flex items-center justify-center">
           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
         <h3 class="text-2xl font-medium text-slate-charcoal-900 mb-4 text-center">
-          Data Management
+          Battlefield Management
         </h3>
         <p class="text-slate-charcoal-600 text-center leading-relaxed">
-          Enterprise-grade solutions for data integration, standardization, governance, and security that ensure information assets deliver maximum value.
+          Command, Control, and Communications (C3BM) systems that provide real-time situational awareness and decision support for military operations.
         </p>
       </div>
     </div>
   </div>
-</section> 
+</section>
+
+<script>
+  import { SectionAnimator } from '../utils/animations.js';
+  
+  // Initialize animation when component loads
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('[data-section-type="capabilities"]');
+    if (section) {
+      const animator = new SectionAnimator();
+      animator.initializeSection(section, 'capabilities');
+    }
+  });
+</script> 

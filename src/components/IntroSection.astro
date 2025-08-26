@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-graphite-charcoal-50">
+<section class="full-page-section h-screen flex items-center justify-center bg-graphite-charcoal-50" data-section-type="intro">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-4xl md:text-5xl font-light text-graphite-charcoal-900 mb-12">
@@ -34,4 +34,17 @@
       </div>
     </div>
   </div>
-</section> 
+</section>
+
+<script>
+  import { SectionAnimator } from '../utils/animations.js';
+  
+  // Initialize animation when component loads
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('[data-section-type="intro"]');
+    if (section) {
+      const animator = new SectionAnimator();
+      animator.initializeSection(section, 'intro');
+    }
+  });
+</script> 

@@ -1,0 +1,235 @@
+/* WTI Solutions - Charcoal Color Palette */
+
+/* FAVORITES - Keep these */
+:root {
+  /* Neutral Charcoal */
+  --charcoal-50: #f6f6f7;
+  --charcoal-100: #e1e2e4;
+  --charcoal-200: #c3c5c9;
+  --charcoal-300: #9fa2a8;
+  --charcoal-400: #7c8187;
+  --charcoal-500: #64686e;
+  --charcoal-600: #515559;
+  --charcoal-700: #45484c;
+  --charcoal-800: #3a3d41;
+  --charcoal-900: #333639;
+  --charcoal-950: #1f2124;
+
+  /* Blue Charcoal */
+  --blue-charcoal-50: #f4f6f9;
+  --blue-charcoal-100: #dde3ed;
+  --blue-charcoal-200: #b8c7db;
+  --blue-charcoal-300: #8fa6c4;
+  --blue-charcoal-400: #6b86aa;
+  --blue-charcoal-500: #536d93;
+  --blue-charcoal-600: #435879;
+  --blue-charcoal-700: #374862;
+  --blue-charcoal-800: #2f3e53;
+  --blue-charcoal-900: #2b3546;
+  --blue-charcoal-950: #1c222e;
+
+  /* Plum Charcoal */
+  --plum-charcoal-50: #f7f6f8;
+  --plum-charcoal-100: #e6e2e7;
+  --plum-charcoal-200: #ccc4d0;
+  --plum-charcoal-300: #aca0b0;
+  --plum-charcoal-400: #8a7d8e;
+  --plum-charcoal-500: #726575;
+  --plum-charcoal-600: #5e5360;
+  --plum-charcoal-700: #4f4651;
+  --plum-charcoal-800: #443d46;
+  --plum-charcoal-900: #3c353e;
+  --plum-charcoal-950: #272227;
+
+  /* Silver Charcoal */
+  --silver-charcoal-50: #f8f9fa;
+  --silver-charcoal-100: #e9ecef;
+  --silver-charcoal-200: #d1d7dc;
+  --silver-charcoal-300: #b1bbc4;
+  --silver-charcoal-400: #8d9ba7;
+  --silver-charcoal-500: #74828f;
+  --silver-charcoal-600: #626d78;
+  --silver-charcoal-700: #525c65;
+  --silver-charcoal-800: #474e55;
+  --silver-charcoal-900: #3f444a;
+  --silver-charcoal-950: #282b2f;
+
+  /* Steel Charcoal */
+  --steel-charcoal-50: #f6f8f9;
+  --steel-charcoal-100: #e3e9ed;
+  --steel-charcoal-200: #c5d2db;
+  --steel-charcoal-300: #9fb4c2;
+  --steel-charcoal-400: #7591a3;
+  --steel-charcoal-500: #597489;
+  --steel-charcoal-600: #495e73;
+  --steel-charcoal-700: #3e4f5f;
+  --steel-charcoal-800: #364350;
+  --steel-charcoal-900: #313a44;
+  --steel-charcoal-950: #1f252b;
+
+  /* Platinum Charcoal */
+  --platinum-charcoal-50: #fafafa;
+  --platinum-charcoal-100: #f0f0f1;
+  --platinum-charcoal-200: #e1e2e4;
+  --platinum-charcoal-300: #c8cacd;
+  --platinum-charcoal-400: #a8abaf;
+  --platinum-charcoal-500: #8e9196;
+  --platinum-charcoal-600: #787c82;
+  --platinum-charcoal-700: #66696f;
+  --platinum-charcoal-800: #565a5f;
+  --platinum-charcoal-900: #4a4d52;
+  --platinum-charcoal-950: #2f3135;
+
+  /* Copper Charcoal */
+  --copper-charcoal-50: #f8f5f3;
+  --copper-charcoal-100: #ede4d9;
+  --copper-charcoal-200: #d9c6b0;
+  --copper-charcoal-300: #c0a180;
+  --copper-charcoal-400: #a67d56;
+  --copper-charcoal-500: #956742;
+  --copper-charcoal-600: #7f5437;
+  --copper-charcoal-700: #6a4530;
+  --copper-charcoal-800: #593a2b;
+  --copper-charcoal-900: #4d3327;
+  --copper-charcoal-950: #2a1b16;
+
+  /* NEW HIGH-TECH OPTIONS */
+  /* Graphite Charcoal */
+  --graphite-charcoal-50: #f7f8f9;
+  --graphite-charcoal-100: #e8eaed;
+  --graphite-charcoal-200: #ced3d8;
+  --graphite-charcoal-300: #aab2ba;
+  --graphite-charcoal-400: #828c97;
+  --graphite-charcoal-500: #68737e;
+  --graphite-charcoal-600: #555e68;
+  --graphite-charcoal-700: #474f57;
+  --graphite-charcoal-800: #3d444b;
+  --graphite-charcoal-900: #363c42;
+  --graphite-charcoal-950: #24282c;
+
+  /* Slate Charcoal */
+  --slate-charcoal-50: #f8fafc;
+  --slate-charcoal-100: #f1f5f9;
+  --slate-charcoal-200: #e2e8f0;
+  --slate-charcoal-300: #cbd5e1;
+  --slate-charcoal-400: #94a3b8;
+  --slate-charcoal-500: #64748b;
+  --slate-charcoal-600: #475569;
+  --slate-charcoal-700: #334155;
+  --slate-charcoal-800: #1e293b;
+  --slate-charcoal-900: #0f172a;
+  --slate-charcoal-950: #020617;
+
+  /* Titanium Charcoal */
+  --titanium-charcoal-50: #f9f9fa;
+  --titanium-charcoal-100: #f0f1f2;
+  --titanium-charcoal-200: #e0e2e4;
+  --titanium-charcoal-300: #c9ccce;
+  --titanium-charcoal-400: #adb1b5;
+  --titanium-charcoal-500: #94999e;
+  --titanium-charcoal-600: #7d8388;
+  --titanium-charcoal-700: #686d72;
+  --titanium-charcoal-800: #585c61;
+  --titanium-charcoal-900: #4c5055;
+  --titanium-charcoal-950: #313538;
+
+  /* Midnight Charcoal */
+  --midnight-charcoal-50: #f6f7f9;
+  --midnight-charcoal-100: #ebeef2;
+  --midnight-charcoal-200: #d2dae2;
+  --midnight-charcoal-300: #b0bcc9;
+  --midnight-charcoal-400: #8897ab;
+  --midnight-charcoal-500: #697891;
+  --midnight-charcoal-600: #546179;
+  --midnight-charcoal-700: #455162;
+  --midnight-charcoal-800: #3b4452;
+  --midnight-charcoal-900: #343b46;
+  --midnight-charcoal-950: #22262d;
+
+  /* Carbon Charcoal */
+  --carbon-charcoal-50: #f6f6f6;
+  --carbon-charcoal-100: #e7e7e7;
+  --carbon-charcoal-200: #d1d1d1;
+  --carbon-charcoal-300: #b0b0b0;
+  --carbon-charcoal-400: #888888;
+  --carbon-charcoal-500: #6d6d6d;
+  --carbon-charcoal-600: #5d5d5d;
+  --carbon-charcoal-700: #4f4f4f;
+  --carbon-charcoal-800: #454545;
+  --carbon-charcoal-900: #3d3d3d;
+  --carbon-charcoal-950: #262626;
+
+  /* Obsidian Charcoal */
+  --obsidian-charcoal-50: #f7f8f9;
+  --obsidian-charcoal-100: #eceff2;
+  --obsidian-charcoal-200: #d6dce3;
+  --obsidian-charcoal-300: #b7c0cb;
+  --obsidian-charcoal-400: #939fae;
+  --obsidian-charcoal-500: #768194;
+  --obsidian-charcoal-600: #606a7c;
+  --obsidian-charcoal-700: #4f5765;
+  --obsidian-charcoal-800: #434a56;
+  --obsidian-charcoal-900: #3a404a;
+  --obsidian-charcoal-950: #26292f;
+
+  /* Abyss Charcoal - Deep Teal/Blue-Green */
+  --abyss-charcoal-50: #f0f4f5;
+  --abyss-charcoal-100: #d9e2e6;
+  --abyss-charcoal-200: #b3c5cc;
+  --abyss-charcoal-300: #8da3ad;
+  --abyss-charcoal-400: #6b7f8a;
+  --abyss-charcoal-500: #546671;
+  --abyss-charcoal-600: #43525a;
+  --abyss-charcoal-700: #374349;
+  --abyss-charcoal-800: #2f383d;
+  --abyss-charcoal-900: #2a3135;
+  --abyss-charcoal-950: #081518;
+}
+
+/* Utility Classes for Easy Use */
+.charcoal-neutral { color: var(--charcoal-900); }
+.charcoal-blue { color: var(--blue-charcoal-900); }
+.charcoal-plum { color: var(--plum-charcoal-900); }
+.charcoal-silver { color: var(--silver-charcoal-900); }
+.charcoal-steel { color: var(--steel-charcoal-900); }
+.charcoal-platinum { color: var(--platinum-charcoal-900); }
+.charcoal-copper { color: var(--copper-charcoal-900); }
+.charcoal-graphite { color: var(--graphite-charcoal-900); }
+.charcoal-slate { color: var(--slate-charcoal-900); }
+.charcoal-titanium { color: var(--titanium-charcoal-900); }
+.charcoal-midnight { color: var(--midnight-charcoal-900); }
+.charcoal-carbon { color: var(--carbon-charcoal-900); }
+.charcoal-obsidian { color: var(--obsidian-charcoal-900); }
+.charcoal-abyss { color: var(--abyss-charcoal-900); }
+
+/* Background Utility Classes */
+.bg-charcoal-neutral { background-color: var(--charcoal-900); }
+.bg-charcoal-blue { background-color: var(--blue-charcoal-900); }
+.bg-charcoal-plum { background-color: var(--plum-charcoal-900); }
+.bg-charcoal-silver { background-color: var(--silver-charcoal-900); }
+.bg-charcoal-steel { background-color: var(--steel-charcoal-900); }
+.bg-charcoal-platinum { background-color: var(--platinum-charcoal-900); }
+.bg-charcoal-copper { background-color: var(--copper-charcoal-900); }
+.bg-charcoal-graphite { background-color: var(--graphite-charcoal-900); }
+.bg-charcoal-slate { background-color: var(--slate-charcoal-900); }
+.bg-charcoal-titanium { background-color: var(--titanium-charcoal-900); }
+.bg-charcoal-midnight { background-color: var(--midnight-charcoal-900); }
+.bg-charcoal-carbon { background-color: var(--carbon-charcoal-900); }
+.bg-charcoal-obsidian { background-color: var(--obsidian-charcoal-900); }
+.bg-charcoal-abyss { background-color: var(--abyss-charcoal-900); }
+
+/* Border Utility Classes */
+.border-charcoal-neutral { border-color: var(--charcoal-900); }
+.border-charcoal-blue { border-color: var(--blue-charcoal-900); }
+.border-charcoal-plum { border-color: var(--plum-charcoal-900); }
+.border-charcoal-silver { border-color: var(--silver-charcoal-900); }
+.border-charcoal-steel { border-color: var(--steel-charcoal-900); }
+.border-charcoal-platinum { border-color: var(--platinum-charcoal-900); }
+.border-charcoal-copper { border-color: var(--copper-charcoal-900); }
+.border-charcoal-graphite { border-color: var(--graphite-charcoal-900); }
+.border-charcoal-slate { border-color: var(--slate-charcoal-900); }
+.border-charcoal-titanium { border-color: var(--titanium-charcoal-900); }
+.border-charcoal-midnight { border-color: var(--midnight-charcoal-900); }
+.border-charcoal-carbon { border-color: var(--carbon-charcoal-900); }
+.border-charcoal-obsidian { border-color: var(--obsidian-charcoal-900); }
+.border-charcoal-abyss { border-color: var(--abyss-charcoal-900); } 

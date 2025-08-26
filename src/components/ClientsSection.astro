@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-white">
+<section class="full-page-section h-screen flex items-center justify-center bg-white" data-section-type="clients">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="text-center mb-16">
       <h2 class="text-5xl md:text-6xl font-light text-titanium-charcoal-900 mb-6">
@@ -28,13 +28,13 @@
         <div class="text-titanium-charcoal-700 font-medium">Department of Defense</div>
       </div>
       <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Federal Agencies</div>
+        <div class="text-titanium-charcoal-700 font-medium">Department of Homeland Security</div>
       </div>
       <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Defense Contractors</div>
+        <div class="text-titanium-charcoal-700 font-medium">Department of Energy</div>
       </div>
       <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Private Industry</div>
+        <div class="text-titanium-charcoal-700 font-medium">Department of Veterans Affairs</div>
       </div>
     </div>
     <div class="text-center mt-16">
@@ -46,4 +46,17 @@
       </a>
     </div>
   </div>
-</section> 
+</section>
+
+<script>
+  import { SectionAnimator } from '../utils/animations.js';
+  
+  // Initialize animation when component loads
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('[data-section-type="clients"]');
+    if (section) {
+      const animator = new SectionAnimator();
+      animator.initializeSection(section, 'clients');
+    }
+  });
+</script> 

@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-platinum-charcoal-50">
+<section class="full-page-section h-screen flex items-center justify-center bg-platinum-charcoal-50" data-section-type="certifications">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="text-center mb-12">
       <h2 class="text-4xl md:text-5xl font-light text-platinum-charcoal-900 mb-6">
@@ -39,7 +39,7 @@
           Security Clearances
         </h3>
         <p class="text-platinum-charcoal-600 leading-relaxed">
-          Team members with active clearances up to TS/SCI supporting classified programs
+          Team members with active security clearances for classified government work
         </p>
       </div>
 
@@ -51,10 +51,10 @@
           </svg>
         </div>
         <h3 class="text-xl font-medium text-platinum-charcoal-900 mb-4">
-          Strategic Partnerships
+          Industry Partnerships
         </h3>
         <p class="text-platinum-charcoal-600 leading-relaxed">
-          Collaborative relationships with leading technology vendors and system integrators
+          Strategic alliances with leading technology providers and industry experts
         </p>
       </div>
 
@@ -104,4 +104,17 @@
       </div>
     </div>
   </div>
-</section> 
+</section>
+
+<script>
+  import { SectionAnimator } from '../utils/animations.js';
+  
+  // Initialize animation when component loads
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('[data-section-type="certifications"]');
+    if (section) {
+      const animator = new SectionAnimator();
+      animator.initializeSection(section, 'certifications');
+    }
+  });
+</script> 
