@@ -1,11 +1,72 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import IntroSection from '../components/IntroSection.astro';
+import CapabilitiesSection from '../components/CapabilitiesSection.astro';
+import CaseStudySection from '../components/CaseStudySection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import ClientsSection from '../components/ClientsSection.astro';
+import CertificationsSection from '../components/CertificationsSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="WTI Solutions - Everything Data®">
+	<Header />
+
+	<!-- 1. HOME HERO -->
+	<Hero />
+
+	<!-- 2. INTRO TEXT -->
+	<IntroSection />
+
+	<!-- 3. CAPABILITIES -->
+	<CapabilitiesSection />
+
+	<!-- 4. CASE STUDY 1 - Image Left -->
+	<CaseStudySection
+		title="AI (Neural Networks, Quantum computer)"
+		subtitle="Advanced Artificial Intelligence Solutions"
+		description="Lorem ipsum dolor sit amet consectetur. Tortor sagittis auctor tortor blandit egestas arcu sed vel. Libero facilisis ut diam est. Donec lorem sit duis malesuada vitae et libero purus. Maecenas mi sed vitae auctor quis pellentesque urna et eget. Turpis ac tempus malesuada et scelerisque urna non nam. Feugiat eget."
+		imageLeft={true}
+		bgColor="bg-gray-50"
+	/>
+
+	<!-- 5. SERVICES -->
+	<ServicesSection />
+
+	<!-- 6. What Our Clients Are Saying -->
+	<TestimonialsSection />
+
+	<!-- 7. CASE STUDY 2 - Image Right -->
+	<CaseStudySection
+		title="Knowledge Graphs (Ontologies, graph databases)"
+		subtitle="Semantic Data Integration and Analysis"
+		description="Lorem ipsum dolor sit amet consectetur. Tortor sagittis auctor tortor blandit egestas arcu sed vel. Libero facilisis ut diam est. Donec lorem sit duis malesuada vitae et libero purus. Maecenas mi sed vitae auctor quis pellentesque urna et eget. Turpis ac tempus malesuada et scelerisque urna non nam. Feugiat eget."
+		imageLeft={false}
+		bgColor="bg-white"
+	/>
+
+	<!-- 8. Sampling of Our Clients -->
+	<ClientsSection />
+
+	<!-- 9. Certifications -->
+	<CertificationsSection />
+
+	<!-- 10. CASE STUDY 3 - Image Left -->
+	<CaseStudySection
+		title="Battlefield Management (C3BM)"
+		subtitle="Command, Control, and Communications"
+		description="Lorem ipsum dolor sit amet consectetur. Tortor sagittis auctor tortor blandit egestas arcu sed vel. Libero facilisis ut diam est. Donec lorem sit duis malesuada vitae et libero purus. Maecenas mi sed vitae auctor quis pellentesque urna et eget. Turpis ac tempus malesuada et scelerisque urna non nam. Feugiat eget."
+		imageLeft={true}
+		bgColor="bg-gray-50"
+	/>
+
+	<!-- 11. CONTACT FORM -->
+	<ContactSection />
+
+	<!-- 12. FOOTER -->
+	<Footer />
 </Layout>

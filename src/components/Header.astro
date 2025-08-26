@@ -1,0 +1,85 @@
+---
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-blue-charcoal-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-blue-charcoal-900">
+          WTI Solutions
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#who-we-are" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+          Who We Are
+        </a>
+        <a href="#what-we-do" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+          What We Do
+        </a>
+        <a href="#careers" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+          Careers
+        </a>
+        <a href="#news" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+          News
+        </a>
+        <a href="#contact" class="bg-blue-charcoal-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-charcoal-900 transition-colors">
+          Get Started
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" class="bg-blue-charcoal-50 p-2 rounded-md text-blue-charcoal-700 hover:text-blue-charcoal-900 hover:bg-blue-charcoal-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-charcoal-500" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!-- Menu icon -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="md:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-blue-charcoal-200">
+        <a href="#who-we-are" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 block px-3 py-2 text-base font-medium">
+          Who We Are
+        </a>
+        <a href="#what-we-do" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 block px-3 py-2 text-base font-medium">
+          What We Do
+        </a>
+        <a href="#careers" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 block px-3 py-2 text-base font-medium">
+          Careers
+        </a>
+        <a href="#news" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 block px-3 py-2 text-base font-medium">
+          News
+        </a>
+        <a href="#contact" class="bg-blue-charcoal-800 text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-charcoal-900">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking on links
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  });
+</script> 
