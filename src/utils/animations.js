@@ -75,7 +75,7 @@ export class SectionAnimator {
 
   // IntroSection - dramatic entrance
   initializeIntroSection(section) {
-    const elementsToFade = section.querySelectorAll('h2, p, .text-4xl');
+    const elementsToFade = section.querySelectorAll('.intro-welcome-text');
     elementsToFade.forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(60px) scale(0.9)';
@@ -84,12 +84,13 @@ export class SectionAnimator {
   }
 
   animateIntroSection(section) {
-    const elementsToFade = section.querySelectorAll('h2, p, .text-4xl');
+    const elementsToFade = section.querySelectorAll('.intro-welcome-text');
     elementsToFade.forEach((el, index) => {
+      const delay = parseFloat(el.getAttribute('data-delay')) || index * 0.2;
       setTimeout(() => {
         el.style.opacity = '1';
         el.style.transform = 'translateY(0) scale(1)';
-      }, index * 200);
+      }, delay * 1000);
     });
   }
 

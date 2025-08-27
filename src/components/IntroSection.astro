@@ -3,48 +3,38 @@
 
 <section class="full-page-section h-screen flex items-center justify-center bg-graphite-charcoal-50" data-section-type="intro">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-light text-graphite-charcoal-900 mb-12">
-        About WTI Solutions
-      </h2>
+    <div class="max-w-4xl mx-auto">
       <div class="space-y-8 text-lg text-graphite-charcoal-600 leading-relaxed">
-        <p>
-          Founded in 2007, WTI has evolved from a profitable IT services company into a leading provider of data management and AI solutions for government and industry. Based in the National Capital Region, we are a certified Woman-Owned Small Business committed to helping organizations harness the power of actionable information through innovative Information Technology solutions.
+        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.2">
+          Welcome to WTI's digital home where we invite you to explore our values, corporate capabilities, and how we drive innovation with you to accomplish mission success.
         </p>
-        <p>
-          Our mission is to democratize data access and enable organizations to make informed decisions through advanced data standardization, AI capabilities, and enterprise data management. We serve a diverse portfolio of clients, from defense and intelligence communities supporting the warfighter to civilian agencies advancing their public service missions.
+        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.4">
+          WTI brings the agility, efficient workflows, and speed of service necessary to thrive and execute complex requirements. Our corporate culture revolves around a partnership where we are trusted to deliver and exceed expectations.
         </p>
-        <p>
-          With a team composed of over 50% military veterans from all services, WTI brings deep expertise and unwavering commitment to excellence. We have delivered data solutions to numerous federal agencies and maintain the highest standards of security, privacy, and compliance with government guidelines while driving innovation at the speed of relevance.
+        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.6">
+          At the core of our company are exceptionally talented individuals who are passionate and deeply committed to achieving mission success. Our employees embody WTI's corporate values, bringing expertise, dedication, a strong work ethic, and focus on client success to their daily tasks. WTI is proud to recruit and retain veterans, who comprise nearly 85% of our workforce. We are also an authorized partner of the DoD SkillBridge program.
+        </p>
+        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.8">
+          Teamwork and communication are vital to our success. I have a "no door policy" which fosters a climate where we all work together to provide the best support to our clients' missions.
+        </p>
+        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="1.0">
+          WTI takes pride in building quality long-term relationships. As you navigate our website, we invite you to discover our track record of commitment to excellence, innovation, and accomplishment.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-        <div class="text-center">
-          <div class="text-4xl font-light text-graphite-charcoal-900 mb-2">15+</div>
-          <div class="text-graphite-charcoal-600">Years of Excellence</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-light text-graphite-charcoal-900 mb-2">50%+</div>
-          <div class="text-graphite-charcoal-600">Veteran Team Members</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-light text-graphite-charcoal-900 mb-2">Multiple</div>
-          <div class="text-graphite-charcoal-600">Federal Agencies Served</div>
-        </div>
+      <div class="mt-12 flex justify-start">
+        <img src="/CF_Signature.png" alt="Cindy Ford Signature" class="h-16 w-auto intro-welcome-text opacity-0 transform translate-y-8" data-delay="1.4" />
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  import { SectionAnimator } from '../utils/animations.js';
+<style>
+  .intro-welcome-text {
+    transition: all 0.8s ease-out;
+  }
   
-  // Initialize animation when component loads
-  document.addEventListener('DOMContentLoaded', () => {
-    const section = document.querySelector('[data-section-type="intro"]');
-    if (section) {
-      const animator = new SectionAnimator();
-      animator.initializeSection(section, 'intro');
-    }
-  });
-</script> 
+  .animate-fade-in-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+</style> 

@@ -1,21 +1,51 @@
 ---
+export interface Props {
+  backgroundVideo?: string;
+  backgroundImage?: string;
+  backgroundColor?: string;
+}
+
+const { backgroundVideo, backgroundImage, backgroundColor } = Astro.props;
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-white relative overflow-hidden">
-  <!-- Background gradient -->
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-charcoal-50 to-white"></div>
+<section class="full-page-section h-screen flex items-end justify-center relative overflow-hidden pb-16" style={backgroundColor ? `background-color: ${backgroundColor};` : ''}>
+  <!-- Background video or image -->
+  {backgroundVideo && (
+    <video 
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay 
+      muted 
+      loop 
+      playsinline
+    >
+      <source src={backgroundVideo} type="video/mp4" />
+    </video>
+  )}
+  
+  {backgroundImage && !backgroundVideo && (
+    <div 
+      class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+      style={`background-image: url(${backgroundImage})`}
+    ></div>
+  )}
+  
+  <!-- Black gradient overlay for text readability -->
+  <div 
+    class="absolute bottom-0 left-0 w-full z-[5]" 
+    style="height: 50%; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.4) 80%, transparent 100%);"
+  ></div>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
     <div class="text-center">
-      <h1 class="text-6xl md:text-8xl lg:text-9xl font-light text-blue-charcoal-900 mb-6 leading-tight">
+      <h1 class="text-6xl md:text-8xl lg:text-9xl font-light text-white mb-6 leading-tight" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
         Everything Data<span class="text-sm align-super">®</span>
       </h1>
       
-      <p class="text-xl md:text-2xl text-blue-charcoal-600 mb-8 max-w-4xl mx-auto font-light">
+      <p class="text-xl md:text-2xl text-blue-charcoal-100 mb-8 max-w-4xl mx-auto font-light">
         Connecting Innovation to Mission
       </p>
       
-      <p class="text-blue-charcoal-600 mb-12 max-w-5xl mx-auto leading-relaxed">
+      <p class="text-blue-charcoal-200 mb-12 max-w-5xl mx-auto leading-relaxed">
         WTI Solutions delivers cutting-edge technology solutions that transform businesses. 
         From advanced AI and machine learning to robust cloud infrastructure, we help organizations 
         achieve their digital transformation goals with innovative, scalable, and secure solutions.
@@ -25,7 +55,7 @@
         <a href="#capabilities" class="bg-blue-charcoal-800 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-charcoal-900 transition-all duration-300 transform hover:scale-105">
           Capabilities
         </a>
-        <a href="#contact" class="border-2 border-blue-charcoal-800 text-blue-charcoal-800 px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-charcoal-800 hover:text-white transition-all duration-300">
+        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-white hover:text-blue-charcoal-800 transition-all duration-300">
           Get Started
         </a>
       </div>

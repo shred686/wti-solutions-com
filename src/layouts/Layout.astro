@@ -35,6 +35,9 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 			let sections = [];
 			let totalSections = 0;
 			let animator = new SectionAnimator();
+			
+			// Make currentSection globally accessible for header component
+			window.currentSection = currentSection;
 
 			// Initialize sections for full-page scrolling
 			function initializeSections() {
@@ -83,6 +86,13 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 
 				isScrolling = true;
 				currentSection = index;
+				window.currentSection = index;
+
+				// Dispatch custom event for header to listen to
+				const sectionChangeEvent = new CustomEvent('sectionChanged', {
+					detail: { currentSection: index }
+				});
+				document.dispatchEvent(sectionChangeEvent);
 
 				// Move all sections
 				sections.forEach((section, sectionIndex) => {

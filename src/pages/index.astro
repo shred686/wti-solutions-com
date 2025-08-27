@@ -13,10 +13,13 @@ import ContactSection from '../components/ContactSection.astro';
 ---
 
 <Layout title="WTI Solutions - Everything Data®">
-	<Header />
+	<Header transparent={true} />
 
 	<!-- 1. HOME HERO -->
-	<Hero />
+	<Hero 
+		backgroundVideo="/src/assets/video/satellite-horizon-video.mp4"
+		backgroundColor="var(--charcoal-50)" 
+	/>
 
 	<!-- 2. INTRO TEXT -->
 	<IntroSection />
@@ -29,9 +32,9 @@ import ContactSection from '../components/ContactSection.astro';
 		title="AI and Predictive Analytics"
 		subtitle="Advanced AI and Machine Learning Solutions"
 		description="WTI designed and deployed Advanced AI and Machine Learning Solutions — including the development of custom Large Language Models (LLMs) — to extract actionable insights, automate workflows, and solve complex operational challenges."
-		backgroundImage="/src/assets/ai-images/1000_F_171279859_qHTFEdfjfnYUQyF3dJ0sqZQBsVtDVGWC.jpg",
+		backgroundImage="/src/assets/ai-images/1000_F_617328247_ERluHDRwhHfeSaVEyie79AB1zmXnq74Y.jpg",
 		imageLeft={true}
-		bgColor="bg-gray-50"
+		gradientColor='black'
 	/>
 
 	<!-- 5. SERVICES -->
@@ -45,9 +48,9 @@ import ContactSection from '../components/ContactSection.astro';
 		title="Ontology and Knowledge Modeling",
 		subtitle="Semantic Data Integration and Analysis",
 		description="By fusing knowledge modeling with ontology-enabled integration, WTI provided a scalable foundation for AI systems to operate in full context — accelerating the transition from raw data to decisive action and reducing operational risk across mission areas.",
-		backgroundImage="/src/assets/ai-images/kg-images/stock-vector-grey-white-abstract-background-with-flowing-particles-digital-future-technology-concept-vector-1636770064.png",
+		backgroundImage="/src/assets/ai-images/1000_F_381437487_AhNBfuWAwHnuvjNRyNXwNlS47FS2rQ1s.jpg",
 		imageLeft={false},
-		gradientColor='white'
+		gradientColor='black'
 	/>
 
 	<!-- 8. Sampling of Our Clients -->
@@ -58,9 +61,10 @@ import ContactSection from '../components/ContactSection.astro';
 
 	<!-- 10. CASE STUDY 3 - Image Left -->
 	<CaseStudySection
-		title="Battlefield Management (C3BM)"
-		subtitle="Command, Control, and Communications"
-		description="Lorem ipsum dolor sit amet consectetur. Tortor sagittis auctor tortor blandit egestas arcu sed vel. Libero facilisis ut diam est. Donec lorem sit duis malesuada vitae et libero purus. Maecenas mi sed vitae auctor quis pellentesque urna et eget. Turpis ac tempus malesuada et scelerisque urna non nam. Feugiat eget."
+		title="IT and Data Modernization"
+		subtitle="Modernizing the Defense and National Security Sector"
+		description="WTI developed an innovative framework utilizing Business Process Modeling, Model-Based Systems Engineering (MBSE), and ontology development to modernize and transform processes, systems, and data through a holistic approach. Combining these disciplines unlocks new insights into the complex relationships between domains and paves the way for advanced AI and automation."
+		backgroundImage="src/assets/ai-images/kg-images/1000_F_1095570403_4esLVgFleSzkezORNrGsEKlCMKz1tO8l.jpg",
 		imageLeft={true}
 		bgColor="bg-gray-50"
 	/>

@@ -1,38 +1,73 @@
 ---
+export interface Props {
+  transparent?: boolean;
+}
+
+const { transparent = false } = Astro.props;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-blue-charcoal-200">
+<header 
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  class:list={{
+    'bg-transparent': transparent,
+    'backdrop-blur-sm border-b border-blue-charcoal-200': !transparent
+  }}
+  data-transparent={transparent}
+  style={transparent ? 'background-color: transparent;' : 'background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);'}
+>
+  <style>
+    /* Hover effects for navigation links */
+    .nav-link:hover {
+      color: #333639 !important;
+    }
+    
+    /* Hover effects for CTA button when on electric blue background */
+    #header-cta:hover {
+      background-color: #ffffff !important;
+      color: #0369a1 !important;
+    }
+    
+    /* Hover effects for transparent background */
+    .bg-transparent .nav-link:hover {
+      color: #ffffff !important;
+    }
+    
+    .bg-transparent #header-cta:hover {
+      background-color: #1c222e !important;
+    }
+  </style>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-2xl font-bold text-blue-charcoal-900">
+        <a href="/" class="text-2xl font-bold transition-colors text-white" id="header-logo">
           WTI Solutions
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#who-we-are" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+        <a href="#who-we-are" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-white">
           Who We Are
         </a>
-        <a href="#what-we-do" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+        <a href="#what-we-do" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-white">
           What We Do
         </a>
-        <a href="#careers" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+        <a href="#careers" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-white">
           Careers
         </a>
-        <a href="#news" class="text-blue-charcoal-700 hover:text-blue-charcoal-900 px-3 py-2 text-sm font-medium transition-colors">
+        <a href="#news" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-white">
           News
         </a>
-        <a href="#contact" class="bg-blue-charcoal-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-charcoal-900 transition-colors">
+        <a href="#contact" class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-white border border-white hover:bg-white hover:text-blue-charcoal-800" id="header-cta">
           Get Started
         </a>
       </nav>
 
       <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button type="button" class="bg-blue-charcoal-50 p-2 rounded-md text-blue-charcoal-700 hover:text-blue-charcoal-900 hover:bg-blue-charcoal-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-charcoal-500" aria-controls="mobile-menu" aria-expanded="false">
+        <button id="mobile-menu-button" type="button" class="bg-transparent p-2 rounded-md text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <!-- Menu icon -->
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -67,9 +102,12 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('main-header');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const isTransparent = header?.getAttribute('data-transparent') === 'true';
 
+    // Mobile menu functionality
     mobileMenuButton?.addEventListener('click', () => {
       mobileMenu?.classList.toggle('hidden');
     });
@@ -81,5 +119,81 @@
         mobileMenu?.classList.add('hidden');
       });
     });
+
+        // Scroll effect for transparent header
+    if (isTransparent && header) {
+      // Function to update header background based on current section
+      const updateHeaderBackground = () => {
+        const currentSection = window.currentSection || 0;
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        
+        if (currentSection > 0) {
+          // Blurry silvery background for non-hero sections
+          header.style.background = 'rgba(255, 255, 255, 0.9)';
+          header.style.backdropFilter = 'blur(12px)';
+          header.style.webkitBackdropFilter = 'blur(12px)';
+          header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+          header.style.borderBottom = '1px solid rgba(156, 163, 175, 0.3)';
+          header.classList.remove('bg-transparent');
+          
+          // Update text colors for silvery background
+          const logo = document.getElementById('header-logo');
+          const navLinks = document.querySelectorAll('.nav-link');
+          const ctaButton = document.getElementById('header-cta');
+          
+          if (logo) logo.style.color = '#0369a1';
+          navLinks.forEach(link => {
+            link.style.color = '#0369a1';
+          });
+          if (ctaButton) {
+            ctaButton.style.backgroundColor = '#0369a1';
+            ctaButton.style.color = '#ffffff';
+            ctaButton.style.border = '1px solid #0369a1';
+          }
+          if (mobileMenuButton) {
+            mobileMenuButton.style.color = '#ffffff';
+            mobileMenuButton.style.backgroundColor = 'transparent';
+          }
+        } else {
+          // Transparent background for hero section
+          header.style.backgroundColor = 'transparent';
+          header.style.background = 'transparent';
+          header.style.opacity = '1';
+          header.style.backdropFilter = 'none';
+          header.style.borderBottom = 'none';
+          header.classList.add('bg-transparent');
+          
+          // Update text colors for transparent background
+          const logo = document.getElementById('header-logo');
+          const navLinks = document.querySelectorAll('.nav-link');
+          const ctaButton = document.getElementById('header-cta');
+          
+          if (logo) logo.style.color = '#ffffff';
+          navLinks.forEach(link => {
+            link.style.color = '#ffffff';
+          });
+          if (ctaButton) {
+            ctaButton.style.backgroundColor = 'transparent';
+            ctaButton.style.color = '#ffffff';
+            ctaButton.style.border = '1px solid #ffffff';
+          }
+          if (mobileMenuButton) {
+            mobileMenuButton.style.color = '#ffffff';
+            mobileMenuButton.style.backgroundColor = 'transparent';
+          }
+        }
+      };
+
+      // Listen for section changes
+      document.addEventListener('sectionChanged', updateHeaderBackground);
+      document.addEventListener('wheel', () => setTimeout(updateHeaderBackground, 100));
+      document.addEventListener('keydown', () => setTimeout(updateHeaderBackground, 100));
+      
+      // Periodic check as backup
+      setInterval(updateHeaderBackground, 200);
+      
+      // Initial setup
+      updateHeaderBackground();
+    }
   });
 </script> 

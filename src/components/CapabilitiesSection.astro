@@ -2,75 +2,67 @@
 ---
 
 <section class="full-page-section h-screen flex items-center justify-center bg-white" data-section-type="capabilities">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center mb-16">
-      <h2 class="text-5xl md:text-6xl font-light text-slate-charcoal-900 mb-6">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="text-center mb-8">
+      <h2 class="text-4xl md:text-5xl font-light text-[#1a1a1a] mb-4">
         Our Capabilities
       </h2>
-      <p class="text-xl text-slate-charcoal-600 max-w-3xl mx-auto">
+      <p class="text-lg text-slate-charcoal-600 max-w-3xl mx-auto">
         Advanced data solutions that transform how organizations collect, process, and leverage information
       </p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Capability 1 -->
-      <div class="bg-slate-charcoal-50 p-8 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-shadow duration-300">
-        <div class="w-16 h-16 bg-slate-charcoal-800 rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-medium text-slate-charcoal-900 mb-4 text-center">
-          AI & Machine Learning
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      <!-- Capability 1: Democratizing Data -->
+      <div class="capability-card bg-slate-charcoal-50 p-4 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-all duration-300 cursor-pointer group aspect-[4/3] relative overflow-hidden" data-capability="democratizing-data">
+        <h3 class="text-lg font-medium text-slate-charcoal-900 text-center transition-all duration-300 transform absolute" style="top: 20px; left: 0; right: 0;">
+          Democratizing Data
         </h3>
-        <p class="text-slate-charcoal-600 text-center leading-relaxed">
-          Neural networks, deep learning, and quantum computing solutions that enable intelligent automation and predictive analytics for mission-critical applications.
-        </p>
+        <div id="democratizing-data-details" class="capability-details absolute inset-0 p-4 flex flex-col justify-start opacity-0 transition-all duration-300 transform translate-y-full">
+          <div style="height: 20px;"></div>
+          <p class="text-slate-charcoal-600 text-center leading-relaxed text-sm" style="margin-top: 20px;">
+            WTI's democratized data solutions enable data to transition to machine-readable formats by building correlations between objects and activities of interest, allowingg decision-makers access to current intelligence.
+          </p>
+        </div>
       </div>
 
-      <!-- Capability 2 -->
-      <div class="bg-slate-charcoal-50 p-8 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-shadow duration-300">
-        <div class="w-16 h-16 bg-slate-charcoal-800 rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-medium text-slate-charcoal-900 mb-4 text-center">
-          Knowledge Graphs
+      <!-- Capability 2: AI Solutions -->
+      <div class="capability-card bg-slate-charcoal-50 p-4 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-all duration-300 cursor-pointer group aspect-[4/3] relative overflow-hidden" data-capability="ai-solutions">
+        <h3 class="text-lg font-medium text-slate-charcoal-900 text-center transition-all duration-300 transform absolute" style="top: 20px; left: 0; right: 0;">
+          AI Solutions
         </h3>
-        <p class="text-slate-charcoal-600 text-center leading-relaxed">
-          Ontologies and graph databases that create semantic relationships between data entities, enabling advanced reasoning and discovery capabilities.
-        </p>
+        <div id="ai-solutions-details" class="capability-details absolute inset-0 p-4 flex flex-col justify-start opacity-0 transition-all duration-300 transform translate-y-full">
+          <div style="height: 20px;"></div>
+          <p class="text-slate-charcoal-600 text-center leading-relaxed text-sm" style="margin-top: 20px;">
+            WTI provides AI capabilities that suit the client's needs, including Natural Language Processing, Neural Networks, Machine Learning, Large Language Models and Expert Systems.
+          </p>
+        </div>
       </div>
 
-      <!-- Capability 3 -->
-      <div class="bg-slate-charcoal-50 p-8 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-shadow duration-300">
-        <div class="w-16 h-16 bg-slate-charcoal-800 rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-medium text-slate-charcoal-900 mb-4 text-center">
-          Data Security
+      <!-- Capability 3: Enterprise Data Management -->
+      <div class="capability-card bg-slate-charcoal-50 p-4 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-all duration-300 cursor-pointer group aspect-[4/3] relative overflow-hidden" data-capability="enterprise-data">
+        <h3 class="text-lg font-medium text-slate-charcoal-900 text-center transition-all duration-300 transform absolute" style="top: 20px; left: 0; right: 0;">
+          Enterprise Data Management
         </h3>
-        <p class="text-slate-charcoal-600 text-center leading-relaxed">
-          Comprehensive security frameworks and encryption protocols that protect sensitive data while maintaining accessibility for authorized users.
-        </p>
+        <div id="enterprise-data-details" class="capability-details absolute inset-0 p-4 flex flex-col justify-start opacity-0 transition-all duration-300 transform translate-y-full">
+          <div style="height: 20px;"></div>
+          <p class="text-slate-charcoal-600 text-center leading-relaxed text-sm" style="margin-top: 20px;">
+            WTI has extensive expertise in transforming legacy enterprise architecture to architecture that can support automation, augmentation, and transformative AI solutions.
+          </p>
+        </div>
       </div>
 
-      <!-- Capability 4 -->
-      <div class="bg-slate-charcoal-50 p-8 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-shadow duration-300">
-        <div class="w-16 h-16 bg-slate-charcoal-800 rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-medium text-slate-charcoal-900 mb-4 text-center">
-          Battlefield Management
+      <!-- Capability 4: Serving the United States of Data -->
+      <div class="capability-card bg-slate-charcoal-50 p-4 rounded-lg border border-slate-charcoal-200 hover:shadow-lg transition-all duration-300 cursor-pointer group aspect-[4/3] relative overflow-hidden" data-capability="united-states-data">
+        <h3 class="text-lg font-medium text-slate-charcoal-900 text-center transition-all duration-300 transform absolute" style="top: 20px; left: 0; right: 0;">
+          Serving the United States of Data
         </h3>
-        <p class="text-slate-charcoal-600 text-center leading-relaxed">
-          Command, Control, and Communications (C3BM) systems that provide real-time situational awareness and decision support for military operations.
-        </p>
+        <div id="united-states-data-details" class="capability-details absolute inset-0 p-4 flex flex-col justify-start opacity-0 transition-all duration-300 transform translate-y-full">
+          <div style="height: 20px;"></div>
+          <p class="text-slate-charcoal-600 text-center leading-relaxed text-sm" style="margin-top: 20px;">
+            WTI makes disparate information understandable and available while ensuring security, privacy, and compliance with government guidelines. WTI is serving the United States of Data ®.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -79,12 +71,48 @@
 <script>
   import { SectionAnimator } from '../utils/animations.js';
   
-  // Initialize animation when component loads
+  // Initialize animation and event listeners when component loads
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.querySelector('[data-section-type="capabilities"]');
     if (section) {
       const animator = new SectionAnimator();
       animator.initializeSection(section, 'capabilities');
     }
+    
+    // Add event listeners for capability cards
+    const capabilityCards = document.querySelectorAll('.capability-card');
+    capabilityCards.forEach(card => {
+      const capabilityId = card.getAttribute('data-capability');
+      const detailsElement = document.getElementById(`${capabilityId}-details`);
+      const titleElement = card.querySelector('h3');
+      
+      card.addEventListener('mouseenter', () => {
+        if (detailsElement) {
+          detailsElement.classList.remove('opacity-0', 'translate-y-full');
+          detailsElement.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        if (detailsElement) {
+          detailsElement.classList.remove('opacity-100', 'translate-y-0');
+          detailsElement.classList.add('opacity-0', 'translate-y-full');
+        }
+      });
+    });
   });
-</script> 
+</script>
+
+<style>
+  .capability-card {
+    transition: all 0.3s ease;
+  }
+  
+  .capability-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .capability-details {
+    transition: all 0.3s ease;
+  }
+</style> 
