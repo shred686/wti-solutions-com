@@ -7,28 +7,28 @@ export interface Props {
 const { backgroundStyle, id } = Astro.props;
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center" data-section-type="intro" id={id} style={backgroundStyle || 'background: var(--bg-graphite-charcoal-50);'}>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+<section class="pt-16" data-section-type="intro" id={id} style={backgroundStyle || 'background: var(--bg-graphite-charcoal-50);'}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <div class="space-y-8 text-lg text-graphite-charcoal-600 leading-relaxed">
-        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.2">
+        <p class="intro-welcome-text" data-delay="0.2">
           Welcome to WTI's digital home where we invite you to explore our values, corporate capabilities, and how we drive innovation with you to accomplish mission success.
         </p>
-        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.4">
+        <p class="intro-welcome-text" data-delay="0.4">
           WTI brings the agility, efficient workflows, and speed of service necessary to thrive and execute complex requirements. Our corporate culture revolves around a partnership where we are trusted to deliver and exceed expectations.
         </p>
-        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.6">
+        <p class="intro-welcome-text" data-delay="0.6">
           At the core of our company are exceptionally talented individuals who are passionate and deeply committed to achieving mission success. Our employees embody WTI's corporate values, bringing expertise, dedication, a strong work ethic, and focus on client success to their daily tasks. WTI is proud to recruit and retain veterans, who comprise nearly 85% of our workforce. We are also an authorized partner of the DoD SkillBridge program.
         </p>
-        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="0.8">
+        <p class="intro-welcome-text" data-delay="0.8">
           Teamwork and communication are vital to our success. I have a "no door policy" which fosters a climate where we all work together to provide the best support to our clients' missions.
         </p>
-        <p class="intro-welcome-text opacity-0 transform translate-y-8" data-delay="1.0">
+        <p class="intro-welcome-text" data-delay="1.0">
           WTI takes pride in building quality long-term relationships. As you navigate our website, we invite you to discover our track record of commitment to excellence, innovation, and accomplishment.
         </p>
       </div>
       <div class="mt-12 flex justify-start">
-        <img src="/CF_Signature.png" alt="Cindy Ford Signature" class="h-16 w-auto intro-welcome-text opacity-0 transform translate-y-8" data-delay="1.4" />
+        <img src="/CF_Signature.png" alt="Cindy Ford Signature" class="h-16 w-auto intro-welcome-text" data-delay="1.4" />
       </div>
     </div>
   </div>
@@ -38,9 +38,8 @@ const { backgroundStyle, id } = Astro.props;
   .intro-welcome-text {
     transition: all 0.8s ease-out;
   }
-  
-  .animate-fade-in-up {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-</style> 
+</style>
+
+<script>
+  // ScrollAnimator is now initialized globally in Layout.astro
+</script> 

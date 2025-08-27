@@ -24,7 +24,7 @@ const { backgroundVideo, backgroundImage, backgroundColor, id } = Astro.props;
 
 </style>
 
-<section class="full-page-section h-screen flex items-end justify-center relative overflow-hidden pb-16" style={backgroundColor ? `background-color: ${backgroundColor};` : ''} id={id}>
+<section class="h-screen flex items-end justify-center relative overflow-hidden py-16" style={backgroundColor ? `background-color: ${backgroundColor};` : ''} id={id}>
   <!-- Background video or image -->
   {backgroundVideo && (
     <video 

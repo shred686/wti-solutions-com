@@ -29,7 +29,26 @@ const textColors = gradientColor === 'white' ? {
 };
 ---
 
-<section class={`full-page-section h-screen flex items-center justify-center relative`} data-section-type="case-study" id={id} style={backgroundStyle || `${bgColor}`}>
+<style>
+  /* Initialization styles for scroll animations */
+  div[style*="backdrop-blur"] {
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .case-study-blur-box {
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .case-study-content h2, .case-study-content h3, .case-study-content p, .case-study-content a, .case-study-content .text-sm {
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+</style>
+
+<script>
+  // Component uses ScrollAnimator from IntroSection
+</script>
+
+<section class="py-16 relative" data-section-type="case-study" id={id} style={backgroundStyle || `${bgColor}`}>
   <!-- Background image -->
   {backgroundImage && (
     <div 
@@ -39,7 +58,7 @@ const textColors = gradientColor === 'white' ? {
   )}
   
   <!-- Text background box - positioned relative to page edge -->
-  <div class={`absolute ${imageLeft ? 'left-0' : 'right-0'} top-1/2 transform -translate-y-1/2 ${gradientColor === 'white' ? 'bg-white/20' : 'bg-black/20'} backdrop-blur-lg rounded-lg shadow-2xl`} style="width: 50%; height: 55%; box-shadow: 0 0 40px rgba(0,0,0,0.3);"></div>
+  <div class={`absolute ${imageLeft ? 'left-0' : 'right-0'} top-1/2 transform -translate-y-1/2 ${gradientColor === 'white' ? 'bg-white/20' : 'bg-black/20'} backdrop-blur-lg rounded-lg shadow-2xl case-study-blur-box`} style="width: 50%; height: 70%; box-shadow: 0 0 40px rgba(0,0,0,0.3);"></div>
 
   <div class="max-w-7xl mx-auto px-1 sm:px-2 lg:px-4 py-16 relative z-10">
     <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${imageLeft ? '' : 'lg:grid-flow-col-dense'}`}>
@@ -47,7 +66,7 @@ const textColors = gradientColor === 'white' ? {
       <!-- Content Side -->
       <div class={`${imageLeft ? 'lg:order-1' : 'lg:order-2'} space-y-6 relative z-20`}>
         <!-- Text content -->
-        <div class="relative z-30 space-y-5 p-8">
+        <div class="case-study-content relative z-30 space-y-5 p-8">
           <div class={`text-sm font-medium ${textColors.label} uppercase tracking-wider`}>
             Case Study
           </div>
@@ -78,19 +97,4 @@ const textColors = gradientColor === 'white' ? {
       </div>
     </div>
   </div>
-</section>
-
-<script>
-  import { SectionAnimator } from '../utils/animations.js';
-  
-  // Initialize animation when component loads
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('[data-section-type="case-study"]');
-    if (sections.length > 0) {
-      const animator = new SectionAnimator();
-      sections.forEach(section => {
-        animator.initializeSection(section, 'case-study');
-      });
-    }
-  });
-</script> 
+</section> 
