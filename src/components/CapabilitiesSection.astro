@@ -1,14 +1,20 @@
 ---
+export interface Props {
+  backgroundStyle?: string;
+  id?: string;
+}
+
+const { backgroundStyle, id } = Astro.props;
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-white" data-section-type="capabilities">
+<section class="full-page-section h-screen flex items-center justify-center" data-section-type="capabilities" id={id} style={backgroundStyle || 'background: white;'}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="text-center mb-8">
       <h2 class="text-4xl md:text-5xl font-light text-[#1a1a1a] mb-4">
-        Our Capabilities
+        Connecting Innovation to Mission
       </h2>
       <p class="text-lg text-slate-charcoal-600 max-w-3xl mx-auto">
-        Advanced data solutions that transform how organizations collect, process, and leverage information
+        WTI turns digital information assets into strategic insights through cutting-edge solutions that make data visible, accessible, understandable, interconnected, trusted, interoperable, and secure—driving innovation, confidence, and agility in a fast-paced, data-driven world.
       </p>
     </div>
     

@@ -27,6 +27,9 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 			<slot />
 		</div>
 
+		<style>
+		</style>
+
 		<script>
 			import { SectionAnimator } from '../utils/animations.js';
 
@@ -38,6 +41,36 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 			
 			// Make currentSection globally accessible for header component
 			window.currentSection = currentSection;
+
+			// Section name to index mapping
+			const sectionMap = {
+				'hero': 0,
+				'intro': 1,
+				'capabilities': 2,
+				'case-study-1': 3,
+				'services': 4,
+				'testimonials': 5,
+				'case-study-2': 6,
+				'clients': 7,
+				'certifications': 8,
+				'case-study-3': 9,
+				'contact': 10
+			};
+
+			// Get section index from hash
+			function getSectionFromHash() {
+				const hash = window.location.hash.slice(1); // Remove the #
+				return sectionMap[hash] || 0;
+			}
+
+			// Update URL hash without triggering scroll
+			function updateHash(sectionIndex) {
+				const sectionName = Object.keys(sectionMap).find(key => sectionMap[key] === sectionIndex);
+				if (sectionName && window.location.hash !== `#${sectionName}`) {
+					// Use history.replaceState to avoid adding to browser history
+					history.replaceState(null, null, `#${sectionName}`);
+				}
+			}
 
 			// Initialize sections for full-page scrolling
 			function initializeSections() {
@@ -87,6 +120,9 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 				isScrolling = true;
 				currentSection = index;
 				window.currentSection = index;
+
+				// Update URL hash
+				updateHash(index);
 
 				// Dispatch custom event for header to listen to
 				const sectionChangeEvent = new CustomEvent('sectionChanged', {
@@ -161,6 +197,14 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 				// Initialize sections
 				initializeSections();
 				
+				// Check for hash in URL and restore position
+				const initialSection = getSectionFromHash();
+				if (initialSection !== 0) {
+					currentSection = initialSection;
+					window.currentSection = initialSection;
+					scrollToSection(initialSection);
+				}
+				
 				// Add event listeners
 				document.addEventListener('wheel', handleWheel, { passive: false });
 				document.addEventListener('keydown', handleKeydown);
@@ -171,17 +215,18 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 					link.addEventListener('click', (e) => {
 						e.preventDefault();
 						const target = link.getAttribute('href');
-						if (target === '#who-we-are') scrollToSection(1);
-						else if (target === '#what-we-do') scrollToSection(2);
-						else if (target === '#careers') scrollToSection(3);
-						else if (target === '#news') scrollToSection(4);
-						else if (target === '#contact') scrollToSection(10);
+						// Extract the section name from the href (remove the #)
+						const sectionName = target.slice(1);
+						const sectionIndex = sectionMap[sectionName];
+						if (sectionIndex !== undefined) {
+							scrollToSection(sectionIndex);
+						}
 					});
 				});
 				
 				// Trigger initial hero animation
 				setTimeout(() => {
-					animateSection(0);
+					animateSection(currentSection);
 				}, 500);
 				
 				console.log('=== INITIALIZATION COMPLETE ===');
@@ -192,6 +237,14 @@ const { title, description = "WTI Solutions - Technology Solutions for Modern Bu
 				if (!isScrolling) {
 					initializeSections();
 					scrollToSection(currentSection);
+				}
+			});
+
+			// Handle hash changes (browser back/forward buttons)
+			window.addEventListener('hashchange', () => {
+				const newSection = getSectionFromHash();
+				if (newSection !== currentSection && !isScrolling) {
+					scrollToSection(newSection);
 				}
 			});
 		</script>

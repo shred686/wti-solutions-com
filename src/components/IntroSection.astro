@@ -1,7 +1,13 @@
 ---
+export interface Props {
+  backgroundStyle?: string;
+  id?: string;
+}
+
+const { backgroundStyle, id } = Astro.props;
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-graphite-charcoal-50" data-section-type="intro">
+<section class="full-page-section h-screen flex items-center justify-center" data-section-type="intro" id={id} style={backgroundStyle || 'background: var(--bg-graphite-charcoal-50);'}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="max-w-4xl mx-auto">
       <div class="space-y-8 text-lg text-graphite-charcoal-600 leading-relaxed">

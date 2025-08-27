@@ -7,9 +7,11 @@ export interface Props {
   bgColor?: string;
   backgroundImage?: string;
   gradientColor?: 'white' | 'black';
+  backgroundStyle?: string;
+  id?: string;
 }
 
-const { title, subtitle, description, imageLeft = true, bgColor = "bg-plum-charcoal-50", backgroundImage, gradientColor = 'black' } = Astro.props;
+const { title, subtitle, description, imageLeft = true, bgColor = "bg-plum-charcoal-50", backgroundImage, gradientColor = 'black', backgroundStyle, id } = Astro.props;
 
 // Determine text colors based on gradient color
 const textColors = gradientColor === 'white' ? {
@@ -27,7 +29,7 @@ const textColors = gradientColor === 'white' ? {
 };
 ---
 
-<section class={`full-page-section h-screen flex items-center justify-center ${bgColor} relative`} data-section-type="case-study">
+<section class={`full-page-section h-screen flex items-center justify-center relative`} data-section-type="case-study" id={id} style={backgroundStyle || `${bgColor}`}>
   <!-- Background image -->
   {backgroundImage && (
     <div 
@@ -79,14 +81,16 @@ const textColors = gradientColor === 'white' ? {
 </section>
 
 <script>
-  // import { SectionAnimator } from '../utils/animations.js';
+  import { SectionAnimator } from '../utils/animations.js';
   
   // Initialize animation when component loads
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   const section = document.querySelector('[data-section-type="case-study"]');
-  //   if (section) {
-  //     const animator = new SectionAnimator();
-  //     animator.initializeSection(section, 'case-study');
-  //   }
-  // });
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('[data-section-type="case-study"]');
+    if (sections.length > 0) {
+      const animator = new SectionAnimator();
+      sections.forEach(section => {
+        animator.initializeSection(section, 'case-study');
+      });
+    }
+  });
 </script> 

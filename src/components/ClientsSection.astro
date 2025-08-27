@@ -1,50 +1,96 @@
 ---
+export interface Props {
+  backgroundImage?: string;
+  overlayColor?: string;
+  overlayOpacity?: number;
+  backgroundStyle?: string;
+  id?: string;
+}
+
+const { backgroundImage, overlayColor = 'black', overlayOpacity = 50, backgroundStyle, id } = Astro.props;
+
+// Convert percentage to decimal for CSS
+const overlayOpacityDecimal = overlayOpacity / 100;
+
+// Client logos data
+const clientLogos = [
+  { name: 'U.S. Air Force', logo: '/src/assets/client-logos/us-air-force.png' },
+  { name: 'Defense Information Systems Agency', logo: '/src/assets/client-logos/disa.png' },
+  { name: 'U.S. Army', logo: '/src/assets/client-logos/us-army.png' },
+  { name: 'U.S. Agency for Global Media', logo: '/src/assets/client-logos/us-agency-global-media.png' },
+  { name: 'Nuclear Regulatory Commission', logo: '/src/assets/client-logos/nrc.png' },
+  { name: 'Department of Homeland Security', logo: '/src/assets/client-logos/dhs.png' },
+  { name: 'Office of Naval Intelligence', logo: '/src/assets/client-logos/oni.png' },
+  { name: 'U.S. Patent and Trademark Office', logo: '/src/assets/client-logos/uspto.jpg' },
+  { name: 'Air Force Family Advocacy Program', logo: '/src/assets/client-logos/air-force-family-advocacy.jpg' },
+  { name: 'Department of State', logo: '/src/assets/client-logos/department-of-state.png' },
+  { name: 'Department of Commerce', logo: '/src/assets/client-logos/department-of-commerce.png' },
+  { name: 'National Oceanic and Atmospheric Administration', logo: '/src/assets/client-logos/noaa.png' },
+  { name: 'Federal Emergency Management Agency', logo: '/src/assets/client-logos/fema.png' },
+  { name: 'Air Force Medical Support Agency', logo: '/src/assets/client-logos/air-force-medical-support.png' },
+  { name: 'Arlington, Virginia', logo: '/src/assets/client-logos/arlington-va.png' },
+  { name: 'Department of Labor', logo: '/src/assets/client-logos/department-of-labor.png' },
+  { name: 'Centers for Disease Control', logo: '/src/assets/client-logos/cdc.png' },
+  { name: 'New York Department of Health', logo: '/src/assets/client-logos/ny-doh.png' },
+  { name: 'National Park Service', logo: '/src/assets/client-logos/nps.png' },
+  { name: 'National Park Service', logo: '/src/assets/client-logos/national-park-service.png' }
+];
 ---
 
-<section class="full-page-section h-screen flex items-center justify-center bg-white" data-section-type="clients">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center mb-16">
-      <h2 class="text-5xl md:text-6xl font-light text-[#1a1a1a] mb-6">
-        Sampling of Our Clients
-      </h2>
-      <p class="text-xl text-titanium-charcoal-600 max-w-3xl mx-auto">
-        Trusted by leading government agencies and industry partners across defense, intelligence, and civilian sectors
-      </p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">U.S. Air Force</div>
+<section class="full-page-section h-screen flex items-center justify-center relative overflow-hidden" data-section-type="clients" id={id} style={backgroundImage ? `background-image: url(${backgroundImage}); background-size: cover; background-position: center; background-repeat: no-repeat;` : (backgroundStyle || 'background: white;')}>
+  {backgroundImage && (
+    <div 
+      class="absolute inset-0 z-0" 
+      style={`background-color: ${overlayColor === 'white' ? 'rgba(255, 255, 255, ' : 'rgba(0, 0, 0, '}${overlayOpacityDecimal});`}
+    ></div>
+  )}
+  <div class="relative z-10 w-full h-full flex items-center justify-center p-8">
+    {backgroundImage ? (
+      <div class="w-full max-w-7xl backdrop-blur-sm bg-white/20 border border-white/30 shadow-xl rounded-2xl p-12">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-light text-[#1a1a1a] mb-6">
+            Sampling of Our Clients
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 items-center">
+          {clientLogos.map((client) => (
+            <div class="h-36 w-full flex items-center justify-center hover:scale-105 transition-all duration-300 group">
+              <img 
+                src={client.logo} 
+                alt={client.name}
+                class="w-full h-full object-contain transition-all duration-300"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-16">
+          <a href="#contact" class="bg-titanium-charcoal-800 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-titanium-charcoal-900 transition-all duration-300 transform hover:scale-105">
+            Become a Client
+          </a>
+        </div>
       </div>
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">U.S. Army</div>
+    ) : (
+      <div class="w-full max-w-7xl">
+        <div class="text-center mb-16">
+          <h2 class="text-5xl md:text-6xl font-light text-[#1a1a1a] mb-6">
+            Sampling of Our Clients
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 items-center">
+          {clientLogos.map((client) => (
+            <div class="h-36 w-full flex items-center justify-center hover:scale-105 transition-all duration-300 group">
+              <img 
+                src={client.logo} 
+                alt={client.name}
+                class="w-full h-full object-contain transition-all duration-300"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">U.S. Navy</div>
-      </div>
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Intelligence Community</div>
-      </div>
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Department of Defense</div>
-      </div>
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Department of Homeland Security</div>
-      </div>
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Department of Energy</div>
-      </div>
-      <div class="bg-titanium-charcoal-50 p-8 rounded-lg text-center h-32 flex items-center justify-center border border-titanium-charcoal-200 hover:shadow-md transition-shadow">
-        <div class="text-titanium-charcoal-700 font-medium">Department of Veterans Affairs</div>
-      </div>
-    </div>
-    <div class="text-center mt-16">
-      <p class="text-titanium-charcoal-600 mb-8">
-        Trusted by leading organizations across industries to deliver innovative solutions that drive growth and efficiency.
-      </p>
-      <a href="#contact" class="bg-titanium-charcoal-800 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-titanium-charcoal-900 transition-all duration-300 transform hover:scale-105">
-        Become a Client
-      </a>
-    </div>
+    )}
   </div>
 </section>
 

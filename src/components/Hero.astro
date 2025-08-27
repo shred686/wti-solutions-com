@@ -3,12 +3,28 @@ export interface Props {
   backgroundVideo?: string;
   backgroundImage?: string;
   backgroundColor?: string;
+  id?: string;
 }
 
-const { backgroundVideo, backgroundImage, backgroundColor } = Astro.props;
+const { backgroundVideo, backgroundImage, backgroundColor, id } = Astro.props;
 ---
 
-<section class="full-page-section h-screen flex items-end justify-center relative overflow-hidden pb-16" style={backgroundColor ? `background-color: ${backgroundColor};` : ''}>
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+</style>
+
+<section class="full-page-section h-screen flex items-end justify-center relative overflow-hidden pb-16" style={backgroundColor ? `background-color: ${backgroundColor};` : ''} id={id}>
   <!-- Background video or image -->
   {backgroundVideo && (
     <video 
@@ -30,33 +46,24 @@ const { backgroundVideo, backgroundImage, backgroundColor } = Astro.props;
   )}
   
   <!-- Black gradient overlay for text readability -->
-  <div 
-    class="absolute bottom-0 left-0 w-full z-[5]" 
-    style="height: 50%; background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.4) 80%, transparent 100%);"
-  ></div>
+  <!-- <div 
+    class="absolute top-0 left-0 w-full z-[5]" 
+    style="height: 50%; background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.4) 80%, transparent 100%);"
+  ></div> -->
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-center justify-center h-full">
     <div class="text-center">
-      <h1 class="text-6xl md:text-8xl lg:text-9xl font-light text-white mb-6 leading-tight" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+      <h1 class="font-medium text-white mb-6 leading-tight animate-fade-in" style="font-size: clamp(4rem, 9vw, 9rem); animation: fadeIn 1s ease-out 0.5s both;">
         Everything Data<span class="text-sm align-super">®</span>
       </h1>
       
-      <p class="text-xl md:text-2xl text-blue-charcoal-100 mb-8 max-w-4xl mx-auto font-light">
-        Connecting Innovation to Mission
-      </p>
-      
-      <p class="text-blue-charcoal-200 mb-12 max-w-5xl mx-auto leading-relaxed">
-        WTI Solutions delivers cutting-edge technology solutions that transform businesses. 
-        From advanced AI and machine learning to robust cloud infrastructure, we help organizations 
-        achieve their digital transformation goals with innovative, scalable, and secure solutions.
-      </p>
+      <!-- <p class="text-white mb-12 max-w-4xl mx-auto leading-relaxed" style="text-shadow: 0 1px 3px rgba(0,0,0,0.4), 0 0 10px rgba(255,255,255,0.1); filter: drop-shadow(0 0 5px rgba(255,255,255,0.05));">
+        WTI enables data standardization for AI solutions and delivers data management solutions that integrate, protect, enhance and add value to digital information assets.
+      </p> -->
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#capabilities" class="bg-blue-charcoal-800 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-blue-charcoal-900 transition-all duration-300 transform hover:scale-105">
+        <a href="#capabilities" class="bg-white text-black px-8 py-4 rounded-lg text-lg font-medium border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all duration-300 transform hover:scale-105" style="animation: fadeIn 1s ease-out 1s both;">
           Capabilities
-        </a>
-        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-white hover:text-blue-charcoal-800 transition-all duration-300">
-          Get Started
         </a>
       </div>
     </div>
