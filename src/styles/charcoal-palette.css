@@ -98,6 +98,12 @@ p {
   --copper-charcoal-900: #4d3327;
   --copper-charcoal-950: #2a1b16;
 
+  /* Dark Theme Colors - Extracted from ServicesSection */
+  --dark-header-color: #F5F5DC;  /* Light beige for headers on dark tiles */
+  --dark-body-color: #D2B48C;    /* Tan/beige for body text on dark tiles */
+  --dark-accent-color: #556B2F;  /* Olive green accent color */
+  --dark-accent-hover: #6B8E23;  /* Darker olive green for hover states */
+
   /* NEW HIGH-TECH OPTIONS */
   /* Graphite Charcoal */
   --graphite-charcoal-50: #f7f8f9;

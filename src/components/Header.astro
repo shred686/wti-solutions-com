@@ -14,7 +14,7 @@ const { transparent = false } = Astro.props;
     'backdrop-blur-sm border-b border-[#2a2a2a]': !transparent
   }}
   data-transparent={transparent}
-  style={transparent ? 'background-color: transparent;' : 'background: #1a1a1a; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);'}
+  style={transparent ? 'background-color: transparent;' : 'background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1f1f1f 100%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);'}
 >
   <style>
     /* Hover effects for navigation links */

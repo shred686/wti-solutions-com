@@ -14,36 +14,51 @@ const { backgroundStyle, id } = Astro.props;
 
 <section class="py-16" data-section-type="capabilities" id={id} style={backgroundStyle || 'background: white;'}>
   <div class="w-full px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 bg-[#1a1a1a] p-8 border border-[#2a2a2a]">
-      <h2 class="text-4xl md:text-5xl font-light text-[#e5e5e5] mb-6">
+    <div class="text-center mb-12 bg-[#1a1a1a] p-8 border border-[var(--dark-accent-color)]">
+      <h2 class="text-4xl md:text-5xl font-light text-[var(--dark-header-color)] mb-6">
         Connecting Innovation to Mission
       </h2>
-      <hr class="w-full max-w-3xl mx-auto mb-6 border-[#b0b0b0]">
-      <p class="text-lg text-[#b0b0b0] max-w-3xl mx-auto">
+      <hr class="w-full max-w-3xl mx-auto mb-6 border-[var(--dark-accent-color)]">
+      <p class="text-lg text-[var(--dark-body-color)] max-w-3xl mx-auto">
         WTI turns digital information assets into strategic insights through cutting-edge solutions that make data visible, accessible, understandable, interconnected, trusted, interoperable, and secure—driving innovation, confidence, and agility in a fast-paced, data-driven world.
       </p>
     </div>
     
     <!-- Tab Navigation -->
     <div class="flex flex-wrap justify-center gap-1 mb-6">
-      <button class="capability-tab active bg-[#1a1a1a] text-[#e5e5e5] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#2a2a2a] border border-[#2a2a2a] border-b-0" data-capability="democratizing-data">
+      <button class="capability-tab active bg-[#1a1a1a] text-[var(--dark-header-color)] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#2a2a2a] border border-[var(--dark-accent-color)] border-b-0" data-capability="united-states-data">
+        Serving the United States of Data
+      </button>
+      <button class="capability-tab bg-[#2a2a2a] text-[var(--dark-body-color)] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[var(--dark-header-color)] border border-[var(--dark-accent-color)] border-b-0" data-capability="democratizing-data">
         Democratizing Data
       </button>
-      <button class="capability-tab bg-[#2a2a2a] text-[#b0b0b0] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#e5e5e5] border border-[#2a2a2a] border-b-0" data-capability="ai-solutions">
+      <button class="capability-tab bg-[#2a2a2a] text-[var(--dark-body-color)] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[var(--dark-header-color)] border border-[var(--dark-accent-color)] border-b-0" data-capability="ai-solutions">
         AI Solutions
       </button>
-      <button class="capability-tab bg-[#2a2a2a] text-[#b0b0b0] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#e5e5e5] border border-[#2a2a2a] border-b-0" data-capability="enterprise-data">
+      <button class="capability-tab bg-[#2a2a2a] text-[var(--dark-body-color)] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[var(--dark-header-color)] border border-[var(--dark-accent-color)] border-b-0" data-capability="enterprise-data">
         Enterprise Data Management
-      </button>
-      <button class="capability-tab bg-[#2a2a2a] text-[#b0b0b0] px-6 py-3 font-medium transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#e5e5e5] border border-[#2a2a2a] border-b-0" data-capability="united-states-data">
-        Serving the United States of Data
       </button>
     </div>
     
     <!-- Content Area -->
     <div class="bg-[#1a1a1a] h-[500px] relative overflow-hidden flex">
+      <!-- Serving the United States of Data Content -->
+      <div id="united-states-data-content" class="capability-content active flex w-full absolute inset-0">
+        <div class="w-1/2">
+          <img src={usDataImage.src} 
+               alt="Serving the United States of Data" 
+               class="w-full h-full object-cover">
+        </div>
+        <div class="w-1/2 p-8 flex flex-col justify-center bg-[#f0f0f0]">
+          <h3 class="text-2xl font-semibold text-[#1a1a1a] mb-4">Serving the United States of Data</h3>
+          <p class="text-[#2a2a2a] leading-relaxed">
+            WTI makes disparate information understandable and available while ensuring security, privacy, and compliance with government guidelines. WTI is serving the United States of Data ®, providing comprehensive data solutions that meet the highest standards of security and regulatory compliance.
+          </p>
+        </div>
+      </div>
+      
       <!-- Democratizing Data Content -->
-      <div id="democratizing-data-content" class="capability-content active flex w-full absolute inset-0">
+      <div id="democratizing-data-content" class="capability-content hidden flex w-full absolute inset-0">
         <div class="w-1/2">
           <img src={kgImage.src} 
                alt="Democratizing Data" 
@@ -87,20 +102,7 @@ const { backgroundStyle, id } = Astro.props;
         </div>
       </div>
       
-      <!-- Serving the United States of Data Content -->
-      <div id="united-states-data-content" class="capability-content hidden flex w-full absolute inset-0">
-        <div class="w-1/2">
-          <img src={usDataImage.src} 
-               alt="Serving the United States of Data" 
-               class="w-full h-full object-cover">
-        </div>
-        <div class="w-1/2 p-8 flex flex-col justify-center bg-[#f0f0f0]">
-          <h3 class="text-2xl font-semibold text-[#1a1a1a] mb-4">Serving the United States of Data</h3>
-          <p class="text-[#2a2a2a] leading-relaxed">
-            WTI makes disparate information understandable and available while ensuring security, privacy, and compliance with government guidelines. WTI is serving the United States of Data ®, providing comprehensive data solutions that meet the highest standards of security and regulatory compliance.
-          </p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -117,11 +119,11 @@ const { backgroundStyle, id } = Astro.props;
     tab.addEventListener('mouseenter', () => {
       // Update tab styles
       capabilityTabs.forEach(t => {
-        t.classList.remove('active', 'bg-[#1a1a1a]', 'text-[#e5e5e5]');
-        t.classList.add('bg-[#2a2a2a]', 'text-[#b0b0b0]');
+        t.classList.remove('active', 'bg-[#1a1a1a]', 'text-[var(--dark-header-color)]');
+        t.classList.add('bg-[#2a2a2a]', 'text-[var(--dark-body-color)]');
       });
-      tab.classList.add('active', 'bg-[#1a1a1a]', 'text-[#e5e5e5]');
-      tab.classList.remove('bg-[#2a2a2a]', 'text-[#b0b0b0]');
+      tab.classList.add('active', 'bg-[#1a1a1a]', 'text-[var(--dark-header-color)]');
+      tab.classList.remove('bg-[#2a2a2a]', 'text-[var(--dark-body-color)]');
       
       // Update content visibility
       capabilityContents.forEach(content => {
@@ -139,8 +141,8 @@ const { backgroundStyle, id } = Astro.props;
   const firstTab = capabilityTabs[0];
   const firstContent = capabilityContents[0];
   if (firstTab && firstContent) {
-    firstTab.classList.add('active', 'bg-[#1a1a1a]', 'text-[#e5e5e5]');
-    firstTab.classList.remove('bg-[#2a2a2a]', 'text-[#b0b0b0]');
+    firstTab.classList.add('active', 'bg-[#1a1a1a]', 'text-[var(--dark-header-color)]');
+    firstTab.classList.remove('bg-[#2a2a2a]', 'text-[var(--dark-body-color)]');
     firstContent.classList.add('active');
     firstContent.classList.remove('hidden');
   }

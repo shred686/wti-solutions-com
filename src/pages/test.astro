@@ -1,449 +1,222 @@
 ---
-// Simple layout for test page without full-page scrolling
+import Layout from '../layouts/Layout.astro';
+import ServicesSection from '../components/ServicesSection.astro';
 ---
 
-<!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content="Astro" />
-		<meta name="description" content="Charcoal Color Palette Test - WTI Solutions" />
-		<title>Charcoal Color Palette Test - WTI Solutions</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="/src/styles/charcoal-palette.css">
-		<script src="https://cdn.tailwindcss.com"></script>
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Design Playground - Working Version</title>
+		
+		<!-- Google Fonts - Expanded Selection -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&family=Lora:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Ubuntu:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;600;700&family=Source+Serif+Pro:wght@300;400;600;700&family=Josefin+Sans:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&family=Fredoka+One:wght@400&family=Bebas+Neue:wght@400&family=Oswald:wght@200;300;400;500;600;700&family=Anton:wght@400&family=Righteous:wght@400&family=Permanent+Marker:wght@400&display=swap" rel="stylesheet">
+		
+		<style>
+			/* Professional Sans-Serif Fonts */
+			.font-inter { font-family: 'Inter', sans-serif !important; }
+			.font-roboto { font-family: 'Roboto', sans-serif !important; }
+			.font-opensans { font-family: 'Open Sans', sans-serif !important; }
+			.font-montserrat { font-family: 'Montserrat', sans-serif !important; }
+			.font-poppins { font-family: 'Poppins', sans-serif !important; }
+			.font-sourcesans { font-family: 'Source Sans Pro', sans-serif !important; }
+			.font-ubuntu { font-family: 'Ubuntu', sans-serif !important; }
+			.font-noto { font-family: 'Noto Sans', sans-serif !important; }
+			.font-ibmplex { font-family: 'IBM Plex Sans', sans-serif !important; }
+			.font-worksans { font-family: 'Work Sans', sans-serif !important; }
+			.font-dmsans { font-family: 'DM Sans', sans-serif !important; }
+			.font-outfit { font-family: 'Outfit', sans-serif !important; }
+			.font-plusjakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+			
+			/* Modern & Fun Sans-Serif Fonts */
+			.font-josefin { font-family: 'Josefin Sans', sans-serif !important; }
+			.font-quicksand { font-family: 'Quicksand', sans-serif !important; }
+			.font-nunito { font-family: 'Nunito', sans-serif !important; }
+			.font-comfortaa { font-family: 'Comfortaa', cursive !important; }
+			
+			/* Bold & Impactful Fonts */
+			.font-fredoka { font-family: 'Fredoka One', cursive !important; }
+			.font-bebas { font-family: 'Bebas Neue', cursive !important; }
+			.font-oswald { font-family: 'Oswald', sans-serif !important; }
+			.font-anton { font-family: 'Anton', sans-serif !important; }
+			.font-righteous { font-family: 'Righteous', cursive !important; }
+			.font-marker { font-family: 'Permanent Marker', cursive !important; }
+			
+			/* Elegant Serif Fonts */
+			.font-playfair { font-family: 'Playfair Display', serif !important; }
+			.font-merriweather { font-family: 'Merriweather', serif !important; }
+			.font-lora { font-family: 'Lora', serif !important; }
+			.font-librebaskerville { font-family: 'Libre Baskerville', serif !important; }
+			.font-crimson { font-family: 'Crimson Text', serif !important; }
+			.font-sourceserif { font-family: 'Source Serif Pro', serif !important; }
+			
+			/* Simple color schemes */
+			.scheme-1 { background-color: #1a1a1a; }
+			.scheme-2 { background-color: #1e3a8a; }
+			.scheme-3 { background-color: #581c87; }
+			.scheme-4 { background-color: #065f46; }
+			.scheme-5 { background-color: #92400e; }
+			
+			/* Make changes obvious */
+			.test-header { font-size: 28px !important; margin-bottom: 20px !important; }
+			.test-body { font-size: 18px !important; line-height: 1.6 !important; }
+		</style>
 	</head>
-	<body class="font-inter antialiased bg-white text-gray-900">
-		<div class="min-h-screen bg-gray-50 p-8">
-			<div class="max-w-7xl mx-auto">
-				<!-- Header -->
-				<div class="text-center mb-12">
-					<h1 class="text-4xl font-bold text-gray-900 mb-4">Charcoal Color Palette</h1>
-					<p class="text-gray-600">Complete WTI Solutions color system</p>
+	<body class="bg-gray-900 text-white p-8">
+		<div class="max-w-6xl mx-auto">
+			<!-- Simple Controls -->
+			<div class="bg-gray-800 p-6 rounded-lg mb-8">
+				<h1 class="text-2xl font-bold mb-4">Design Playground - Simple Working Version</h1>
+				
+				<div class="flex flex-wrap gap-4 mb-4">
+					<button id="color-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded font-bold">
+						Change Colors (Click Me!)
+					</button>
+					<button id="header-font-btn" class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded font-bold">
+						Change Header Fonts (Click Me!)
+					</button>
+					<button id="body-font-btn" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded font-bold">
+						Change Body Fonts (Click Me!)
+					</button>
 				</div>
-
-				<!-- Primary Hues Section -->
-				<div class="mb-16">
-					<h2 class="text-3xl font-semibold text-gray-900 mb-8">Primary Hues</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-						<!-- Electric Blue Gradient -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32 bg-primary-electric-gradient"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Electric Blue Gradient</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded bg-primary-electric-gradient">
-										<span class="text-sm font-semibold text-white">Primary</span>
-										<span class="text-sm font-mono text-white">#0369a1 → #0c4a6e</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Zinc Gray Gradient -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32 bg-primary-zinc-gradient"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Zinc Gray Gradient</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded bg-primary-zinc-gradient">
-										<span class="text-sm font-semibold text-white">Primary</span>
-										<span class="text-sm font-mono text-white">#71717a → #3f3f46</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
+				<div class="text-sm text-gray-300">
+					<span>Current Color: <span id="current-color" class="font-bold text-white">Dark Gray</span></span> | 
+					<span>Header Font: <span id="current-header" class="font-bold text-white">Playfair Display</span></span> | 
+					<span>Body Font: <span id="current-body" class="font-bold text-white">Inter</span></span>
 				</div>
-
-				<!-- Neutral Charcoal Section -->
-				<div class="mb-16">
-					<h2 class="text-3xl font-semibold text-gray-900 mb-8">Neutral Charcoal</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-						<!-- 50-200 -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--charcoal-50) 0%, var(--charcoal-200) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Light (50-200)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-50);">
-										<span class="text-sm font-semibold text-gray-900">50</span>
-										<span class="text-sm font-mono text-gray-900">#f6f6f7</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-100);">
-										<span class="text-sm font-semibold text-gray-900">100</span>
-										<span class="text-sm font-mono text-gray-900">#e1e2e4</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-200);">
-										<span class="text-sm font-semibold text-gray-900">200</span>
-										<span class="text-sm font-mono text-gray-900">#c3c5c9</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- 300-500 -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--charcoal-300) 0%, var(--charcoal-500) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Medium (300-500)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-300);">
-										<span class="text-sm font-semibold text-white">300</span>
-										<span class="text-sm font-mono text-white">#9fa2a8</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-400);">
-										<span class="text-sm font-semibold text-white">400</span>
-										<span class="text-sm font-mono text-white">#7c8187</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-500);">
-										<span class="text-sm font-semibold text-white">500</span>
-										<span class="text-sm font-mono text-white">#64686e</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- 600-800 -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--charcoal-600) 0%, var(--charcoal-800) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Dark (600-800)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-600);">
-										<span class="text-sm font-semibold text-white">600</span>
-										<span class="text-sm font-mono text-white">#515559</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-700);">
-										<span class="text-sm font-semibold text-white">700</span>
-										<span class="text-sm font-mono text-white">#45484c</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-800);">
-										<span class="text-sm font-semibold text-white">800</span>
-										<span class="text-sm font-mono text-white">#3a3d41</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- 900-950 -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--charcoal-900) 0%, var(--charcoal-950) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Deep (900-950)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-900);">
-										<span class="text-sm font-semibold text-white">900</span>
-										<span class="text-sm font-mono text-white">#333639</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--charcoal-950);">
-										<span class="text-sm font-semibold text-white">950</span>
-										<span class="text-sm font-mono text-white">#1f2124</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			</div>
+			
+			<!-- Test Sections -->
+			<div id="test-sections">
+				<!-- Section 1 -->
+				<div class="scheme-1 p-6 rounded-lg mb-6">
+					<h2 class="test-header font-playfair">Data Governance</h2>
+					<p class="test-body font-inter">Comprehensive data governance solutions to ensure data quality, compliance, and security across your organization.</p>
 				</div>
-
-				<!-- Blue Charcoal Section -->
-				<div class="mb-16">
-					<h2 class="text-3xl font-semibold text-gray-900 mb-8">Blue Charcoal</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-						<!-- Light -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--blue-charcoal-50) 0%, var(--blue-charcoal-200) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Light (50-200)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-50);">
-										<span class="text-sm font-semibold text-gray-900">50</span>
-										<span class="text-sm font-mono text-gray-900">#f4f6f9</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-100);">
-										<span class="text-sm font-semibold text-gray-900">100</span>
-										<span class="text-sm font-mono text-gray-900">#dde3ed</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-200);">
-										<span class="text-sm font-semibold text-gray-900">200</span>
-										<span class="text-sm font-mono text-gray-900">#b8c7db</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Medium -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--blue-charcoal-300) 0%, var(--blue-charcoal-500) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Medium (300-500)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-300);">
-										<span class="text-sm font-semibold text-white">300</span>
-										<span class="text-sm font-mono text-white">#8fa6c4</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-400);">
-										<span class="text-sm font-semibold text-white">400</span>
-										<span class="text-sm font-mono text-white">#6b86aa</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-500);">
-										<span class="text-sm font-semibold text-white">500</span>
-										<span class="text-sm font-mono text-white">#536d93</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Dark -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--blue-charcoal-600) 0%, var(--blue-charcoal-800) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Dark (600-800)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-600);">
-										<span class="text-sm font-semibold text-white">600</span>
-										<span class="text-sm font-mono text-white">#435879</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-700);">
-										<span class="text-sm font-semibold text-white">700</span>
-										<span class="text-sm font-mono text-white">#374862</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-800);">
-										<span class="text-sm font-semibold text-white">800</span>
-										<span class="text-sm font-mono text-white">#2f3e53</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Deep -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--blue-charcoal-900) 0%, var(--blue-charcoal-950) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Deep (900-950)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-900);">
-										<span class="text-sm font-semibold text-white">900</span>
-										<span class="text-sm font-mono text-white">#2b3546</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--blue-charcoal-950);">
-										<span class="text-sm font-semibold text-white">950</span>
-										<span class="text-sm font-mono text-white">#1c222e</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
+				<!-- Section 2 -->
+				<div class="scheme-1 p-6 rounded-lg mb-6">
+					<h2 class="test-header font-playfair">Data Modeling & Engineering</h2>
+					<p class="test-body font-inter">Expert data modeling and engineering services to build robust, scalable data architectures.</p>
 				</div>
-
-				<!-- Plum Charcoal Section -->
-				<div class="mb-16">
-					<h2 class="text-3xl font-semibold text-gray-900 mb-8">Plum Charcoal</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-						<!-- Light -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--plum-charcoal-50) 0%, var(--plum-charcoal-200) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Light (50-200)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-50);">
-										<span class="text-sm font-semibold text-gray-900">50</span>
-										<span class="text-sm font-mono text-gray-900">#f7f6f8</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-100);">
-										<span class="text-sm font-semibold text-gray-900">100</span>
-										<span class="text-sm font-mono text-gray-900">#e6e2e7</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-200);">
-										<span class="text-sm font-semibold text-gray-900">200</span>
-										<span class="text-sm font-mono text-gray-900">#ccc4d0</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Medium -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--plum-charcoal-300) 0%, var(--plum-charcoal-500) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Medium (300-500)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-300);">
-										<span class="text-sm font-semibold text-white">300</span>
-										<span class="text-sm font-mono text-white">#aca0b0</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-400);">
-										<span class="text-sm font-semibold text-white">400</span>
-										<span class="text-sm font-mono text-white">#8a7d8e</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-500);">
-										<span class="text-sm font-semibold text-white">500</span>
-										<span class="text-sm font-mono text-white">#726575</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Dark -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--plum-charcoal-600) 0%, var(--plum-charcoal-800) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Dark (600-800)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-600);">
-										<span class="text-sm font-semibold text-white">600</span>
-										<span class="text-sm font-mono text-white">#5e5360</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-700);">
-										<span class="text-sm font-semibold text-white">700</span>
-										<span class="text-sm font-mono text-white">#4f4651</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-800);">
-										<span class="text-sm font-semibold text-white">800</span>
-										<span class="text-sm font-mono text-white">#443d46</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Deep -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--plum-charcoal-900) 0%, var(--plum-charcoal-950) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Deep (900-950)</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-900);">
-										<span class="text-sm font-semibold text-white">900</span>
-										<span class="text-sm font-mono text-white">#3c353e</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--plum-charcoal-950);">
-										<span class="text-sm font-semibold text-white">950</span>
-										<span class="text-sm font-mono text-white">#272227</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
+				<!-- Section 3 -->
+				<div class="scheme-1 p-6 rounded-lg mb-6">
+					<h2 class="test-header font-playfair">Zero Trust</h2>
+					<p class="test-body font-inter">Implement comprehensive zero trust security frameworks to protect your critical assets.</p>
 				</div>
-
-				<!-- High-Tech Options Section -->
-				<div class="mb-16">
-					<h2 class="text-3xl font-semibold text-gray-900 mb-8">High-Tech Options</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						<!-- Slate Charcoal -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--slate-charcoal-600) 0%, var(--slate-charcoal-800) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Slate Charcoal</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--slate-charcoal-600);">
-										<span class="text-sm font-semibold text-white">600</span>
-										<span class="text-sm font-mono text-white">#475569</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--slate-charcoal-700);">
-										<span class="text-sm font-semibold text-white">700</span>
-										<span class="text-sm font-mono text-white">#334155</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--slate-charcoal-800);">
-										<span class="text-sm font-semibold text-white">800</span>
-										<span class="text-sm font-mono text-white">#1e293b</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Graphite Charcoal -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--graphite-charcoal-600) 0%, var(--graphite-charcoal-800) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Graphite Charcoal</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--graphite-charcoal-600);">
-										<span class="text-sm font-semibold text-white">600</span>
-										<span class="text-sm font-mono text-white">#555e68</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--graphite-charcoal-700);">
-										<span class="text-sm font-semibold text-white">700</span>
-										<span class="text-sm font-mono text-white">#474f57</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--graphite-charcoal-800);">
-										<span class="text-sm font-semibold text-white">800</span>
-										<span class="text-sm font-mono text-white">#3d444b</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Abyss Charcoal -->
-						<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-							<div class="h-32" style="background: linear-gradient(135deg, var(--abyss-charcoal-600) 0%, var(--abyss-charcoal-800) 100%);"></div>
-							<div class="p-4">
-								<h3 class="font-semibold text-gray-900 mb-2">Abyss Charcoal</h3>
-								<div class="space-y-2">
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--abyss-charcoal-600);">
-										<span class="text-sm font-semibold text-white">600</span>
-										<span class="text-sm font-mono text-white">#43525a</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--abyss-charcoal-700);">
-										<span class="text-sm font-semibold text-white">700</span>
-										<span class="text-sm font-mono text-white">#374349</span>
-									</div>
-									<div class="flex items-center justify-between p-2 rounded" style="background-color: var(--abyss-charcoal-800);">
-										<span class="text-sm font-semibold text-white">800</span>
-										<span class="text-sm font-mono text-white">#2f383d</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
+				<!-- Section 4 -->
+				<div class="scheme-1 p-6 rounded-lg mb-6">
+					<h2 class="test-header font-playfair">AI/ML Capabilities</h2>
+					<p class="test-body font-inter">Advanced artificial intelligence and machine learning solutions to drive innovation.</p>
 				</div>
-
-				<!-- Utility Classes Section -->
-				<div class="mb-16">
-					<h2 class="text-3xl font-semibold text-gray-900 mb-8">Utility Classes</h2>
-					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						<!-- Background Classes -->
-						<div class="bg-white rounded-lg shadow-lg p-6">
-							<h3 class="text-xl font-semibold text-gray-900 mb-4">Background Classes</h3>
-							<div class="space-y-2">
-								<div class="p-3 rounded bg-charcoal-neutral text-white">.bg-charcoal-neutral</div>
-								<div class="p-3 rounded bg-charcoal-blue text-white">.bg-charcoal-blue</div>
-								<div class="p-3 rounded bg-charcoal-plum text-white">.bg-charcoal-plum</div>
-								<div class="p-3 rounded bg-charcoal-slate text-white">.bg-charcoal-slate</div>
-								<div class="p-3 rounded bg-charcoal-graphite text-white">.bg-charcoal-graphite</div>
-							</div>
-						</div>
-
-						<!-- Text Classes -->
-						<div class="bg-white rounded-lg shadow-lg p-6">
-							<h3 class="text-xl font-semibold text-gray-900 mb-4">Text Classes</h3>
-							<div class="space-y-2">
-								<div class="p-3 rounded bg-gray-100 charcoal-neutral">.charcoal-neutral</div>
-								<div class="p-3 rounded bg-gray-100 charcoal-blue">.charcoal-blue</div>
-								<div class="p-3 rounded bg-gray-100 charcoal-plum">.charcoal-plum</div>
-								<div class="p-3 rounded bg-gray-100 charcoal-slate">.charcoal-slate</div>
-								<div class="p-3 rounded bg-gray-100 charcoal-graphite">.charcoal-graphite</div>
-							</div>
-						</div>
-
-						<!-- Border Classes -->
-						<div class="bg-white rounded-lg shadow-lg p-6">
-							<h3 class="text-xl font-semibold text-gray-900 mb-4">Border Classes</h3>
-							<div class="space-y-2">
-								<div class="p-3 rounded border-2 border-charcoal-neutral">.border-charcoal-neutral</div>
-								<div class="p-3 rounded border-2 border-charcoal-blue">.border-charcoal-blue</div>
-								<div class="p-3 rounded border-2 border-charcoal-plum">.border-charcoal-plum</div>
-								<div class="p-3 rounded border-2 border-charcoal-slate">.border-charcoal-slate</div>
-								<div class="p-3 rounded border-2 border-charcoal-graphite">.border-charcoal-graphite</div>
-							</div>
-						</div>
-					</div>
+				
+				<!-- Section 5 -->
+				<div class="scheme-1 p-6 rounded-lg mb-6">
+					<h2 class="test-header font-playfair">Multi-Source Data Retrieval</h2>
+					<p class="test-body font-inter">Efficient data retrieval and integration from multiple sources and systems.</p>
 				</div>
 			</div>
 		</div>
+
+		<script>
+			// Simple, working variables
+			let currentColor = 1;
+			let currentHeaderFont = 1;
+			let currentBodyFont = 0;
+			
+			const colors = ['scheme-1', 'scheme-2', 'scheme-3', 'scheme-4', 'scheme-5'];
+			const colorNames = ['Dark Gray', 'Blue', 'Purple', 'Green', 'Orange'];
+			
+			// Expanded header fonts - mix of professional and creative
+			const headerFonts = [
+				'font-playfair', 'font-merriweather', 'font-lora', 'font-librebaskerville', 'font-crimson', 'font-sourceserif',
+				'font-oswald', 'font-anton', 'font-bebas', 'font-fredoka', 'font-righteous', 'font-marker',
+				'font-roboto', 'font-montserrat', 'font-poppins', 'font-ibmplex', 'font-worksans', 'font-dmsans'
+			];
+			const headerFontNames = [
+				'Playfair Display', 'Merriweather', 'Lora', 'Libre Baskerville', 'Crimson Text', 'Source Serif Pro',
+				'Oswald', 'Anton', 'Bebas Neue', 'Fredoka One', 'Righteous', 'Permanent Marker',
+				'Roboto', 'Montserrat', 'Poppins', 'IBM Plex Sans', 'Work Sans', 'DM Sans'
+			];
+			
+			// Expanded body fonts - professional and readable
+			const bodyFonts = [
+				'font-inter', 'font-opensans', 'font-roboto', 'font-montserrat', 'font-poppins', 'font-sourcesans',
+				'font-ubuntu', 'font-noto', 'font-ibmplex', 'font-worksans', 'font-dmsans', 'font-outfit',
+				'font-plusjakarta', 'font-josefin', 'font-quicksand', 'font-nunito', 'font-comfortaa'
+			];
+			const bodyFontNames = [
+				'Inter', 'Open Sans', 'Roboto', 'Montserrat', 'Poppins', 'Source Sans Pro',
+				'Ubuntu', 'Noto Sans', 'IBM Plex Sans', 'Work Sans', 'DM Sans', 'Outfit',
+				'Plus Jakarta Sans', 'Josefin Sans', 'Quicksand', 'Nunito', 'Comfortaa'
+			];
+			
+			// Color button
+			document.getElementById('color-btn')?.addEventListener('click', function() {
+				currentColor = (currentColor % 5);
+				currentColor++;
+				
+				const sections = document.querySelectorAll('#test-sections > div');
+				sections.forEach(section => {
+					// Remove all color classes
+					section.classList.remove('scheme-1', 'scheme-2', 'scheme-3', 'scheme-4', 'scheme-5');
+					// Add new color class
+					section.classList.add(colors[currentColor - 1]);
+				});
+				
+				const colorElement = document.getElementById('current-color');
+				if (colorElement) {
+					colorElement.textContent = colorNames[currentColor - 1];
+				}
+				console.log('Color changed to:', colorNames[currentColor - 1]);
+			});
+			
+			// Header font button
+			document.getElementById('header-font-btn')?.addEventListener('click', function() {
+				currentHeaderFont = (currentHeaderFont % headerFonts.length);
+				currentHeaderFont++;
+				
+				const headers = document.querySelectorAll('.test-header');
+				headers.forEach(header => {
+					// Remove all font classes
+					header.classList.remove('font-playfair', 'font-merriweather', 'font-lora', 'font-librebaskerville', 'font-crimson', 'font-sourceserif', 'font-oswald', 'font-anton', 'font-bebas', 'font-fredoka', 'font-righteous', 'font-marker', 'font-roboto', 'font-montserrat', 'font-poppins', 'font-ibmplex', 'font-worksans', 'font-dmsans');
+					// Add new font class
+					header.classList.add(headerFonts[currentHeaderFont - 1]);
+				});
+				
+				const headerElement = document.getElementById('current-header');
+				if (headerElement) {
+					headerElement.textContent = headerFontNames[currentHeaderFont - 1];
+				}
+				console.log('Header font changed to:', headerFontNames[currentHeaderFont - 1]);
+			});
+			
+			// Body font button
+			document.getElementById('body-font-btn')?.addEventListener('click', function() {
+				currentBodyFont = (currentBodyFont % bodyFonts.length);
+				currentBodyFont++;
+				
+				const bodies = document.querySelectorAll('.test-body');
+				bodies.forEach(body => {
+					// Remove all font classes
+					body.classList.remove('font-inter', 'font-opensans', 'font-roboto', 'font-montserrat', 'font-poppins', 'font-sourcesans', 'font-ubuntu', 'font-noto', 'font-ibmplex', 'font-worksans', 'font-dmsans', 'font-outfit', 'font-plusjakarta', 'font-josefin', 'font-quicksand', 'font-nunito', 'font-comfortaa');
+					// Add new font class
+					body.classList.add(bodyFonts[currentBodyFont - 1]);
+				});
+				
+				const bodyElement = document.getElementById('current-body');
+				if (bodyElement) {
+					bodyElement.textContent = bodyFontNames[currentBodyFont - 1];
+				}
+				console.log('Body font changed to:', bodyFontNames[currentBodyFont - 1]);
+			});
+			
+			console.log('Simple design playground loaded and ready!');
+		</script>
 	</body>
 </html> 

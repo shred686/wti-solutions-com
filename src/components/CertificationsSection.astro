@@ -30,21 +30,21 @@ const { backgroundStyle, id } = Astro.props;
   // Component uses ScrollAnimator from IntroSection
 </script>
 
-<section class="pt-16 bg-white" data-section-type="certifications" id={id} style="background: white !important;">
+<section class="py-16 bg-white" data-section-type="certifications" id={id} style="background: white !important;">
   <div class="w-full px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12 bg-[#1a1a1a] p-8 border border-[#2a2a2a]">
-      <h2 class="text-4xl md:text-5xl font-light text-[#e5e5e5] mb-6">
+    <div class="text-center mb-12 bg-[#1a1a1a] p-8 border border-[var(--dark-accent-color)]">
+      <h2 class="text-4xl md:text-5xl font-light text-[var(--dark-header-color)] mb-6">
         Certifications & Partnerships
       </h2>
-      <hr class="w-full max-w-3xl mx-auto mb-6 border-[#b0b0b0]">
-      <p class="text-xl text-[#b0b0b0] max-w-3xl mx-auto">
+      <hr class="w-full max-w-3xl mx-auto mb-6 border-[var(--dark-accent-color)]">
+      <p class="text-xl text-[var(--dark-body-color)] max-w-3xl mx-auto">
         Validated expertise and strategic partnerships that ensure the highest standards of service delivery
       </p>
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- ISO 9001:2015 -->
-      <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
+      <div class="bg-white p-8 text-center border border-[var(--dark-accent-color)] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
           <img src={iso9001.src} alt="ISO 9001:2015 Certification" class="certification-logo">
         </div>
@@ -57,7 +57,7 @@ const { backgroundStyle, id } = Astro.props;
       </div>
 
       <!-- ISO/IEC 20000-1:2018 -->
-      <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
+      <div class="bg-white p-8 text-center border border-[var(--dark-accent-color)] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
           <img src={iso20000.src} alt="ISO/IEC 20000-1:2018 Certification" class="certification-logo">
         </div>
@@ -70,7 +70,7 @@ const { backgroundStyle, id } = Astro.props;
       </div>
 
       <!-- ISO/IEC 27001:2013 -->
-      <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
+      <div class="bg-white p-8 text-center border border-[var(--dark-accent-color)] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
           <img src={iso27001.src} alt="ISO/IEC 27001:2013 Certification" class="certification-logo">
         </div>
@@ -83,7 +83,7 @@ const { backgroundStyle, id } = Astro.props;
       </div>
 
       <!-- CMMI SVC and DEV LEVEL III -->
-      <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
+      <div class="bg-white p-8 text-center border border-[var(--dark-accent-color)] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
           <img src={cmmi.src} alt="CMMI Level 3 Certification" class="certification-logo">
         </div>
@@ -96,7 +96,7 @@ const { backgroundStyle, id } = Astro.props;
       </div>
 
       <!-- DOD SkillBridge -->
-      <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
+      <div class="bg-white p-8 text-center border border-[var(--dark-accent-color)] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
           <img src={skillbridge.src} alt="DOD SkillBridge Partnership" class="certification-logo">
         </div>
@@ -109,7 +109,7 @@ const { backgroundStyle, id } = Astro.props;
       </div>
 
       <!-- Virginia Values Veterans -->
-      <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
+      <div class="bg-white p-8 text-center border border-[var(--dark-accent-color)] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
           <img src={v3.src} alt="Virginia Values Veterans V3 Certified Company" class="certification-logo">
         </div>
