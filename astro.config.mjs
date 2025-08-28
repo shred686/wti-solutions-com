@@ -6,5 +6,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://shred686.github.io',
-  base: '/wti-solutions-com'
+  base: process.env.NODE_ENV === 'production' ? '/wti-solutions-com' : undefined
 });

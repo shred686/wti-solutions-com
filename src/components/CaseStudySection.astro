@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+
 export interface Props {
   title: string;
   subtitle: string;
   description: string;
   imageLeft?: boolean;
   bgColor?: string;
-  backgroundImage?: string;
+  backgroundImage?: ImageMetadata;
   gradientColor?: 'white' | 'black';
   backgroundStyle?: string;
   id?: string;
@@ -51,10 +53,11 @@ const textColors = gradientColor === 'white' ? {
 <section class="py-16 relative" data-section-type="case-study" id={id} style={backgroundStyle || `${bgColor}`}>
   <!-- Background image -->
   {backgroundImage && (
-    <div 
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-      style={`background-image: url(${backgroundImage})`}
-    ></div>
+    <img 
+      src={backgroundImage.src}
+      alt="Case study background"
+      class="absolute inset-0 w-full h-full object-cover z-0"
+    />
   )}
   
   <!-- Text background box - positioned relative to page edge -->
