@@ -4,5 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // Development config - no base path
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  base: undefined,
+  site: undefined
 }); 

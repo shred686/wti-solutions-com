@@ -14,17 +14,133 @@ const overlayOpacityDecimal = overlayOpacity / 100;
 
 // Set default overlay color only if overlayColor is provided
 const finalOverlayColor = overlayColor || 'black';
+
+// Testimonials data from old site
+const testimonials = [
+  {
+    quote: "WTI employs exceptional Subject Matter Expertise, and they provide exceptional results to our programs and objectives.",
+    author: "U.S. Air Force"
+  },
+  {
+    quote: "Contractor has maintained effective and viable control measures throughout the period and as a result all factors have been well within anticipated cost levels and contract limits, without flaw of exception.",
+    author: "Colonel, USAF"
+  },
+  {
+    quote: "WTI has exhibited exceptional management of subcontractor operations during the term of this contract and as a prime contractor, ensured all contracting staff performed as one seamless team. This is evidenced by meeting all criteria for inspections, week/quarterly program reports, and contractor communications with Government personnel and subcontractors.",
+    author: "Colonel, USAF"
+  },
+  {
+    quote: "It has been a pleasure working with you and all the quality folks you have provided!",
+    author: "Branch Chief, USAF Major Command"
+  },
+  {
+    quote: "Just finished reading the (document). I LOVE it! Best description I've seen on how we want to leverage modern data management principles in a consistent and effective fashion.",
+    author: "USAF ISR Chief Architect"
+  },
+  {
+    quote: "'Go-To' vendor and first stop for success stories. Seeking 'modernization at the speed of relevance' and only vendor who can match this statement when it comes to rapid capability delivery and modernization updates.",
+    author: "DCGS Gov Lead"
+  },
+  {
+    quote: "I wanted to take a second and thank you for the brilliant support of your employees",
+    author: "Senior Intelligence Integration Officer, Office of Naval Intelligence"
+  }
+];
 ---
 
 <style>
-  .bg-white.rounded-lg {
-    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  .swiper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+  }
+  
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #333;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .swiper-pagination-bullet {
+    background: #e5e5e5;
+    opacity: 0.5;
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #e5e5e5;
+  }
+  
+  .testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .swiper-slide {
+    height: auto;
+  }
+  
+  .swiper-container-wrapper {
+    position: relative;
+    padding: 0 60px;
   }
 </style>
-
-<script>
-  // Component uses ScrollAnimator from IntroSection
-</script>
 
 <section class={backgroundImage ? "h-screen relative overflow-hidden" : "py-16"} data-section-type="testimonials" id={id} style={backgroundImage ? `background-image: url(${backgroundImage}); background-size: cover; background-position: center; background-repeat: no-repeat;` : (backgroundStyle || 'background: white;')}>
   {backgroundImage && overlayColor && (
@@ -46,94 +162,33 @@ const finalOverlayColor = overlayColor || 'black';
           </p>
         </div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <!-- Testimonial 1 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
+        <!-- Swiper Container -->
+        <div class="swiper-container-wrapper">
+          <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+              {testimonials.map((testimonial) => (
+                <div class="swiper-slide">
+                  <div class="testimonial-card bg-silver-charcoal-50 p-6 rounded-lg shadow-sm border border-silver-charcoal-200">
+                    <div>
+                      <p class="text-silver-charcoal-600 mb-4 leading-relaxed text-lg">
+                        "{testimonial.quote}"
+                      </p>
+                      <div>
+                        <div class="text-sm font-medium text-silver-charcoal-900">{testimonial.author}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "WTI Solutions transformed our data infrastructure completely. Their AI-driven approach to data management has given us insights we never thought possible, enabling faster decision-making across all departments."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">Director of Technology</div>
-                  <div class="text-sm text-silver-charcoal-500">Federal Defense Agency</div>
-                </div>
-              </div>
+              ))}
             </div>
+            
+            <!-- Pagination dots -->
+            <div class="swiper-pagination"></div>
           </div>
-
-          <!-- Testimonial 2 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "The knowledge graph solutions WTI developed have revolutionized how we connect disparate data sources. Their team's expertise in both technology and our mission requirements is unmatched."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">Chief Data Officer</div>
-                  <div class="text-sm text-silver-charcoal-500">Intelligence Community</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "WTI's battlefield management systems have significantly enhanced our operational capabilities. The real-time data integration and AI-powered insights are game-changing for mission success."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">Operations Commander</div>
-                  <div class="text-sm text-silver-charcoal-500">U.S. Military</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 4 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "Their commitment to security and compliance while delivering cutting-edge solutions is exactly what we needed. WTI understands both the technical challenges and regulatory requirements."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">IT Security Director</div>
-                  <div class="text-sm text-silver-charcoal-500">Civilian Federal Agency</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
+          <!-- Navigation arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
       </div>
     ) : (
@@ -148,96 +203,109 @@ const finalOverlayColor = overlayColor || 'black';
           </p>
         </div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <!-- Testimonial 1 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
+        <!-- Swiper Container -->
+        <div class="swiper-container-wrapper">
+          <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+              {testimonials.map((testimonial) => (
+                <div class="swiper-slide">
+                  <div class="testimonial-card bg-silver-charcoal-50 p-6 rounded-lg shadow-sm border border-silver-charcoal-200">
+                    <div>
+                      <p class="text-silver-charcoal-600 mb-4 leading-relaxed text-lg">
+                        "{testimonial.quote}"
+                      </p>
+                      <div>
+                        <div class="text-sm font-medium text-silver-charcoal-900">{testimonial.author}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "WTI Solutions transformed our data infrastructure completely. Their AI-driven approach to data management has given us insights we never thought possible, enabling faster decision-making across all departments."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">Director of Technology</div>
-                  <div class="text-sm text-silver-charcoal-500">Federal Defense Agency</div>
-                </div>
-              </div>
+              ))}
             </div>
+            
+            <!-- Pagination dots -->
+            <div class="swiper-pagination"></div>
           </div>
-
-          <!-- Testimonial 2 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "The knowledge graph solutions WTI developed have revolutionized how we connect disparate data sources. Their team's expertise in both technology and our mission requirements is unmatched."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">Chief Data Officer</div>
-                  <div class="text-sm text-silver-charcoal-500">Intelligence Community</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "WTI's battlefield management systems have significantly enhanced our operational capabilities. The real-time data integration and AI-powered insights are game-changing for mission success."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">Operations Commander</div>
-                  <div class="text-sm text-silver-charcoal-500">U.S. Military</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 4 -->
-          <div class="bg-white p-8 rounded-lg shadow-sm border border-silver-charcoal-200">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0">
-                <div class="w-12 h-12 bg-silver-charcoal-800 rounded-full flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-              <div class="flex-1">
-                <p class="text-silver-charcoal-600 mb-4 leading-relaxed">
-                  "Their commitment to security and compliance while delivering cutting-edge solutions is exactly what we needed. WTI understands both the technical challenges and regulatory requirements."
-                </p>
-                <div>
-                  <div class="text-sm font-medium text-silver-charcoal-900">IT Security Director</div>
-                  <div class="text-sm text-silver-charcoal-500">Civilian Federal Agency</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
+          <!-- Navigation arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
         </div>
       </div>
     )}
   </div>
-</section> 
+</section>
+
+<script>
+  // Load Swiper from CDN
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+  script.onload = function() {
+    // Initialize Swiper after it's loaded
+    initSwiper();
+  };
+  document.head.appendChild(script);
+
+  function initSwiper() {
+    // @ts-ignore - Swiper is loaded from CDN
+    if (typeof Swiper !== 'undefined') {
+      // @ts-ignore - Swiper is loaded from CDN
+      const swiper = new Swiper('.testimonials-swiper', {
+        // Enable automatic sliding every 5 seconds
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        
+        // Enable loop for continuous sliding
+        loop: true,
+        
+        // Enable navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        
+        // Enable pagination dots
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        
+        // Responsive breakpoints
+        breakpoints: {
+          // Mobile
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          // Tablet
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          // Desktop
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40
+          }
+        },
+        
+        // Smooth transitions
+        effect: 'slide',
+        speed: 800,
+        
+        // Pause autoplay on hover
+        pauseOnMouseEnter: true,
+        
+        // Resume autoplay when mouse leaves
+        pauseOnMouseLeave: false
+      });
+      
+      console.log('Swiper initialized successfully!');
+    } else {
+      console.log('Swiper not loaded yet, retrying...');
+      setTimeout(initSwiper, 100);
+    }
+  }
+</script> 

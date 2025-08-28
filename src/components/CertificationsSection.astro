@@ -11,6 +11,12 @@ const { backgroundStyle, id } = Astro.props;
   .bg-white.p-8 {
     transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
+  
+  .certification-logo {
+    max-height: 80px;
+    max-width: 200px;
+    object-fit: contain;
+  }
 </style>
 
 <script>
@@ -30,93 +36,81 @@ const { backgroundStyle, id } = Astro.props;
     </div>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Woman-Owned Small Business -->
+      <!-- ISO 9001:2015 -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
-        <div class="w-16 h-16 bg-[#1a1a1a] rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-          </svg>
+        <div class="mb-6 flex justify-center">
+          <img src="/assets/certification-logos/iso-9001-2015.jpg" alt="ISO 9001:2015 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
-          Woman-Owned Small Business
+          ISO 9001:2015 CERTIFIED
         </h3>
-        <p class="text-[#2a2a2a] leading-relaxed">
-          Certified WOSB supporting diversity and inclusion in federal contracting
+        <p class="text-[#2a2a2a] leading-relaxed text-sm">
+          WTI is certified ISO 9001:2015 in our commitment to quality management. We understand the importance of constantly improving performance and are committed to delivery quality to our customers.
         </p>
       </div>
 
-      <!-- Security Clearances -->
+      <!-- ISO/IEC 20000-1:2018 -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
-        <div class="w-16 h-16 bg-[#1a1a1a] rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
+        <div class="mb-6 flex justify-center">
+          <img src="/assets/certification-logos/iso-20000-1-2018.jpg" alt="ISO/IEC 20000-1:2018 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
-          Security Clearances
+          ISO/IEC 20000-1:2018 CERTIFIED
         </h3>
-        <p class="text-[#2a2a2a] leading-relaxed">
-          Team members with active security clearances for classified government work
+        <p class="text-[#2a2a2a] leading-relaxed text-sm">
+          WTI is certified ISO/IEC 20000-1:2018. Our clients can expect WTI to establish, implement, maintain and continually improve IT service management systems (SMS). This includes planning, design, transitioning, delivery and improvement services.
         </p>
       </div>
 
-      <!-- Industry Partnerships -->
+      <!-- ISO/IEC 27001:2013 -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
-        <div class="w-16 h-16 bg-[#1a1a1a] rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-          </svg>
+        <div class="mb-6 flex justify-center">
+          <img src="/assets/certification-logos/iso-27001-2013.jpg" alt="ISO/IEC 27001:2013 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
-          Industry Partnerships
+          ISO/IEC 27001:2013 CERTIFIED
         </h3>
-        <p class="text-[#2a2a2a] leading-relaxed">
-          Strategic alliances with leading technology providers and industry experts
+        <p class="text-[#2a2a2a] leading-relaxed text-sm">
+          WTI is certified ISO/IEC 27001:2013 demonstrating our commitment to Information Security Management. We meet multiple compliance requirements such as NIST, PCI, FedRAMP, etc.
         </p>
       </div>
 
-      <!-- Compliance -->
+      <!-- CMMI SVC and DEV LEVEL III -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
-        <div class="w-16 h-16 bg-[#1a1a1a] rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-          </svg>
+        <div class="mb-6 flex justify-center">
+          <img src="/assets/certification-logos/cmmi-level-3.png" alt="CMMI Level 3 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
-          Compliance Standards
+          CMMI SVC and DEV LEVEL III
         </h3>
-        <p class="text-[#2a2a2a] leading-relaxed">
-          Adherence to federal regulations, security protocols, and industry best practices
+        <p class="text-[#2a2a2a] leading-relaxed text-sm">
+          WTI is rated CMMI Service and Development Level 3. WTI provides organizational standards that streamline guidance across projects, programs, and portfolios. We use industry best practices in project and process management, engineering, and software services that our clients rely on.
         </p>
       </div>
 
-      <!-- Technical Expertise -->
+      <!-- DOD SkillBridge -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
-        <div class="w-16 h-16 bg-[#1a1a1a] rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-          </svg>
+        <div class="mb-6 flex justify-center">
+          <img src="/assets/certification-logos/dod-skillbridge.png" alt="DOD SkillBridge Partnership" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
-          Technical Certifications
+          DOD SkillBridge
         </h3>
-        <p class="text-[#2a2a2a] leading-relaxed">
-          Industry-recognized certifications in AI, data management, and cybersecurity
+        <p class="text-[#2a2a2a] leading-relaxed text-sm">
+          WTI is a proud partner of DOD SkillBridge – connecting returning service members to career job training opportunities and thus gaining valuable real-world job experiences through specific industry training, apprenticeships or internships with industry partners.
         </p>
       </div>
 
-      <!-- Quality Assurance -->
+      <!-- Virginia Values Veterans -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
-        <div class="w-16 h-16 bg-[#1a1a1a] rounded-lg mx-auto mb-6 flex items-center justify-center">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-          </svg>
+        <div class="mb-6 flex justify-center">
+          <img src="/assets/certification-logos/virginia-values-veterans.jpg" alt="Virginia Values Veterans V3 Certified Company" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
-          Quality Assurance
+          Virginia Values Veterans - Official V3 Certified Company
         </h3>
-        <p class="text-[#2a2a2a] leading-relaxed">
-          ISO standards and rigorous quality management processes ensuring excellence
+        <p class="text-[#2a2a2a] leading-relaxed text-sm">
+          WTI partners with the Virginia Values Veterans program, which helps us develop and implement long-term strategies and nationally recognized best practices in recruiting, hiring, and retaining Veterans. WTI is proud to have over half of its staff composed of Veterans from all services.
         </p>
       </div>
     </div>
