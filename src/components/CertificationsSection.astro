@@ -1,4 +1,11 @@
 ---
+import iso9001 from '../assets/certification-logos/iso-9001-2015.jpg';
+import iso20000 from '../assets/certification-logos/iso-20000-1-2018.jpg';
+import iso27001 from '../assets/certification-logos/iso-27001-2013.jpg';
+import cmmi from '../assets/certification-logos/cmmi-level-3.png';
+import skillbridge from '../assets/certification-logos/dod-skillbridge.png';
+import v3 from '../assets/certification-logos/virginia-values-veterans.jpg';
+
 export interface Props {
   backgroundStyle?: string;
   id?: string;
@@ -39,7 +46,7 @@ const { backgroundStyle, id } = Astro.props;
       <!-- ISO 9001:2015 -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
-          <img src="./assets/certification-logos/iso-9001-2015.jpg" alt="ISO 9001:2015 Certification" class="certification-logo">
+          <img src={iso9001.src} alt="ISO 9001:2015 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
           ISO 9001:2015 CERTIFIED
@@ -52,7 +59,7 @@ const { backgroundStyle, id } = Astro.props;
       <!-- ISO/IEC 20000-1:2018 -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
-          <img src="./assets/certification-logos/iso-20000-1-2018.jpg" alt="ISO/IEC 20000-1:2018 Certification" class="certification-logo">
+          <img src={iso20000.src} alt="ISO/IEC 20000-1:2018 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
           ISO/IEC 20000-1:2018 CERTIFIED
@@ -65,7 +72,7 @@ const { backgroundStyle, id } = Astro.props;
       <!-- ISO/IEC 27001:2013 -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
-          <img src="./assets/certification-logos/iso-27001-2013.jpg" alt="ISO/IEC 27001:2013 Certification" class="certification-logo">
+          <img src={iso27001.src} alt="ISO/IEC 27001:2013 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
           ISO/IEC 27001:2013 CERTIFIED
@@ -78,7 +85,7 @@ const { backgroundStyle, id } = Astro.props;
       <!-- CMMI SVC and DEV LEVEL III -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
-          <img src="./assets/certification-logos/cmmi-level-3.png" alt="CMMI Level 3 Certification" class="certification-logo">
+          <img src={cmmi.src} alt="CMMI Level 3 Certification" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
           CMMI SVC and DEV LEVEL III
@@ -91,7 +98,7 @@ const { backgroundStyle, id } = Astro.props;
       <!-- DOD SkillBridge -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
-          <img src="./assets/certification-logos/dod-skillbridge.png" alt="DOD SkillBridge Partnership" class="certification-logo">
+          <img src={skillbridge.src} alt="DOD SkillBridge Partnership" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
           DOD SkillBridge
@@ -104,7 +111,7 @@ const { backgroundStyle, id } = Astro.props;
       <!-- Virginia Values Veterans -->
       <div class="bg-white p-8 text-center border border-[#2a2a2a] hover:bg-[#f0f0f0] transition-all duration-300">
         <div class="mb-6 flex justify-center">
-          <img src="./assets/certification-logos/virginia-values-veterans.jpg" alt="Virginia Values Veterans V3 Certified Company" class="certification-logo">
+          <img src={v3.src} alt="Virginia Values Veterans V3 Certified Company" class="certification-logo">
         </div>
         <h3 class="text-xl font-medium text-[#1a1a1a] mb-4">
           Virginia Values Veterans - Official V3 Certified Company

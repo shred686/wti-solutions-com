@@ -4,11 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --config astro.config.dev.mjs",
-    "dev:local": "astro dev --config astro.config.dev.mjs",
-    "dev:prod": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "preview:dev": "astro preview --config astro.config.dev.mjs",
     "astro": "astro"
   },
   "dependencies": {

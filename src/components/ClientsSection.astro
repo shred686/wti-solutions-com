@@ -1,4 +1,26 @@
 ---
+// Import all client logos
+import usAirForce from '../assets/client-logos/us-air-force.png';
+import disa from '../assets/client-logos/disa.png';
+import usArmy from '../assets/client-logos/us-army.png';
+import usAgencyGlobalMedia from '../assets/client-logos/us-agency-global-media.png';
+import nrc from '../assets/client-logos/nrc.png';
+import dhs from '../assets/client-logos/dhs.png';
+import oni from '../assets/client-logos/oni.png';
+import uspto from '../assets/client-logos/uspto.jpg';
+import airForceFamilyAdvocacy from '../assets/client-logos/air-force-family-advocacy.jpg';
+import departmentOfState from '../assets/client-logos/department-of-state.png';
+import departmentOfCommerce from '../assets/client-logos/department-of-commerce.png';
+import noaa from '../assets/client-logos/noaa.png';
+import fema from '../assets/client-logos/fema.png';
+import airForceMedicalSupport from '../assets/client-logos/air-force-medical-support.png';
+import arlingtonVa from '../assets/client-logos/arlington-va.png';
+import departmentOfLabor from '../assets/client-logos/department-of-labor.png';
+import cdc from '../assets/client-logos/cdc.png';
+import nyDoh from '../assets/client-logos/ny-doh.png';
+import nps from '../assets/client-logos/nps.png';
+import nationalParkService from '../assets/client-logos/national-park-service.png';
+
 export interface Props {
   backgroundImage?: string;
   overlayColor?: string;
@@ -12,29 +34,29 @@ const { backgroundImage, overlayColor = 'black', overlayOpacity = 50, background
 // Convert percentage to decimal for CSS
 const overlayOpacityDecimal = overlayOpacity / 100;
 
-// Client logos data
-  const clientLogos = [
-    { name: 'U.S. Air Force', logo: './assets/client-logos/us-air-force.png' },
-    { name: 'Defense Information Systems Agency', logo: './assets/client-logos/disa.png' },
-    { name: 'U.S. Army', logo: './assets/client-logos/us-army.png' },
-    { name: 'U.S. Agency for Global Media', logo: './assets/client-logos/us-agency-global-media.png' },
-    { name: 'Nuclear Regulatory Commission', logo: './assets/client-logos/nrc.png' },
-    { name: 'Department of Homeland Security', logo: './assets/client-logos/dhs.png' },
-    { name: 'Office of Naval Intelligence', logo: './assets/client-logos/oni.png' },
-    { name: 'U.S. Patent and Trademark Office', logo: './assets/client-logos/uspto.jpg' },
-    { name: 'Air Force Family Advocacy Program', logo: './assets/client-logos/air-force-family-advocacy.jpg' },
-    { name: 'Department of State', logo: './assets/client-logos/department-of-state.png' },
-    { name: 'Department of Commerce', logo: './assets/client-logos/department-of-commerce.png' },
-    { name: 'National Oceanic and Atmospheric Administration', logo: './assets/client-logos/noaa.png' },
-    { name: 'Federal Emergency Management Agency', logo: './assets/client-logos/fema.png' },
-    { name: 'Air Force Medical Support Agency', logo: './assets/client-logos/air-force-medical-support.png' },
-    { name: 'Arlington, Virginia', logo: './assets/client-logos/arlington-va.png' },
-    { name: 'Department of Labor', logo: './assets/client-logos/department-of-labor.png' },
-    { name: 'Centers for Disease Control', logo: './assets/client-logos/cdc.png' },
-    { name: 'New York Department of Health', logo: './assets/client-logos/ny-doh.png' },
-    { name: 'National Park Service', logo: './assets/client-logos/nps.png' },
-    { name: 'National Park Service', logo: './assets/client-logos/national-park-service.png' }
-  ];
+// Client logos data with imported images
+const clientLogos = [
+  { name: 'U.S. Air Force', logo: usAirForce.src },
+  { name: 'Defense Information Systems Agency', logo: disa.src },
+  { name: 'U.S. Army', logo: usArmy.src },
+  { name: 'U.S. Agency for Global Media', logo: usAgencyGlobalMedia.src },
+  { name: 'Nuclear Regulatory Commission', logo: nrc.src },
+  { name: 'Department of Homeland Security', logo: dhs.src },
+  { name: 'Office of Naval Intelligence', logo: oni.src },
+  { name: 'U.S. Patent and Trademark Office', logo: uspto.src },
+  { name: 'Air Force Family Advocacy Program', logo: airForceFamilyAdvocacy.src },
+  { name: 'Department of State', logo: departmentOfState.src },
+  { name: 'Department of Commerce', logo: departmentOfCommerce.src },
+  { name: 'National Oceanic and Atmospheric Administration', logo: noaa.src },
+  { name: 'Federal Emergency Management Agency', logo: fema.src },
+  { name: 'Air Force Medical Support Agency', logo: airForceMedicalSupport.src },
+  { name: 'Arlington, Virginia', logo: arlingtonVa.src },
+  { name: 'Department of Labor', logo: departmentOfLabor.src },
+  { name: 'Centers for Disease Control', logo: cdc.src },
+  { name: 'New York Department of Health', logo: nyDoh.src },
+  { name: 'National Park Service', logo: nps.src },
+  { name: 'National Park Service', logo: nationalParkService.src }
+];
 ---
 
 <style>
