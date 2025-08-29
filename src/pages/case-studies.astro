@@ -1,0 +1,646 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Case studies data - simple structure
+const caseStudies = [
+  {
+    id: 'ai-predictive-analytics',
+    tabTitle: 'AI and Predictive Analytics',
+    caseStudyTitle: 'Driving Mission-Critical Decision Advantage with AI and Predictive Analytics',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> In high tempo, high stakes operational environments, leaders must make rapid, informed decisions based on vast, complex, and constantly evolving data streams. Traditional analytics pipelines often struggle to keep pace, leading to:</div>
+      <ul class="list-disc space-y-2 mt-4 ml-4">
+        <li>Information Overload – Decision makers overwhelmed by unstructured and siloed data.</li>
+        <li>Slow Insight Generation – Manual analysis delaying operational response.</li>
+        <li>Context Gaps – Generic AI models lacking mission specific knowledge, resulting in incomplete or inaccurate outputs.</li>
+        <li>Workflow Bottlenecks – Repetitive, time consuming tasks consuming skilled personnel's bandwidth.</li>
+      </ul>
+      <p class="mt-4 leading-relaxed">Without a tailored AI approach, organizations risk slower decision cycles, missed opportunities, and reduced mission agility.</p>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI designed and deployed advanced AI and machine learning solutions — including the development of custom <strong>Large Language Models (LLMs)</strong> — to extract actionable insights, automate workflows, and solve complex operational challenges.</div>
+      <div class="mt-4"><strong>Key elements of the solution included:</strong></div>
+      <ul class="list-disc space-y-3 mt-4 ml-4">
+        <li><strong>Custom Retrieval Augmented Generation (RAG) Systems</strong>
+                      <ul class="list-disc mt-2 ml-4 space-y-1">
+              <li>Combined LLM capabilities with <strong>organization-specific datasets</strong> to ensure outputs were contextually relevant and operationally accurate.</li>
+              <li>Enabled high-accuracy generative AI that could answer mission-critical questions with precision.</li>
+            </ul>
+        </li>
+        <li><strong>Predictive Analytics Frameworks</strong>
+                      <ul class="list-disc mt-2 ml-4 space-y-1">
+              <li>Leveraged historical and real-time data to forecast trends, anticipate operational needs, and identify emerging risks.</li>
+            </ul>
+        </li>
+        <li><strong>Workflow Automation</strong>
+                      <ul class="list-disc mt-2 ml-4 space-y-1">
+              <li>Integrated AI into existing processes to reduce manual effort, accelerate reporting, and free personnel for higher-value tasks.</li>
+            </ul>
+        </li>
+        <li><strong>Secure, Scalable Architecture</strong>
+                      <ul class="list-disc mt-2 ml-4 space-y-1">
+              <li>Designed to operate within stringent security protocols and scale across multiple operational domains.</li>
+            </ul>
+        </li>
+        <li><strong>Trustworthy AI Governance</strong>
+                      <ul class="list-disc mt-2 ml-4 space-y-1">
+              <li>Implemented robust transparency, explainability, and bias-mitigation measures to ensure decisions were not only fast but also fair, verifiable, and aligned with ethical and regulatory standards.</li>
+              <li>Incorporated human-in-the-loop oversight for all mission-impacting outputs, ensuring accountability and operational trust.</li>
+            </ul>
+        </li>
+        <li><strong>Agentic AI Capabilities</strong>
+                      <ul class="list-disc mt-2 ml-4 space-y-1">
+              <li>Deployed autonomous AI agents capable of executing multi-step tasks, coordinating across data sources, and adapting their approach based on evolving mission parameters.</li>
+              <li>Enabled persistent, goal-driven problem-solving — from continuous monitoring of operational indicators to initiating follow-up actions without waiting for manual triggers.</li>
+            </ul>
+        </li>
+      </ul>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <ul class="list-disc space-y-2 mt-4 ml-4">
+        <li><strong>Accelerated Decision Cycles</strong> – Reduced time from data ingestion to actionable insight by over 60%, enabling faster operational responses.</li>
+        <li><strong>Enhanced Accuracy</strong> – RAG-powered AI delivered outputs with significantly higher contextual relevance compared to generic LLMs.</li>
+        <li><strong>Operational Efficiency</strong> – Automated repetitive analysis tasks, freeing analysts to focus on strategic priorities.</li>
+        <li><strong>Improved Forecasting</strong> – Predictive models identified potential mission risks and opportunities earlier, improving readiness.</li>
+        <li><strong>Mission Impact</strong> – Delivered a sustained decision advantage in dynamic, high-pressure environments.</li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">By integrating mission specific AI, predictive analytics, and custom RAG systems, WTI transformed raw, fragmented data into a strategic decision advantage—empowering leaders to act faster, with greater confidence, and with the precision required for mission success.</p>
+      </div>
+    `
+  },
+  {
+    id: 'business-process-modeling',
+    tabTitle: 'Business Process Modeling and Notation',
+    caseStudyTitle: 'Modeling the Mission — Business Process Modeling and Notation (BPMN) Driven Workflow Optimization for National Security',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> The Defense and National Security Sector required a non-intrusive method to detect workflow inefficiencies, eliminate delays, and identify opportunities for streamlining and AI automation — all without disrupting critical mission operations. The objective was to enhance agility, precision, and scalability for current and future targeting requirements.</div>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI developed mission domain-specific BPMN-based process models to:</div>
+      <ul class="space-y-2 mt-4">
+        <li>Simulate workflows in a digital environment without impacting live systems.</li>
+        <li>Conduct controlled alpha/beta testing of software and hardware solutions to assess system, data, and human‑factor impacts, guiding future investment decisions.</li>
+        <li>Integrate with Model-Based Systems Engineering (MBSE) and Data Architecture frameworks.</li>
+        <li>Create a near-real digital twin to evaluate the effects of system, data, or human-factor changes.</li>
+      </ul>
+      <p class="mt-4 leading-relaxed">This unified visual language improved communication across stakeholders, enabling clear analysis, collaborative decision-making, and continuous process improvement.</p>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <ul class="space-y-2 mt-4">
+        <li><strong>Faster Targeting:</strong> Accelerated identification, validation, and engagement of targets.</li>
+        <li><strong>Improved Accuracy:</strong> Reduced errors through workflow automation and process optimization.</li>
+        <li><strong>Enhanced Collaboration:</strong> Senior leaders, IT, and operational teams actively engaged in improvement cycles.</li>
+        <li><strong>Mission Agility:</strong> Strengthened operational responsiveness for both strategic and tactical scenarios.</li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">BPMN transformed complex workflows into a shared visual framework, reducing ambiguity and enabling the Defense and National Security Sector client to respond with speed, accuracy, and confidence.</p>
+      </div>
+    `
+  },
+  {
+    id: 'modernizing-defense',
+    tabTitle: 'IT and Data Modernization, Integration, and Transformation',
+    caseStudyTitle: 'Modernizing the Defense and National Security Sector through Integrated Process, Systems, and Data Transformation',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> The Defense and National Security Sector operates in a highly complex, multi domain environment where mission success depends on the seamless integration of processes, systems, and data across diverse operational, technical, and organizational boundaries. Legacy workflows, siloed systems, and inconsistent data structures have historically limited the enterprise's ability to fully leverage advanced analytics, artificial intelligence (AI), and automation. These constraints hinder agility, slow decision cycles, and reduce the ability to adapt rapidly to evolving mission requirements in an increasingly data driven battlespace.</div>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI developed and deployed an innovative, holistic transformation framework that integrates three complementary disciplines:</div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Business Process Modeling & Notation (BPMN):</strong> Captured and visualized end to end workflows to identify inefficiencies, redundancies, and opportunities for optimization without disrupting live operations.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Model Based Systems Engineering (MBSE):</strong> Created detailed, traceable system and data models to map interdependencies, ensure architectural integrity, and support iterative modernization.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Ontology Development:</strong> Established a shared semantic framework to unify data definitions, relationships, and context across domains, enabling interoperability and machine readable intelligence.
+        </li>
+      </ul>
+      <p class="mt-4 leading-relaxed">By combining these disciplines, WTI provided the Defense and National Security Sector client with a single, integrated view of its operational ecosystem — revealing hidden relationships between domains, aligning technical and operational perspectives, and creating a foundation for scalable AI and automation.</p>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Modernized Processes:</strong> Streamlined workflows reduced operational friction and improved mission responsiveness.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Integrated Systems:</strong> Enhanced interoperability between ISR platforms, decision support tools, and command and control systems.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Unified Data Architecture:</strong> Ontology driven integration improved data discoverability, accessibility, and trustworthiness across the enterprise.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Data Interoperability:</strong> Enabled seamless data exchange and contextual alignment across domains, reducing duplication, eliminating translation errors, and ensuring that mission critical information is consistently understood and actionable by both humans and machines.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>AI & Automation Readiness:</strong> Established the structural and semantic foundation for deploying advanced analytics, predictive modeling, and autonomous decision support capabilities.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Enhanced Decision Superiority:</strong> Shortened decision cycles and improved situational awareness in time sensitive, mission critical scenarios.
+        </li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">By uniting BPMN, MBSE, and Ontologies into a single transformation framework, WTI enabled the Defense and National Security Sector client to modernize its operational ecosystem, unlock cross domain insights, and position itself for sustained advantage in a rapidly evolving, data driven battlespace.</p>
+      </div>
+    `
+  },
+  {
+    id: 'knowledge-management',
+    tabTitle: 'Knowledge Mangement Systems',
+    caseStudyTitle: 'Advancing Mission Readiness Through Knowledge Management Systems',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> The Defense and National Security Sector operates in a dynamic, high stakes environment where mission success depends on rapid access to accurate, relevant, and context rich information. However, institutional knowledge — including operational best practices, technical expertise, and mission lessons learned — are often dispersed across units, systems, and personnel. This fragmentation limits organizational learning, slows decision cycles, and creates risk of knowledge loss due to personnel turnover or system stovepipes. Without a unified approach to capturing, structuring, and sharing knowledge, the Defense and National Security Sector faces challenges in optimizing processes, sustaining readiness, and enabling seamless collaboration across domains and with joint and allied partners.</div>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI engineered and deployed mission ready Knowledge Management Systems (KMS) purpose built to capture, organize, and securely disseminate institutional knowledge across the client's Enterprise — aligning with stringent operational demands and security protocols to ensure critical information is accessible, actionable, and enduring.</div>
+      <div class="mt-4">These systems:</div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Captured institutional knowledge from diverse sources — including mission reports, operational workflows, technical documentation, and subject matter expertise.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Structured information using standardized taxonomies, metadata, and ontologies to ensure discoverability, interoperability, and contextual accuracy.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Distributed knowledge securely across classification levels, enabling authorized personnel to access the right information at the right time.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Integrated with business process optimization and Model Based Systems Engineering (MBSE) frameworks to align knowledge assets with operational workflows.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Embedded search, analytics, and visualization tools to transform raw information into actionable intelligence for planners, analysts, and decision makers.
+        </li>
+      </ul>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Improved Organizational Learning:</strong> Institutional knowledge became a living, accessible resource, accelerating training and onboarding while preserving mission expertise.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Optimized Business Processes:</strong> Knowledge driven insights identified inefficiencies and informed continuous process improvement across ISR operations.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Enhanced Mission Readiness:</strong> Decision makers gained faster access to validated, context rich information, improving agility in time sensitive scenarios.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Strengthened Interoperability:</strong> Standardized knowledge structures aligned with Defense Intelligence Enterprise and Joint All Domain Command and Control (JADC2) data sharing requirements.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Reduced Knowledge Loss Risk:</strong> Critical expertise was retained and made reusable, mitigating the operational impact of personnel turnover.
+        </li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">By implementing secure, structured, and interoperable Knowledge Management Systems, WTI empowered the Defense and National Security Sector client to transform institutional knowledge into a strategic asset — enabling faster, more informed decisions, improving mission agility, and ensuring that critical expertise is preserved and leveraged across the force and with mission partners.</p>
+      </div>
+    `
+  },
+  {
+    id: 'knowledge-modeling',
+    tabTitle: 'Knowledge Modeling and Ontology',
+    caseStudyTitle: 'Unifying the Language of Data — Ontology and Knowledge Modeling for Mission Advantage',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> In dynamic, high stakes mission environments, decisions are only as good as the data behind them. Yet existing AI solutions often operate in isolation, each relying on its own data structures, taxonomies, and assumptions. This lack of a common semantic framework leads to:</div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Fragmented, inconsistent insights — AI outputs that cannot be easily compared, combined, or trusted.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Scaling limitations — Models tuned for one dataset or system cannot readily adapt to new inputs or evolving mission demands.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Interoperability breakdowns — Different systems "speak different languages," making integration slow and error prone.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Information silos — Data locked away in separate environments prevents analysts from forming a complete operational picture.
+        </li>
+      </ul>
+      <p class="mt-4 leading-relaxed">In time sensitive, contested environments, these barriers cause critical delays, reduce the accuracy of intelligence, and elevate operational risk. The mission needed a shared language of data to unlock AI's full potential.</p>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI designed and deployed comprehensive, mission specific ontologies — structured representations of entities, relationships, and concepts that accurately reflect the operational domain.</div>
+      <div class="mt-4">This ontology driven foundation enabled data from diverse systems, formats, and sources to be:</div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Unified</strong> — Harmonized in a shared semantic "language" for seamless interoperability and consistent, context rich meaning.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Linked and enriched</strong> — Connected across silos, with additional metadata and relationships inferred to drive data interoperability and strengthen AI driven reasoning.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Activated for automation</strong> — Powering intelligent workflows, autonomous processing, and mission ready AI analytics.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Visualized dynamically</strong> — Through dashboards and tailored analytics that convert vast, complex datasets into intuitive, actionable intelligence — from real time tactical decisions to long range strategic planning.
+        </li>
+      </ul>
+      <p class="mt-4 leading-relaxed">The result: a coherent knowledge fabric woven across the enterprise, where AI, automation, and human expertise operate from the same accurate, up to date data context.</p>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>AI Assisted Data Integration & Automation</strong> – Seamless ingestion, fusion, and transformation of multi source data at mission speed.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Enhanced Mission Outcomes</strong> – AI insights grounded in ontology driven context, enabling more precise, confident, and timely decision making.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>AI Powered Situational Awareness</strong> – Unified, cross domain operational picture updated in real time, giving leadership immediate clarity in shifting situations.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Resilience & Agility in Contested Environments</strong> – Edge based AI analytics delivering speed, precision, and adaptability even under degraded communications or infrastructure.
+        </li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">By fusing knowledge modeling with ontology enabled integration, WTI delivered a scalable, future ready foundation for AI systems to operate in full mission context. This accelerated the path from raw, scattered data to decisive action — while reducing uncertainty, minimizing operational risk, and strengthening decision advantage across the battlespace.</p>
+      </div>
+    `
+  },
+  {
+    id: 'policy-data-governance',
+    tabTitle: 'Policy and Data Governance',
+    caseStudyTitle: 'Accelerating Mission Decisions Through Unified Policy and Data Governance',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> The Defense and National Security Sector has historically operated under fragmented, unit or system specific data governance policies. This siloed approach limits data discovery, sharing, and integration, reduces operational agility, and directly impacts time sensitive, mission critical decisions and joint operations with U.S. and allied partners.</div>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI designed and supported the rollout of enterprise level data governance frameworks to unify policy adoption and enable interoperability.</div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Established mission agnostic standards for data management and tradecraft.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Ensured data met VAULTIS principles: Visible, Accessible, Understandable, Linked, Trustworthy, Interoperable, Secure.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Defined principles, policies, processes, tools, metrics, and oversight for managing data from creation to disposition.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Provided architecture and management guidance for data objects, object management systems/services, and ontology/domain lexicon minimums.
+        </li>
+      </ul>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <p class="mt-4 leading-relaxed">The frameworks delivered clear governance boundaries and aligned data practices with Defense Intelligence Enterprise, Combined Joint All Domain Command and Control (CJADC2), and Advanced Battle Management System (ABMS) initiatives — directly supporting the Joint Warfighting Concept (JWC) vision.</p>
+      
+      <div class="mt-6"><strong>Key Outcomes:</strong></div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Standardized data governance across the Enterprise.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Improved interoperability with U.S. and allied mission partners.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Accelerated decision making through faster, more reliable data access.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Strengthened compliance with enterprise and joint data standards.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Enhanced readiness for multi domain, joint warfighting operations.
+        </li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">Unified, enterprise‑level data governance has transformed the Defense and National Security Sector into a more agile, interoperable, and mission‑ready force — enabling faster, more informed decisions that directly enhance joint warfighting effectiveness.</p>
+      </div>
+    `
+  },
+  {
+    id: 'systems-architecture',
+    tabTitle: 'Systems Architecture and Engineering',
+    caseStudyTitle: 'Architecting the Mission Network — Unifying National Security Systems for Joint Force Integration',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> The Defense and National Security Sector faces persistent challenges in aligning fragmented systems and processes to fully leverage complex, multi organizational relationships and interdependent information flows. These gaps reduce operational efficiency, limit capability and scalability, and hinder integration with Department of Defense interoperability mandates.</div>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI developed comprehensive systems and data models mapping the full spectrum of interconnections among participating systems and data flows.</div>
+      <div class="mt-4">These models:</div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Provide an end to end view of mission critical information movement from sensors to decision makers.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Identify key interaction points between ISR, Battle Management, and Command & Control (C2) nodes.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Deliver a clear, actionable picture of operational pathways, dependencies, and integration opportunities.
+        </li>
+      </ul>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Standardized, traceable framework:</strong> accelerating decision making and improving system reliability.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Increased accuracy and reusability:</strong> of system data and models.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Strengthened Quality Assurance (QA) processes:</strong> and established a foundation for iterative Model Based Systems Engineering (MBSE).
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Resolved dispersed data and inconsistent information issues:</strong> reducing errors and rework.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Shortened project timelines, mitigated technical risks:</strong> and improved cross system communication.
+        </li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">By unifying fragmented systems through standardized architecture and robust data modeling, WTI delivered a scalable, interoperable foundation to accelerate decision cycles, enhance mission reliability, and enable seamless integration into operational networks.</p>
+      </div>
+    `
+  },
+  {
+    id: 'zero-trust',
+    tabTitle: 'Zero Trust',
+    caseStudyTitle: 'Fortifying Enterprise Security with Zero Trust Architecture',
+    html: `
+      <div><strong>Client:</strong> Defense and National Security Sector</div>
+      <div><strong>Partner:</strong> WTI</div>
+      <div><strong>Challenge:</strong> In today's threat landscape, perimeter based security models are no longer sufficient. Adversaries exploit compromised credentials, vulnerable devices, and lateral movement inside networks to bypass traditional defenses. The client faced:</div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Evolving Threats – Sophisticated cyberattacks targeting users, devices, and applications.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Over Privileged Access – Broad permissions increasing the blast radius of potential breaches.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Siloed Security Controls – Inconsistent enforcement across systems and environments.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          Limited Visibility – Difficulty detecting anomalous activity in real time.
+        </li>
+      </ul>
+      <p class="mt-4 leading-relaxed">Without a unified, continuous verification approach, the organization risked data compromise, operational disruption, and erosion of mission trust.</p>
+      
+      <div class="mt-6"><strong>Approach:</strong> WTI supported the development and implementation of a Zero Trust security model designed to continuously verify every connection — across users, devices, applications, and data—before granting access.</div>
+      <div class="mt-4"><strong>Key solution components included:</strong></div>
+      <ul class="space-y-3 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <div>
+            <strong>Identity Centric Access Control</strong>
+            <ul class="mt-2 ml-4 space-y-1">
+              <li class="flex items-start">
+                <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full flex-shrink-0 mt-1.5"></span>
+                Enforced least privilege principles, granting only the minimum access necessary for each role.
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full flex-shrink-0 mt-1.5"></span>
+                Integrated multi factor authentication (MFA) and adaptive risk scoring.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <div>
+            <strong>Device and Endpoint Verification</strong>
+            <ul class="mt-2 ml-4 space-y-1">
+              <li class="flex items-start">
+                <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full flex-shrink-0 mt-1.5"></span>
+                Assessed device health and compliance before allowing network or application access.
+              </li>
+              <li class="flex items-start">
+                <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full flex-shrink-0 mt-1.5"></span>
+                Applied continuous posture checks to detect changes in security status.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <div>
+            <strong>Micro Segmentation</strong>
+            <ul class="mt-2 ml-4 space-y-1">
+              <li class="flex items-start">
+                <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full flex-shrink-0 mt-1.5"></span>
+                Isolated workloads and sensitive data to limit lateral movement in case of compromise.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <div>
+            <strong>Real Time Monitoring and Analytics</strong>
+            <ul class="mt-2 ml-4 space-y-1">
+              <li class="flex items-start">
+                <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full flex-shrink-0 mt-1.5"></span>
+                Leveraged behavioral analytics to detect anomalies and trigger automated responses.
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <div>
+            <strong>Policy Enforcement Across All Layers</strong>
+            <ul class="mt-2 ml-4 space-y-1">
+              <li class="flex items-start">
+                <span class="w-2 h-2 mr-2 bg-gray-400 rounded-full flex-shrink-0 mt-1.5"></span>
+                Unified security controls across on premises, cloud, and hybrid environments.
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="mt-6"><strong>Results:</strong></div>
+      <ul class="space-y-2 mt-4">
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Reduced Attack Surface</strong> – Eliminated unnecessary access pathways, minimizing breach opportunities.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Improved Threat Detection</strong> – Real time analytics identified and contained suspicious activity faster.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Consistent Security Posture</strong> – Standardized enforcement across all systems and environments.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Operational Resilience</strong> – Maintained mission continuity even under active cyber threat conditions.
+        </li>
+        <li class="flex items-start">
+          <span class="w-2 h-2 mr-3 bg-black rounded-full flex-shrink-0 mt-2"></span>
+          <strong>Regulatory Alignment</strong> – Met or exceeded compliance requirements for federal cybersecurity mandates.
+        </li>
+      </ul>
+      
+      <div class="mt-6 p-4 bg-[#556b2f] text-white rounded-lg">
+        <h4 class="text-lg font-medium mb-2">Key Impact Statement:</h4>
+        <p class="leading-relaxed">By supporting the development and implementation of a Zero Trust architecture, WTI transformed the client's security posture from reactive to proactive — ensuring that every user, device, and connection is continuously verified. This approach not only reduced cyber risk at every layer but also strengthened operational resilience and safeguarded mission critical assets.</p>
+      </div>
+    `
+  },
+];
+
+---
+
+<Layout title="Case Studies - WTI Solutions">
+  <PageHeader title="Case Studies" subtitle="Real-world solutions delivering mission impact" />
+  <Header />
+  
+  <main class="min-h-screen bg-gray-50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row">
+        <!-- Vertical Tab Navigation (skinny left side) -->
+        <div class="w-56 flex-shrink-0 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          {caseStudies.map((caseStudy, index) => (
+            <button
+              class={`case-study-tab w-full h-20 text-left px-3 font-medium transition-all duration-300 border-b border-gray-100 last:border-b-0 text-sm flex items-center ${
+                index === 0
+                  ? 'bg-gray-800 text-white'
+                  : 'bg-white text-gray-700 hover:bg-gray-50 hover:text-[#556b2f]'
+              }`}
+              data-case-study={caseStudy.id}
+            >
+              <span class="font-semibold leading-tight">{caseStudy.tabTitle}</span>
+            </button>
+          ))}
+        </div>
+
+        <!-- Content Area (right side) -->
+        <div class="flex-1 ml-0 lg:ml-8 mt-8 lg:mt-0">
+          {caseStudies.map((caseStudy, index) => (
+            <div
+              class={`case-study-content ${index === 0 ? 'block' : 'hidden'}`}
+              data-case-study={caseStudy.id}
+            >
+              <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+                <div class="space-y-6">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h2 class="text-3xl font-light mb-2">{caseStudy.caseStudyTitle}</h2>
+                    </div>
+                  </div>
+
+                  <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
+                    <div class="space-y-4" set:html={caseStudy.html}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+
+  <script>
+    // Tab switching functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.case-study-tab');
+      const contents = document.querySelectorAll('.case-study-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const caseStudyId = this.getAttribute('data-case-study');
+          
+          // Update tab styles
+          tabs.forEach(t => {
+            t.classList.remove('bg-gray-800', 'text-white');
+            t.classList.add('bg-white', 'text-gray-700');
+          });
+          this.classList.remove('bg-white', 'text-gray-700');
+          this.classList.add('bg-gray-800', 'text-white');
+          
+          // Show/hide content
+          contents.forEach(content => {
+            content.classList.add('hidden');
+            if (content.getAttribute('data-case-study') === caseStudyId) {
+              content.classList.remove('hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</Layout> 
