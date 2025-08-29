@@ -570,7 +570,7 @@ const caseStudies = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row">
         <!-- Vertical Tab Navigation (skinny left side) -->
-        <div class="w-56 flex-shrink-0 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+        <div class="w-56 flex-shrink-0 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm sticky top-24 h-fit">
           {caseStudies.map((caseStudy, index) => (
             <button
               class={`case-study-tab w-full h-20 text-left px-3 font-medium transition-all duration-300 border-b border-gray-100 last:border-b-0 text-sm flex items-center ${
@@ -639,6 +639,12 @@ const caseStudies = [
               content.classList.remove('hidden');
             }
           });
+          
+          // Scroll to top of the main container
+          const mainContainer = document.querySelector('.max-w-7xl');
+          if (mainContainer) {
+            mainContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
       });
     });
