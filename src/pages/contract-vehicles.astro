@@ -1,0 +1,476 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Contract vehicles data
+const contractVehicles = [
+  {
+    id: 'oasis-plus',
+    name: 'OASIS+',
+    fullName: 'One Acquisition Solution for Integrated Services Plus',
+    description: 'A GWAC designed to support federal agencies\' procurement requirements for services-based solutions.',
+    details: 'WTI delivers secure, mission-critical capabilities that align with government standards and compliance requirements. Leverage our subject-matter expertise across these domains to enhance your agency\'s capabilities. Below is a sampling of how we can support positive mission outcomes:',
+    capabilities: [
+      '<strong>AI/ML Innovation Excellence.</strong> Deliver cutting-edge cognitive architectures and next-gen AI frameworks, powering mission-critical intelligence systems and data-driven decision superiority across DoD and civilian ecosystems.',
+      '<strong>Strategic Governance Leadership.</strong> Architect enterprise-wide data sovereignty frameworks and mission-enabling reference models with proven force-multiplier impacts.',
+      '<strong>Cross-Domain Synergy.</strong> Engineer enterprise knowledge graphs and intelligent data fabrics that unlock seamless collaboration between data scientists, engineers, and distributed data ecosystems.',
+      '<strong>Zero-Trust Innovation.</strong> Champion next-generation Zero Trust Architecture while spearheading technical roadmaps for modernizing legacy systems into cloud-native, API-first data platforms.',
+      '<strong>Enterprise Modernization.</strong> Pioneer intelligent data mesh architectures to optimize, harmonize, and AI-enable systems, transforming data silos into unified digital neural networks.',
+      '<strong>Innovation Ecosystem.</strong> Drive strategic partnerships with elite institutions while delivering thought leadership in emerging tech and data strategy acceleration.'
+    ],
+    conclusion: 'This award is a significant milestone in WTI\'s continued growth and dedication as a key provider of mission-critical solutions to federal agencies.',
+    contact: {
+      title: 'Contact our OASIS+ Program Management Office',
+      email: 'WTI-OASISPlus@wti-solutions.com',
+      phone: '703.286.2416 x 102'
+    },
+    links: [
+      { text: 'GSA OASIS+ Website', url: '#' },
+      { text: 'WTI Capabilities', url: '#' }
+    ],
+    hasLogo: true
+  },
+  {
+    id: 'ussocom',
+    name: 'USSOCOM',
+    fullName: 'U.S. Special Operations Command',
+    description: 'Special Operations Forces (SOF) Core Support (SCS) Indefinite Delivery Indefinite Quantity (IDIQ) contract vehicle.',
+    details: 'Webworld Technologies, Inc. (WTI) is a prime contractor on a multiple award $950M Special Operations Forces (SOF) Core Support (SCS) Indefinite Delivery Indefinite Quantity (IDIQ) contract vehicle by U.S. Special Operations Command (USSOCOM). The SOF Core Support vehicle provides U.S. based and globally assigned SOF missions with subject matter expertise and knowledge to support USSOCOM\'s stability, agility, and reach.',
+    additionalInfo: [
+      'U.S. Special Operations Command (USSOCOM) awarded Webworld Technologies, Inc (WTI) and 45 other companies spots on this $950M contract vehicle which will deliver core services in support of USSOCOM\'s domestic and international enterprise requirements. This indefinite-delivery/indefinite-quantity (IDIQ) vehicle includes knowledge-based services and subject matter expertise in support of engineering, training, education, program management, professional, and technical requirements.',
+      'USSOCOM develops and employs fully capable Special Operations Forces to conduct global special operations and activities as part of the Joint Force to support persistent, networked, and distributed Combatant Command operations and campaigns against state and non-state actors to protect and advance U.S. policies and objectives.'
+    ],
+    contractDetails: {
+      period: '05/01/2020 – 05/14/2030',
+      ceiling: '$950 million'
+    },
+    contact: {
+      email: 'contracts@wti-solutions.com'
+    },
+    hasLogo: false
+  },
+  {
+    id: 'jaic-draid',
+    name: 'JAIC DRAID',
+    fullName: 'Joint Artificial Intelligence Center (JAIC) Data Readiness for Artificial Intelligence Development (DRAID) Services Basic Ordering Agreement (BOA)',
+    description: 'Accelerate AI adoption across the Defense Department.',
+    details: 'WTI was awarded a prime position on the Joint Artificial Intelligence Center (JAIC) Data Readiness for Artificial Intelligence Development (DRAID) Services Basic Ordering Agreement (BOA).',
+    additionalInfo: [
+      'This mission is to accelerate AI adoption across the Defense Department. This five-year, multi-award contract has a $241M ceiling.'
+    ],
+    capabilities: [
+      'Project and Program Management',
+      'Data Science',
+      'Data Engineering',
+      'Data Architecture',
+      'Data Acquisition and Curation',
+      'Data Quality and Analysis',
+      'Synthetic Data Generation and Data Anonymization',
+      'Software Development, Modification, and Configuration',
+      'Enterprise Information Management and Governance',
+      'Cloud Integration and Alignment'
+    ],
+    contact: {
+      email: 'contracts@wti-solutions.com'
+    },
+    hasLogo: false
+  },
+  {
+    id: 'jaic-te',
+    name: 'JAIC T&E',
+    fullName: 'Joint Artificial Intelligence Center (JAIC) Test and Evaluation (T&E) Blanket Purchase Agreement (BPA)',
+    description: 'Provide T&E services to the JAIC, the Department of Defense, and the entire U.S. Government.',
+    details: 'WTI was awarded a prime position on the Joint Artificial Intelligence Center (JAIC) Test and Evaluation (T&E) Blanket Purchase Agreement (BPA).',
+    additionalInfo: [
+      'The purpose of this BPA is to provide T&E services to the JAIC, the Department of Defense, and the entire U.S. Government. This BPA is open for ordering to the U.S. Government in support of Artificial Intelligence (AI) T&E.',
+      'This JAIC T&E vehicle is a five-year BPA that will enable the acquisition, development, and integration of commercial AI tools and services in support of the DoD\'s and the U.S. Government\'s AI test and evaluation objectives. The areas of focus include emerging AI technologies such as Machine Learning, Deep Learning, and Neural Networks.',
+      'JAIC T&E BPA is a 5-year, multiple-award contract sponsored by the Department of Defense and managed by GSA\'s Federal Systems Integration and Management Center.'
+    ],
+    taskAreas: [
+      'Task 1: AI T&E Solutions',
+      'Task 2: T&E Independent Verification and Validation (IV&V) Services',
+      'Task 3: Other Technologies',
+      'Task 4: Alignment/Integration with the Joint Common Foundation (JCF)'
+    ],
+    contact: {
+      email: 'contracts@wti-solutions.com'
+    },
+    hasLogo: false
+  },
+  {
+    id: 'dha-omnibus',
+    name: 'DHA OMNIBUS IV',
+    fullName: 'DHA OMNIBUS IV Military Medical Research and Development',
+    description: 'Military Medical Research and Development Contract.',
+    details: 'WTI was awarded a prime position on the DHA OMNIBUS IV Military Medical Research and Development Contract. This is an indefinite delivery/indefinite quantity (IDIQ), multiple-award contract with a ceiling value of $10 billion.',
+    additionalInfo: [
+      'The Department of Defense has an on-going need for discovery and integration of innovative medical knowledge and material solutions to continually enhance Force health readiness, resilience and rehabilitation. OMNIBUS IV is designed to enhance the related medical research and development programs of the Department of Defense.',
+      'The OMNIBUS IV requirement provides for a broad range of health-related research and development and support services that are separated into four Market Segments:'
+    ],
+    marketSegments: [
+      'Research and Development (R&D)',
+      'R&D Support Services',
+      'Regulatory Processes',
+      'Translational Science Support and Services'
+    ],
+    contact: {
+      email: 'contracts@wti-solutions.com'
+    },
+    hasLogo: false
+  },
+  {
+    id: 'dia-site',
+    name: 'DIA SITE III',
+    fullName: 'Defense Intelligence Agency (DIA) Solutions for the Information Technology Enterprise III',
+    description: '10-year, $12.6 billion Solutions for the Information Technology Enterprise III contract vehicle.',
+    details: 'Defense Intelligence Agency (DIA) awarded Webworld Technologies, Inc. (WTI) a spot on its 10-year, $12.6 billion Solutions for the Information Technology Enterprise III contract vehicle. One hundred forty-four (144) awards were made, of which 107 were small business.',
+    additionalInfo: [
+      'Work is expected to be performed at government and contractor facilities in the U.S. and OCONUS through March 1, 2031.',
+      'SITE III includes the delivery of IT and technical support services to DIA and the National Geospatial-Intelligence Agency. These services are grouped into several categories, including enterprise activities and services, infrastructure development/sustainment, application development and sustainment, support core functions, and cybersecurity services.'
+    ],
+    contractDetails: {
+      period: 'March 2, 2020 – March 1, 2031',
+      ceiling: '$12.6 billion'
+    },
+    contact: {
+      email: 'contracts@wti-solutions.com'
+    },
+    hasLogo: false
+  },
+  {
+    id: 'gsa-mas',
+    name: 'GSA MAS',
+    fullName: 'GSA Multiple Award Schedule (MAS)',
+    description: 'Professional services available via General Services Administration (GSA) Information Technology Acquisition Center.',
+    details: 'WTI\'s professional services are available via General Services Administration (GSA) Information Technology Acquisition Center, Group 70 Multiple Award Schedule (MAS) for General Purpose Commercial Information Technology, Equipment, Software, and Services for the following functional SIN:',
+    sin: 'SIN 54151S – INFORMATION TECHNOLOGY (IT) PROFESSIONAL SERVICES',
+    additionalInfo: [
+      'GSA Multiple Award Schedule (MAS) is the largest, most widely used acquisition vehicle in the federal government. Schedule 70 is an indefinite delivery/indefinite quantity (IDIQ) multiple award schedule (MAS), providing direct access to products, services and solutions from certified industry partners. Federal, state, local, and tribal government entities can buy from IT Schedule 70.'
+    ],
+    contractDetails: {
+      contractNumber: 'GSA Schedule #: 47QTCA19D00H1',
+      period: '8 August 2019 – 7 August 2024'
+    },
+    links: [
+      { text: 'GSA Multiple Award Schedule (MAS) Web Page', url: '#' },
+      { text: 'View WTI\'s GSA Multiple Award Schedule (MAS) contract offerings to include scope, services, price list, and points of contact online at GSA Advantage!®', url: '#' }
+    ],
+    hasLogo: false
+  },
+  {
+    id: 'astro',
+    name: 'ASTRO',
+    fullName: 'ASTRO Data Operations UNR, ASTRO Mission Operations UNR, ASTRO Support UNR',
+    description: 'GSA ASTRO indefinite-delivery, indefinite-quantity vehicle for robotics and unmanned systems.',
+    details: 'WTI has been awarded prime contracts under the GSA ASTRO indefinite-delivery, indefinite-quantity vehicle for robotics and unmanned systems. GSA ASTRO is a large contract vehicle, focused on needs of the Department of Defense. There is no defined ceiling but it is understood that the budget is in the billions of dollars.',
+    additionalInfo: [
+      'The scope of work is focused on the operation and maintenance of robotics and unmanned systems, as well as intelligence, surveillance and reconnaissance. ASTRO is a multiple award indefinite-delivery, indefinite-quantity (IDIQ) contract vehicle that includes research, development, maintenance, support, and operations services related to manned, unmanned, and optionally manned platforms and robotics. This is a full and open awarded contract vehicle. WTI was awarded three pools. Our awarded pools are: Data Operations, Mission Operations and Support.',
+      'ASTRO is a 10-year, multiple-award contract sponsored by the Department of Defense and managed by GSA\'s Federal Systems Integration and Management Center.'
+    ],
+    awardedPools: [
+      'Data Operations',
+      'Mission Operations',
+      'Support'
+    ],
+    links: [
+      { text: 'For more information visit: https://aas.gsa.gov/astro/', url: 'https://aas.gsa.gov/astro/' }
+    ],
+    contact: {
+      email: 'contracts@wti-solutions.com'
+    },
+    hasCapabilitiesStatement: true,
+    hasLogo: false
+  }
+];
+---
+
+<Layout title="Contract Vehicles - WTI Solutions">
+  <Header transparent={false} />
+  
+  <!-- Page Header -->
+  <PageHeader title="Contract Vehicles" />
+  
+  <!-- Contract Vehicles Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-6">
+          Our Contract Vehicles
+        </h2>
+        <p class="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+          WTI holds prime positions on multiple government contract vehicles, providing federal agencies with streamlined access to our technology solutions and professional services.
+        </p>
+      </div>
+      
+            <!-- Tab System Container -->
+      <div class="flex flex-col lg:flex-row">
+        <!-- Vertical Tab Navigation (skinny left side) -->
+        <div class="w-48 flex-shrink-0 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+          {contractVehicles.map((contract, index) => (
+            <button 
+              class={`contract-tab w-full h-16 text-left px-4 font-medium transition-all duration-300 border-b border-gray-100 last:border-b-0 text-lg flex items-center justify-center ${
+                index === 0 
+                  ? 'bg-gray-800 text-white' 
+                  : 'bg-white text-gray-700 hover:bg-gray-50 hover:text-[#556b2f]'
+              }`}
+              data-contract={contract.id}
+            >
+              <span class="font-semibold">{contract.name}</span>
+            </button>
+          ))}
+        </div>
+        
+        <!-- Content Area (takes up remaining space) -->
+        <div class="lg:flex-1 bg-white border border-gray-200 rounded-lg p-8 shadow-sm">
+            {contractVehicles.map((contract, index) => (
+              <div 
+                id={`${contract.id}-content`}
+                class={`contract-content ${index === 0 ? 'block' : 'hidden'}`}
+              >
+                                                 <div class="space-y-6">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      {contract.hasLogo ? (
+                        <div class="mb-2">
+                          <img src="/assets/icons/oasis-logo.jpg" alt="OASIS+ Logo" class="h-24 w-auto" />
+                        </div>
+                      ) : (
+                        <h2 class="text-3xl font-light mb-2">{contract.name}</h2>
+                      )}
+                      <h3 class="text-xl text-gray-600 mt-2">{contract.fullName}</h3>
+                    </div>
+                  </div>
+                  
+                  <p class="text-lg leading-relaxed">{contract.description}</p>
+                   
+                   <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
+                     <p class="leading-relaxed">{contract.details}</p>
+                     
+                     {contract.capabilities && (
+                       <div class="mt-6 space-y-4">
+                         {contract.capabilities.map(capability => (
+                           <p class="leading-relaxed" set:html={capability}></p>
+                         ))}
+                       </div>
+                     )}
+                     
+                     {contract.taskAreas && (
+                       <div class="mt-6">
+                         <h4 class="text-lg font-medium mb-3">Task orders will focus on the following task areas:</h4>
+                         <ul class="space-y-2">
+                           {contract.taskAreas.map(taskArea => (
+                             <li class="flex items-center">
+                               <svg class="w-4 h-4 mr-3 text-[#556b2f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                               </svg>
+                               {taskArea}
+                             </li>
+                           ))}
+                         </ul>
+                       </div>
+                     )}
+                     
+                     {contract.marketSegments && (
+                       <div class="mt-6">
+                         <div class="space-y-2">
+                           {contract.marketSegments.map((segment, index) => (
+                             <div class="flex items-start">
+                               <span class="text-[#556b2f] font-medium mr-3 mt-0.5 w-6 text-center">{index + 1}.</span>
+                               <span class="text-gray-700">{segment}</span>
+                             </div>
+                           ))}
+                         </div>
+                       </div>
+                     )}
+                     
+                     {contract.conclusion && (
+                       <p class="leading-relaxed mt-6">{contract.conclusion}</p>
+                     )}
+                     
+                     {contract.additionalInfo && (
+                       <div class="mt-6 space-y-4">
+                         {contract.additionalInfo.map(info => (
+                           <p class="leading-relaxed">{info}</p>
+                         ))}
+                       </div>
+                     )}
+                     
+                     {contract.sin && (
+                       <div class="mt-4">
+                         <p class="font-semibold text-[#556b2f]">{contract.sin}</p>
+                       </div>
+                     )}
+                     
+                     {contract.contractDetails && (
+                       <div class="mt-6">
+                         <h4 class="text-lg font-medium mb-3">Contract Details:</h4>
+                         <div class="ml-4 space-y-1">
+                           {contract.contractDetails.contractNumber && (
+                             <p><strong>Contract Number:</strong> {contract.contractDetails.contractNumber}</p>
+                           )}
+                           {contract.contractDetails.period && (
+                             <p><strong>Period of Performance:</strong> {contract.contractDetails.period}</p>
+                           )}
+                           {contract.contractDetails.ceiling && (
+                             <p><strong>Ceiling:</strong> {contract.contractDetails.ceiling}</p>
+                           )}
+                         </div>
+                       </div>
+                     )}
+                     
+                     {contract.contact && contract.contact.title && (
+                       <div class="mt-6">
+                         <h4 class="text-lg font-medium mb-3">{contract.contact.title}</h4>
+                         <div class="ml-4 space-y-1">
+                           {contract.contact.email && <p><strong>Email:</strong> {contract.contact.email}</p>}
+                           {contract.contact.phone && <p><strong>Phone:</strong> {contract.contact.phone}</p>}
+                         </div>
+                       </div>
+                     )}
+                     
+                     {contract.contact && contract.contact.email && !contract.contact.title && (
+                       <div class="mt-6">
+                         <p><strong>For more information, contact:</strong> {contract.contact.email}</p>
+                       </div>
+                     )}
+                     
+                     {contract.awardedPools && (
+                       <div class="mt-6">
+                         <h4 class="text-lg font-medium mb-3">Our awarded pools are:</h4>
+                         <ul class="space-y-2">
+                           {contract.awardedPools.map(pool => (
+                             <li class="flex items-center">
+                               <svg class="w-4 h-4 mr-3 text-[#556b2f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                               </svg>
+                               {pool}
+                             </li>
+                           ))}
+                         </ul>
+                       </div>
+                     )}
+                     
+                     {contract.links && contract.links.length > 0 && (
+                       <div class="mt-6">
+                         <ul class="ml-4 space-y-1">
+                           {contract.links.map(link => (
+                             <li><a href={link.url} class="text-[#556b2f] hover:underline">{link.text}</a></li>
+                           ))}
+                         </ul>
+                       </div>
+                     )}
+                     
+                     {contract.hasCapabilitiesStatement && (
+                       <div class="mt-6">
+                         <a href={`${baseUrl}WTI-Capabilities-Statement.pdf`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-slate-800 hover:bg-slate-700 transition-colors duration-300">
+                           Capabilities Statement
+                         </a>
+                       </div>
+                     )}
+                     
+                     {contract.domains && (
+                       <div class="mt-4">
+                         <h4 class="text-lg font-medium mb-3">Contract Domains:</h4>
+                         <ul class="space-y-2">
+                           {contract.domains.map((domain: string) => (
+                             <li class="flex items-center">
+                               <svg class="w-4 h-4 mr-3 text-[#556b2f] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                               </svg>
+                               {domain}
+                             </li>
+                           ))}
+                         </ul>
+                       </div>
+                     )}
+                   </div>
+                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-light text-gray-900 mb-6">
+          Ready to Partner?
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          Contact us to learn more about how we can support your mission through these contract vehicles.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={`${baseUrl}contact`} class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-slate-800 hover:bg-slate-700 transition-colors duration-300">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+
+<script>
+  // Contract vehicles tab functionality
+  const contractTabs = document.querySelectorAll('.contract-tab');
+  const contractContents = document.querySelectorAll('.contract-content');
+  
+  contractTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const contractId = tab.getAttribute('data-contract');
+      const targetContent = document.getElementById(`${contractId}-content`);
+      
+             // Update tab styles
+       contractTabs.forEach(t => {
+         t.classList.remove('bg-gray-800', 'text-white');
+         t.classList.add('bg-white', 'text-gray-700');
+       });
+       tab.classList.remove('bg-white', 'text-gray-700');
+       tab.classList.add('bg-gray-800', 'text-white');
+      
+      // Update content visibility
+      contractContents.forEach(content => {
+        content.classList.add('hidden');
+        content.classList.remove('block');
+      });
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        targetContent.classList.add('block');
+      }
+    });
+  });
+</script>
+
+<style>
+  .contract-tab {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .contract-content {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style> 

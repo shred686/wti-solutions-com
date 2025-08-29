@@ -20,7 +20,14 @@
 - [ ] Case Studies page
 
 ### Other Pages
-- [ ] Contract Vehicles page
+- [x] Contract Vehicles page
+  - [x] Implemented vertical tab system with 1/3 tabs, 2/3 content layout
+  - [x] Added all 8 contract vehicles with detailed content
+  - [x] Integrated OASIS+ logo and styling
+  - [x] Implemented interactive tab switching functionality
+  - [x] Added proper styling and responsive design
+  - [x] Included capabilities statement button for GSA ASTRO
+  - [x] Updated contact section with dark styled button
 - [ ] Careers page
   - [ ] Culture & Benefits subpage
   - [ ] Job Openings subpage
