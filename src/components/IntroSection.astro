@@ -1,6 +1,8 @@
 ---
 
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export interface Props {
   backgroundStyle?: string;
   id?: string;
@@ -14,23 +16,23 @@ const { backgroundStyle, id } = Astro.props;
     <div class="max-w-4xl mx-auto">
       <div class="space-y-8 text-lg text-graphite-charcoal-600 leading-relaxed">
         <p class="intro-welcome-text" data-delay="0.2">
-          Welcome to WTI's digital home where we invite you to explore our values, corporate capabilities, and how we drive innovation with you to accomplish mission success.
+          Welcome to WTI, where we transform complex challenges into impactful, secure, and data-driven solutions.
         </p>
         <p class="intro-welcome-text" data-delay="0.4">
-          WTI brings the agility, efficient workflows, and speed of service necessary to thrive and execute complex requirements. Our corporate culture revolves around a partnership where we are trusted to deliver and exceed expectations.
+          At WTI, we combine agility, intelligent workflows, and rapid execution to address today’s intricate mission demands. Our culture, rooted in partnership and trust, empowers us to leverage AI, data-driven insights, and technical expertise to consistently surpass expectations and drive mission success.
         </p>
         <p class="intro-welcome-text" data-delay="0.6">
-          At the core of our company are exceptionally talented individuals who are passionate and deeply committed to achieving mission success. Our employees embody WTI's corporate values, bringing expertise, dedication, a strong work ethic, and focus on client success to their daily tasks. WTI is proud to recruit and retain veterans, who comprise nearly 85% of our workforce. We are also an authorized partner of the DoD SkillBridge program.
+          We deliver a dynamic mix of speed, agility, and expertise, turning challenges into secure, innovative outcomes. Our strength lies in our people—a dedicated team of experts, including a significant number of veterans and active DoD SkillBridge partners, all united by a commitment to excellence and teamwork.
         </p>
         <p class="intro-welcome-text" data-delay="0.8">
-          Teamwork and communication are vital to our success. I have a "no door policy" which fosters a climate where we all work together to provide the best support to our clients' missions.
+          Communication is our cornerstone. Our open-door policy fosters cohesion, energy, and relentless focus, ensuring every client mission is executed with precision.
         </p>
         <p class="intro-welcome-text" data-delay="1.0">
-          WTI takes pride in building quality long-term relationships. As you navigate our website, we invite you to discover our track record of commitment to excellence, innovation, and accomplishment.
+          More than just a contractor, WTI builds enduring partnerships grounded in transparency, innovation, and tangible results. As you explore our website, discover our proven record of delivering streamlined, innovative, solutions that uphold the highest standards of excellence and accountability.
         </p>
       </div>
       <div class="mt-12 flex justify-start">
-        <img src="/CF_Signature.png" alt="Cindy Ford Signature" class="h-16 w-auto intro-welcome-text" data-delay="1.4" />
+        <img src={`${baseUrl}CF_Signature.png`} alt="Cindy Ford Signature" class="h-16 w-auto intro-welcome-text" data-delay="1.4" />
       </div>
     </div>
   </div>
