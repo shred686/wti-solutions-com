@@ -2,7 +2,7 @@
 export const siteConfig = {
   // Document links
   documents: {
-    capabilitiesStatement: '/WTI-Capabilities-Statement.pdf'
+    capabilitiesStatement: './WTI-Capabilities-Statement.pdf'
   },
   
   // Navigation links
