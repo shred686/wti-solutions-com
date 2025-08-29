@@ -106,8 +106,12 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href={baseUrl} class="text-2xl font-bold transition-colors text-[#e5e5e5]" id="header-logo">
-          WTI Solutions
+        <a href={baseUrl} class="transition-opacity hover:opacity-80" id="header-logo">
+          <img 
+            src="/WTI-logo-type.png" 
+            alt="WTI Solutions" 
+            class="h-10 w-auto"
+          />
         </a>
       </div>
 
@@ -198,13 +202,13 @@ const baseUrl = import.meta.env.BASE_URL;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-                     <div class="mobile-dropdown">
-             <a href={`${baseUrl}#intro`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Welcome</a>
-             <a href={`${baseUrl}team-wti#leadership`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Leadership Team</a>
-             <a href={`${baseUrl}team-wti#technical-advisory-board`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Technical Advisory Board</a>
-             <a href={`${baseUrl}team-wti#advisory-board`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Advisory Board</a>
-             <a href={`${baseUrl}#certifications`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Certifications</a>
-           </div>
+          <div class="mobile-dropdown">
+            <a href={`${baseUrl}#intro`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Welcome</a>
+            <a href={`${baseUrl}team-wti#leadership`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Leadership Team</a>
+            <a href={`${baseUrl}team-wti#technical-advisory-board`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Technical Advisory Board</a>
+            <a href={`${baseUrl}team-wti#advisory-board`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Advisory Board</a>
+            <a href={`${baseUrl}#certifications`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Certifications</a>
+          </div>
         </div>
 
         <!-- What We Do Mobile -->
@@ -216,7 +220,7 @@ const baseUrl = import.meta.env.BASE_URL;
             </svg>
           </button>
           <div class="mobile-dropdown">
-                         <a href={`${baseUrl}capabilities`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Capabilities</a>
+            <a href={`${baseUrl}capabilities`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Capabilities</a>
             <a href={`${baseUrl}what-we-do/clients`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Clients</a>
             <a href={`${baseUrl}what-we-do/case-studies`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Case Studies</a>
           </div>
@@ -314,7 +318,7 @@ const baseUrl = import.meta.env.BASE_URL;
           const navLinks = document.querySelectorAll('.nav-link');
           const ctaButton = document.getElementById('header-cta');
           
-          if (logo) logo.style.color = '#e5e5e5';
+          // Logo is now an image, no color changes needed
           navLinks.forEach(link => {
             link.style.color = '#b0b0b0';
           });
@@ -341,7 +345,7 @@ const baseUrl = import.meta.env.BASE_URL;
           const navLinks = document.querySelectorAll('.nav-link');
           const ctaButton = document.getElementById('header-cta');
           
-          if (logo) logo.style.color = '#ffffff';
+          // Logo is now an image, no color changes needed
           navLinks.forEach(link => {
             link.style.color = '#ffffff';
           });

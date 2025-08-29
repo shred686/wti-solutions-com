@@ -3,6 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// Import certification logos
+import iso9001 from '../assets/certification-logos/iso-9001-2015.jpg';
+import iso27001 from '../assets/certification-logos/iso-27001-2013.jpg';
+import iso20000 from '../assets/certification-logos/iso-20000-1-2018.jpg';
+import cmmi from '../assets/certification-logos/cmmi-level-3.png';
+import skillbridge from '../assets/certification-logos/dod-skillbridge.png';
+import v3 from '../assets/certification-logos/virginia-values-veterans.jpg';
 ---
 
 <Layout title="Certifications - WTI Solutions">
@@ -31,7 +39,7 @@ import Footer from '../components/Footer.astro';
         <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
           <div class="text-center">
             <img 
-              src="/src/assets/certification-logos/iso-9001-2015.jpg" 
+              src={iso9001.src} 
               alt="ISO 9001:2015 Certification"
               class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
             />
@@ -47,7 +55,7 @@ import Footer from '../components/Footer.astro';
         <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
           <div class="text-center">
             <img 
-              src="/src/assets/certification-logos/iso-27001-2013.jpg" 
+              src={iso27001.src} 
               alt="ISO 27001:2013 Certification"
               class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
             />
@@ -63,7 +71,7 @@ import Footer from '../components/Footer.astro';
         <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
           <div class="text-center">
             <img 
-              src="/src/assets/certification-logos/iso-20000-1-2018.jpg" 
+              src={iso20000.src} 
               alt="ISO 20000-1:2018 Certification"
               class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
             />
@@ -79,7 +87,7 @@ import Footer from '../components/Footer.astro';
         <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
           <div class="text-center">
             <img 
-              src="/src/assets/certification-logos/cmmi-level-3.png" 
+              src={cmmi.src} 
               alt="CMMI Level 3 Certification"
               class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
             />
@@ -95,7 +103,7 @@ import Footer from '../components/Footer.astro';
         <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
           <div class="text-center">
             <img 
-              src="/src/assets/certification-logos/dod-skillbridge.png" 
+              src={skillbridge.src} 
               alt="DoD SkillBridge Program"
               class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
             />
@@ -111,7 +119,7 @@ import Footer from '../components/Footer.astro';
         <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
           <div class="text-center">
             <img 
-              src="/src/assets/certification-logos/virginia-values-veterans.jpg" 
+              src={v3.src} 
               alt="Virginia Values Veterans"
               class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
             />
@@ -126,42 +134,7 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
   
-  <!-- Additional Credentials Section -->
-  <section class="py-16 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-4">
-          Additional Credentials
-        </h2>
-        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-          Beyond our formal certifications, WTI Solutions maintains additional credentials 
-          and partnerships that enhance our service delivery capabilities.
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-8 border border-slate-200">
-          <h3 class="text-xl font-medium text-slate-800 mb-4">Government Contracting</h3>
-          <ul class="space-y-2 text-slate-600">
-            <li>• GSA Schedule 70 IT Services</li>
-            <li>• 8(a) Business Development Program</li>
-            <li>• Service-Disabled Veteran-Owned Small Business (SDVOSB)</li>
-            <li>• Woman-Owned Small Business (WOSB)</li>
-          </ul>
-        </div>
-        
-        <div class="bg-white rounded-xl p-8 border border-slate-200">
-          <h3 class="text-xl font-medium text-slate-800 mb-4">Industry Partnerships</h3>
-          <ul class="space-y-2 text-slate-600">
-            <li>• Microsoft Gold Partner</li>
-            <li>• AWS Advanced Consulting Partner</li>
-            <li>• Google Cloud Partner</li>
-            <li>• Palantir Technologies Partner</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  
   
   <Footer />
 </Layout> 
