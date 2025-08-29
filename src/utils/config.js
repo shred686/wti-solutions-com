@@ -10,6 +10,8 @@ export const siteConfig = {
     home: '/',
     capabilities: '/capabilities',
     team: '/team-wti',
-    contact: '/#contact'
+    contact: '/#contact',
+    careersCultureBenefits: '/careers-culture-benefits',
+    careersJobOpenings: '/careers-job-openings'
   }
 }; 

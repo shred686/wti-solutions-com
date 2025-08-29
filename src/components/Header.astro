@@ -12,21 +12,21 @@ const baseUrl = import.meta.env.BASE_URL;
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
   class:list={{
     'bg-transparent': transparent,
-    'backdrop-blur-sm border-b border-[#2a2a2a]': !transparent
+    'backdrop-blur-sm border-b border-[var(--dark-accent-color)]': !transparent
   }}
   data-transparent={transparent}
-  style={transparent ? 'background-color: transparent;' : 'background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1f1f1f 100%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);'}
+  style={transparent ? 'background-color: transparent;' : 'background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1f1f1f 100%); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);'}
 >
   <style>
     /* Hover effects for navigation links */
     .nav-link:hover {
-      color: #e5e5e5 !important;
+      color: #ffffff !important;
     }
     
     /* Hover effects for CTA button when on dark background */
     #header-cta:hover {
       background-color: #2a2a2a !important;
-      color: #e5e5e5 !important;
+      color: var(--dark-header-color) !important;
     }
     
     /* Hover effects for transparent background */
@@ -69,7 +69,7 @@ const baseUrl = import.meta.env.BASE_URL;
     .dropdown-item {
       display: block;
       padding: 12px 16px;
-      color: #b0b0b0;
+      color: var(--dark-body-color);
       text-decoration: none;
       transition: all 0.3s ease;
       border-bottom: 1px solid rgba(85, 107, 47, 0.1);
@@ -81,7 +81,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
     .dropdown-item:hover {
       background: rgba(85, 107, 47, 0.1);
-      color: #e5e5e5;
+      color: var(--dark-header-color);
       padding-left: 20px;
     }
 
@@ -99,7 +99,7 @@ const baseUrl = import.meta.env.BASE_URL;
     .mobile-dropdown-item {
       padding-left: 24px;
       font-size: 0.9em;
-      color: #a0a0a0;
+      color: var(--dark-body-color);
     }
   </style>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -119,7 +119,7 @@ const baseUrl = import.meta.env.BASE_URL;
       <nav class="hidden md:flex items-center space-x-8">
         <!-- Who We Are Dropdown -->
         <div class="dropdown-container">
-          <a href={`${baseUrl}team-wti`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+          <a href={`${baseUrl}team-wti`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[var(--dark-body-color)] flex items-center">
             Who We Are
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -136,7 +136,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
         <!-- What We Do Dropdown -->
         <div class="dropdown-container">
-          <a href={`${baseUrl}capabilities`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+          <a href={`${baseUrl}capabilities`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[var(--dark-body-color)] flex items-center">
             What We Do
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -150,38 +150,38 @@ const baseUrl = import.meta.env.BASE_URL;
         </div>
 
         <!-- Contract Vehicles -->
-        <a href={`${baseUrl}contract-vehicles`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
+        <a href={`${baseUrl}contract-vehicles`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[var(--dark-body-color)]">
           Contract Vehicles
         </a>
 
         <!-- Careers Dropdown -->
         <div class="dropdown-container">
-          <a href={`${baseUrl}careers`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+          <a href={`${baseUrl}careers`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[var(--dark-body-color)] flex items-center">
             Careers
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
           <div class="dropdown-menu">
-            <a href={`${baseUrl}careers/culture`} class="dropdown-item">Culture & Benefits</a>
-            <a href={`${baseUrl}careers/jobs`} class="dropdown-item">Job Openings</a>
+            <a href={`${baseUrl}careers-culture-benefits`} class="dropdown-item">Culture & Benefits</a>
+            <a href={`${baseUrl}careers-job-openings`} class="dropdown-item">Job Openings</a>
           </div>
         </div>
 
         <!-- News -->
-        <a href={`${baseUrl}news`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
+        <a href={`${baseUrl}news`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[var(--dark-body-color)]">
           News
         </a>
 
         <!-- Contact Button -->
-        <a href={`${baseUrl}contact`} class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-[#e5e5e5] border border-[#2a2a2a] hover:bg-[#2a2a2a] hover:text-[#e5e5e5]" id="header-cta">
+        <a href={`${baseUrl}contact`} class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-[var(--dark-header-color)] border border-[var(--dark-accent-color)] hover:bg-[#2a2a2a] hover:text-[var(--dark-header-color)]" id="header-cta">
           Contact
         </a>
       </nav>
 
       <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button id="mobile-menu-button" type="button" class="bg-transparent p-2 rounded-md text-[#e5e5e5] hover:text-[#b0b0b0] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#e5e5e5]" aria-controls="mobile-menu" aria-expanded="false">
+        <button id="mobile-menu-button" type="button" class="bg-transparent p-2 rounded-md text-[var(--dark-header-color)] hover:text-[var(--dark-body-color)] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--dark-header-color)]" aria-controls="mobile-menu" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <!-- Menu icon -->
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -193,10 +193,10 @@ const baseUrl = import.meta.env.BASE_URL;
 
     <!-- Mobile menu -->
     <div class="md:hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#1a1a1a] border-t border-[#2a2a2a]">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#1a1a1a] border-t border-[var(--dark-accent-color)]">
         <!-- Who We Are Mobile -->
         <div class="mobile-dropdown-container">
-          <button class="mobile-dropdown-toggle text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
+          <button class="mobile-dropdown-toggle text-[var(--dark-body-color)] hover:text-[var(--dark-header-color)] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
             Who We Are
             <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -213,7 +213,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
         <!-- What We Do Mobile -->
         <div class="mobile-dropdown-container">
-          <button class="mobile-dropdown-toggle text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
+          <button class="mobile-dropdown-toggle text-[var(--dark-body-color)] hover:text-[var(--dark-header-color)] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
             What We Do
             <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -227,31 +227,31 @@ const baseUrl = import.meta.env.BASE_URL;
         </div>
 
         <!-- Contract Vehicles Mobile -->
-        <a href={`${baseUrl}contract-vehicles`} class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
+        <a href={`${baseUrl}contract-vehicles`} class="text-[var(--dark-body-color)] hover:text-[var(--dark-header-color)] block px-3 py-2 text-base font-medium">
           Contract Vehicles
         </a>
 
         <!-- Careers Mobile -->
         <div class="mobile-dropdown-container">
-          <button class="mobile-dropdown-toggle text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
+          <button class="mobile-dropdown-toggle text-[var(--dark-body-color)] hover:text-[var(--dark-header-color)] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
             Careers
             <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div class="mobile-dropdown">
-            <a href={`${baseUrl}careers/culture`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Culture & Benefits</a>
-            <a href={`${baseUrl}careers/jobs`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Job Openings</a>
+            <a href={`${baseUrl}careers-culture-benefits`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Culture & Benefits</a>
+            <a href={`${baseUrl}careers-job-openings`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Job Openings</a>
           </div>
         </div>
 
         <!-- News Mobile -->
-        <a href={`${baseUrl}news`} class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
+        <a href={`${baseUrl}news`} class="text-[var(--dark-body-color)] hover:text-[var(--dark-header-color)] block px-3 py-2 text-base font-medium">
           News
         </a>
 
         <!-- Contact Mobile -->
-        <a href={`${baseUrl}contact`} class="bg-[#2a2a2a] text-[#e5e5e5] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#1a1a1a]">
+        <a href={`${baseUrl}contact`} class="bg-[#2a2a2a] text-[var(--dark-header-color)] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#1a1a1a]">
           Contact
         </a>
       </div>
@@ -306,11 +306,11 @@ const baseUrl = import.meta.env.BASE_URL;
         
         if (scrollY > 50) {
           // Dark background when scrolled
-          header.style.background = '#1a1a1a';
-          header.style.backdropFilter = 'blur(12px)';
-          header.style.webkitBackdropFilter = 'blur(12px)';
-          header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.2)';
-          header.style.borderBottom = '1px solid #2a2a2a';
+          header.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1f1f1f 100%)';
+          header.style.backdropFilter = 'blur(8px)';
+          header.style.webkitBackdropFilter = 'blur(8px)';
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
+          header.style.borderBottom = '1px solid var(--dark-accent-color)';
           header.classList.remove('bg-transparent');
           
           // Update text colors for dark background
@@ -320,15 +320,15 @@ const baseUrl = import.meta.env.BASE_URL;
           
           // Logo is now an image, no color changes needed
           navLinks.forEach(link => {
-            link.style.color = '#b0b0b0';
+            link.style.color = 'var(--dark-body-color)';
           });
           if (ctaButton) {
             ctaButton.style.backgroundColor = 'transparent';
-            ctaButton.style.color = '#e5e5e5';
-            ctaButton.style.border = '1px solid #2a2a2a';
+            ctaButton.style.color = 'var(--dark-header-color)';
+            ctaButton.style.border = '1px solid var(--dark-accent-color)';
           }
           if (mobileMenuButton) {
-            mobileMenuButton.style.color = '#e5e5e5';
+            mobileMenuButton.style.color = 'var(--dark-header-color)';
             mobileMenuButton.style.backgroundColor = 'transparent';
           }
         } else {

@@ -17,7 +17,16 @@
 ### What We Do Section
 - [x] Capabilities page
 - [x] Clients page
-- [ ] Case Studies page
+- [x] Case Studies page
+  - [x] Implemented vertical tab system with 1/3 tabs, 2/3 content layout
+  - [x] Created clean, simple data structure with tabTitle, caseStudyTitle, and html content
+  - [x] Added all 9 case studies with complete content from provided documents
+  - [x] Implemented interactive tab switching functionality
+  - [x] Added proper bullet styling with list-disc classes for main and nested lists
+  - [x] Made tabs module sticky/floating with proper top margin for navigation bar
+  - [x] Added scroll-to-top functionality when switching tabs
+  - [x] Integrated into main navigation menu
+  - [x] Applied consistent styling and responsive design
 
 ### Other Pages
 - [x] Contract Vehicles page
