@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../utils/config.js';
+---
+
+<Layout title="Capabilities - WTI Solutions">
+  <Header transparent={false} />
+  
+  <!-- Page Header -->
+  <PageHeader title="Capabilities" />
+  
+  <!-- Introduction Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-6">
+          WTI provides data management solutions that control, protect, deliver, and transform the way organizations use their data.
+        </h2>
+        <p class="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+          We support government agencies in their mission to make disparate information accessible, interoperable, and understandable. This solves problems and augments human intelligence – while ensuring security, privacy, and compliance with government guidelines. WTI provides subject matter expertise to ensure the accessibility, reliability, and timeliness of data by properly managing how data is acquired, validated, stored, protected, and processed.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="pt-8 pb-16 bg-[#1a1a1a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ServicesGrid showHeader={true} title="Our Services" subtitle="From serving the defense and intelligence communities that support the warfighter to aiding civilian agencies in their public service missions, WTI delivers services to include:" />
+    </div>
+  </section>
+  
+  <!-- Learn More Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-6">
+          Learn More
+        </h2>
+        <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+          Find out how we can be your technology partner.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={siteConfig.navigation.contact} class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-slate-800 hover:bg-slate-700 transition-colors duration-300">
+            Contact Us
+          </a>
+          <a href={siteConfig.documents.capabilitiesStatement} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 border border-slate-800 text-base font-medium rounded-lg text-slate-800 bg-transparent hover:bg-slate-800 hover:text-white transition-colors duration-300">
+            Capabilities Statement
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout> 

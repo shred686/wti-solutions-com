@@ -1,0 +1,74 @@
+---
+export interface Props {
+  name: string;
+  title: string;
+  bio: string;
+  imageSrc?: string | ImageMetadata;
+}
+
+const { name, title, bio, imageSrc } = Astro.props;
+---
+
+<style>
+  .team-member-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
+  }
+  
+  .team-member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member-image {
+    background: #f8f9fa;
+  }
+  
+  .member-name {
+    color: #1e293b;
+    font-weight: 600;
+  }
+  
+  .member-title {
+    color: #1e293b;
+    font-weight: 500;
+  }
+</style>
+
+<div class="team-member-card rounded-lg mb-8 max-w-4xl mx-auto">
+  <div class="flex flex-col lg:flex-row h-80">
+    <!-- Member Photo -->
+    <div class="flex-shrink-0 w-64 h-64 flex items-center justify-center self-center">
+      <div class="member-image w-full h-full overflow-hidden">
+        {imageSrc ? (
+                      <img 
+              src={typeof imageSrc === 'string' ? imageSrc : imageSrc.src} 
+              alt={`${name} - ${title}`}
+              class="w-full h-full object-cover object-center"
+            />
+        ) : (
+          <div class="w-full h-full flex items-center justify-center">
+            <svg class="w-16 h-16 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </div>
+        )}
+      </div>
+    </div>
+    
+    <!-- Member Info -->
+    <div class="flex-1 p-8 flex flex-col justify-center">
+      <h3 class="member-name text-2xl mb-2">
+        {name}
+      </h3>
+      <p class="member-title text-lg mb-4">
+        {title}
+      </p>
+      <p class="text-slate-700 leading-relaxed text-base">
+        {bio}
+      </p>
+    </div>
+  </div>
+</div> 

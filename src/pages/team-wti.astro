@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import TeamMemberSmall from '../components/TeamMemberSmall.astro';
+import TeamMemberLarge from '../components/TeamMemberLarge.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Import team member images
+import cindyFordImage from '../assets/images/cindy-ford.jpg';
+import kristoferChesterImage from '../assets/images/kristofer-chester.jpeg';
+import deniseFernizaImage from '../assets/images/denise-ferniza.jpg';
+import janetRowlandImage from '../assets/images/janet-rowland.jpeg';
+import claytonJonesImage from '../assets/images/clayton-jones.jpg';
+import johnSuitImage from '../assets/images/john-suit.jpeg';
+import drJohnBeverleyImage from '../assets/images/dr-john-beverley.jpg';
+import charlesMoritzImage from '../assets/images/charles-moritz.jpg';
+import drPeterDemitryImage from '../assets/images/dr-peter-demitry.jpg';
+---
+
+<Layout title="Team WTI - Leadership & Advisory Board | WTI Solutions">
+  <Header transparent={false} />
+  
+  <!-- Page Header -->
+  <PageHeader 
+    title="Team WTI" 
+  />
+  
+  <!-- Leadership Team Section -->
+  <section id="leadership" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-4">
+          Leadership Team
+        </h2>
+      </div>
+      
+      <div class="space-y-12">
+        <!-- Cindy Ford -->
+        <TeamMemberSmall
+          name="Cindy Ford"
+          title="President"
+          bio="Ms. Ford has built the company by earning the trust of customers and partners through continuous innovation and a relentless commitment to their success. She has years of experience supporting government agencies and industry leaders with innovative and emerging IT solutions."
+          imageSrc={cindyFordImage}
+        />
+        
+        <!-- Kristofer Chester -->
+        <TeamMemberSmall
+          name="Kristofer Chester"
+          title="Chief Technology Officer"
+          bio="Serves as an WTI Chief Technology Officer, provides insights into the future to provide the most up-to-date solutions and influence the development of next-gen solutions in advance of their need."
+          imageSrc={kristoferChesterImage}
+        />
+        
+        <!-- Denise Ferniza -->
+        <TeamMemberSmall
+          name="Denise Ferniza"
+          title="Chief Data and AI Officer"
+          bio="Denise Ferniza serves as WTI's Chief Data and AI Officer and member of the executive management team. Denise brings more than 20 years of data management. She provides senior expertise on the utilization and governance of data across the organization, ensuring data accuracy, transparency, and value creation."
+          imageSrc={deniseFernizaImage}
+        />
+        
+        <!-- Janet Rowland -->
+        <TeamMemberSmall
+          name="Janet Rowland"
+          title="Controller"
+          bio="Janet Rowland serves as WTI's Controller and is a member of the executive management team. She has extensive experience with financial functions and records. She has been with WTI for 10 years and could also be called the company's financial historian."
+          imageSrc={janetRowlandImage}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Technical Advisory Board Section -->
+  <section id="technical-advisory-board" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-4">
+          Technical Advisory Board
+        </h2>
+      </div>
+      
+      <div class="space-y-12">
+        <!-- Clayton Jones -->
+        <TeamMemberLarge
+          name="Clayton Jones"
+          title="Senior Technical Advisor"
+          bio="A former U.S. government senior leader with more than two decades of experience driving innovation across defense, intelligence, and diplomatic missions. Clayton Jones has led strategic initiatives in cybersecurity, artificial intelligence, data science, and space-based systems, supporting organizations such as U.S. CYBERCOM, USSPACECOM, and the U.S. Department of State. His work spans global cybersecurity operations, AI-enabled threat detection, secure communications, and cross-domain mission planning."
+          imageSrc={claytonJonesImage}
+        />
+        
+        <!-- John Suit -->
+        <TeamMemberLarge
+          name="John Suit"
+          title="Senior Technical Advisor"
+          bio="A recognized authority in neuro-symbolic AI, ontology engineering, and secure digital transformation for the public sector. With over two decades of executive leadership, John Suit guides organizations at the intersection of artificial intelligence, knowledge engineering, and national security. Mr. Suit specializes in the design and deployment of neuro-symbolic AI systems, integrating advanced large language models (LLMs) with formal ontologies to deliver explainable, trusted automation for complex government and defense applications. He has pioneered Retrieval-Augmented Generation (RAG) solutions and knowledge graph architectures."
+          imageSrc={johnSuitImage}
+        />
+        
+        <!-- Dr. John Beverley -->
+        <TeamMemberLarge
+          name="Dr. John Beverley"
+          title="Senior Technical Advisor"
+          bio="Dr. John Beverley is a leading authority and Assistant Professor at the University of New York at Buffalo, focused on using formal methods to enrich AI development and AI for Public Good. He has shaped the foundation for hundreds of high-stakes data integration projects across government and industry. Advisor on AI transparency, cognitive interoperability, and the underpinnings of decision support systems for defense and intelligence."
+          imageSrc={drJohnBeverleyImage}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Advisory Board Section -->
+  <section id="advisory-board" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-4">
+          Advisory Board
+        </h2>
+      </div>
+      
+      <div class="space-y-12">
+        <!-- Charlie Moritz -->
+        <TeamMemberLarge
+          name="Charlie Moritz"
+          title="Senior Advisor"
+          bio="A distinguished retired military officer who served as a Chief Warrant Officer Five (CW5) Green Beret and Senior Executive for the United States Special Operations Command (USSOCOM) within the Department of Defense. Mr. Moritz has over 30-plus years of military and government contract acquisition experience. As a senior advisor he offers valuable national security and government business solution services."
+          imageSrc={charlesMoritzImage}
+        />
+        
+        <!-- Dr. Peter Demitry -->
+        <TeamMemberLarge
+          name="Dr. Peter Demitry (Col Ret, USAF)"
+          title="Senior Advisor"
+          bio="Dr. Demitry retired from the U.S. Air Force after 28 years on active duty. Pete Demitry, Col (r) piloted over 37 different types of jet aircraft logging over 2,300 fighter and flight test hours. He later served as the Assistant Air Force Surgeon General and brings extensive expertise in DoD and VA clinical and business processes. His multi-discipline and technical skills facilitate integration of the basic sciences in operational and test environments."
+          imageSrc={drPeterDemitryImage}
+        />
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout> 

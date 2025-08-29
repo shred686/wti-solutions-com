@@ -1,0 +1,28 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #4a4a4a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    border-bottom: 1px solid #4a4a4a;
+  }
+  
+  .page-title {
+    color: #e5e5e5;
+  }
+</style>
+
+<section class="page-header py-16 relative flex items-center" style="margin-top: 64px;">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="text-center">
+      <h1 class="page-title text-4xl md:text-5xl lg:text-6xl font-light">
+        {title}
+      </h1>
+    </div>
+  </div>
+</section> 

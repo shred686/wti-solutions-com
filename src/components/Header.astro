@@ -36,6 +36,70 @@ const { transparent = false } = Astro.props;
     .bg-transparent #header-cta:hover {
       background-color: #1c222e !important;
     }
+
+    /* Dropdown styles */
+    .dropdown-container {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background: rgba(26, 26, 26, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(85, 107, 47, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1000;
+    }
+
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item {
+      display: block;
+      padding: 12px 16px;
+      color: #b0b0b0;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(85, 107, 47, 0.1);
+    }
+
+    .dropdown-item:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(85, 107, 47, 0.1);
+      color: #e5e5e5;
+      padding-left: 20px;
+    }
+
+    /* Mobile dropdown styles */
+    .mobile-dropdown {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .mobile-dropdown.open {
+      max-height: 300px;
+    }
+
+    .mobile-dropdown-item {
+      padding-left: 24px;
+      font-size: 0.9em;
+      color: #a0a0a0;
+    }
   </style>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
@@ -48,20 +112,65 @@ const { transparent = false } = Astro.props;
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#who-we-are" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
-          Who We Are
+        <!-- Who We Are Dropdown -->
+        <div class="dropdown-container">
+          <a href="/who-we-are" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+            Who We Are
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/#intro" class="dropdown-item">Welcome</a>
+            <a href="/team-wti#leadership" class="dropdown-item">Leadership Team</a>
+            <a href="/team-wti#technical-advisory-board" class="dropdown-item">Technical Advisory Board</a>
+            <a href="/team-wti#advisory-board" class="dropdown-item">Advisory Board</a>
+            <a href="/#certifications" class="dropdown-item">Certifications</a>
+          </div>
+        </div>
+
+        <!-- What We Do Dropdown -->
+        <div class="dropdown-container">
+          <a href="/what-we-do" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+            What We Do
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/capabilities" class="dropdown-item">Capabilities</a>
+            <a href="/what-we-do/clients" class="dropdown-item">Clients</a>
+            <a href="/what-we-do/case-studies" class="dropdown-item">Case Studies</a>
+          </div>
+        </div>
+
+        <!-- Contract Vehicles -->
+        <a href="/contract-vehicles" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
+          Contract Vehicles
         </a>
-        <a href="#what-we-do" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
-          What We Do
-        </a>
-        <a href="#careers" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
-          Careers
-        </a>
-        <a href="#news" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
+
+        <!-- Careers Dropdown -->
+        <div class="dropdown-container">
+          <a href="/careers" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+            Careers
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/careers/culture" class="dropdown-item">Culture & Benefits</a>
+            <a href="/careers/jobs" class="dropdown-item">Job Openings</a>
+          </div>
+        </div>
+
+        <!-- News -->
+        <a href="/news" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
           News
         </a>
-        <a href="#contact" class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-[#e5e5e5] border border-[#2a2a2a] hover:bg-[#2a2a2a] hover:text-[#e5e5e5]" id="header-cta">
-          Get Started
+
+        <!-- Contact Button -->
+        <a href="/contact" class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-[#e5e5e5] border border-[#2a2a2a] hover:bg-[#2a2a2a] hover:text-[#e5e5e5]" id="header-cta">
+          Contact
         </a>
       </nav>
 
@@ -80,20 +189,65 @@ const { transparent = false } = Astro.props;
     <!-- Mobile menu -->
     <div class="md:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#1a1a1a] border-t border-[#2a2a2a]">
-        <a href="#who-we-are" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
-          Who We Are
+        <!-- Who We Are Mobile -->
+        <div class="mobile-dropdown-container">
+          <button class="mobile-dropdown-toggle text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
+            Who We Are
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+                     <div class="mobile-dropdown">
+             <a href="/#intro" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Welcome</a>
+             <a href="/team-wti#leadership" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Leadership Team</a>
+             <a href="/team-wti#technical-advisory-board" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Technical Advisory Board</a>
+             <a href="/team-wti#advisory-board" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Advisory Board</a>
+             <a href="/#certifications" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Certifications</a>
+           </div>
+        </div>
+
+        <!-- What We Do Mobile -->
+        <div class="mobile-dropdown-container">
+          <button class="mobile-dropdown-toggle text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
+            What We Do
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="mobile-dropdown">
+                         <a href="/capabilities" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Capabilities</a>
+            <a href="/what-we-do/clients" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Clients</a>
+            <a href="/what-we-do/case-studies" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Case Studies</a>
+          </div>
+        </div>
+
+        <!-- Contract Vehicles Mobile -->
+        <a href="/contract-vehicles" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
+          Contract Vehicles
         </a>
-        <a href="#what-we-do" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
-          What We Do
-        </a>
-        <a href="#careers" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
-          Careers
-        </a>
-        <a href="#news" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
+
+        <!-- Careers Mobile -->
+        <div class="mobile-dropdown-container">
+          <button class="mobile-dropdown-toggle text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
+            Careers
+            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="mobile-dropdown">
+            <a href="/careers/culture" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Culture & Benefits</a>
+            <a href="/careers/jobs" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Job Openings</a>
+          </div>
+        </div>
+
+        <!-- News Mobile -->
+        <a href="/news" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
           News
         </a>
-        <a href="#contact" class="bg-[#2a2a2a] text-[#e5e5e5] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#1a1a1a]">
-          Get Started
+
+        <!-- Contact Mobile -->
+        <a href="/contact" class="bg-[#2a2a2a] text-[#e5e5e5] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#1a1a1a]">
+          Contact
         </a>
       </div>
     </div>
@@ -112,11 +266,30 @@ const { transparent = false } = Astro.props;
       mobileMenu?.classList.toggle('hidden');
     });
 
+    // Mobile dropdown functionality
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const dropdown = toggle.nextElementSibling;
+        const icon = toggle.querySelector('svg');
+        
+        if (dropdown && icon) {
+          dropdown.classList.toggle('open');
+          icon.style.transform = dropdown.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      });
+    });
+
     // Close mobile menu when clicking on links
     const mobileLinks = mobileMenu?.querySelectorAll('a');
     mobileLinks?.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu?.classList.add('hidden');
+        // Close all dropdowns
+        const dropdowns = mobileMenu?.querySelectorAll('.mobile-dropdown');
+        const icons = mobileMenu?.querySelectorAll('.mobile-dropdown-toggle svg');
+        dropdowns?.forEach(dropdown => dropdown.classList.remove('open'));
+        icons?.forEach(icon => icon.style.transform = 'rotate(0deg)');
       });
     });
 

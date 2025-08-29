@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Certifications - WTI Solutions">
+  <Header transparent={false} />
+  
+  <!-- Page Header -->
+  <PageHeader 
+    title="Certifications" 
+  />
+  
+  <!-- Certifications Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-4">
+          Our Certifications & Credentials
+        </h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          WTI Solutions maintains rigorous standards across all aspects of our operations, 
+          ensuring the highest quality and security for our government and industry partners.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- ISO 9001:2015 -->
+        <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <img 
+              src="/src/assets/certification-logos/iso-9001-2015.jpg" 
+              alt="ISO 9001:2015 Certification"
+              class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
+            />
+            <h3 class="text-xl font-medium text-slate-800 mb-3">ISO 9001:2015</h3>
+            <p class="text-slate-600 mb-4">Quality Management Systems</p>
+            <p class="text-sm text-slate-500">
+              Demonstrates our commitment to quality management and continuous improvement across all business processes.
+            </p>
+          </div>
+        </div>
+        
+        <!-- ISO 27001:2013 -->
+        <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <img 
+              src="/src/assets/certification-logos/iso-27001-2013.jpg" 
+              alt="ISO 27001:2013 Certification"
+              class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
+            />
+            <h3 class="text-xl font-medium text-slate-800 mb-3">ISO 27001:2013</h3>
+            <p class="text-slate-600 mb-4">Information Security Management</p>
+            <p class="text-sm text-slate-500">
+              Ensures the highest standards of information security and data protection for our clients and systems.
+            </p>
+          </div>
+        </div>
+        
+        <!-- ISO 20000-1:2018 -->
+        <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <img 
+              src="/src/assets/certification-logos/iso-20000-1-2018.jpg" 
+              alt="ISO 20000-1:2018 Certification"
+              class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
+            />
+            <h3 class="text-xl font-medium text-slate-800 mb-3">ISO 20000-1:2018</h3>
+            <p class="text-slate-600 mb-4">IT Service Management</p>
+            <p class="text-sm text-slate-500">
+              Validates our IT service management processes and commitment to delivering exceptional service quality.
+            </p>
+          </div>
+        </div>
+        
+        <!-- CMMI Level 3 -->
+        <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <img 
+              src="/src/assets/certification-logos/cmmi-level-3.png" 
+              alt="CMMI Level 3 Certification"
+              class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
+            />
+            <h3 class="text-xl font-medium text-slate-800 mb-3">CMMI Level 3</h3>
+            <p class="text-slate-600 mb-4">Capability Maturity Model Integration</p>
+            <p class="text-sm text-slate-500">
+              Demonstrates our mature, well-defined processes and ability to consistently deliver high-quality solutions.
+            </p>
+          </div>
+        </div>
+        
+        <!-- DoD SkillBridge -->
+        <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <img 
+              src="/src/assets/certification-logos/dod-skillbridge.png" 
+              alt="DoD SkillBridge Program"
+              class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
+            />
+            <h3 class="text-xl font-medium text-slate-800 mb-3">DoD SkillBridge</h3>
+            <p class="text-slate-600 mb-4">Department of Defense SkillBridge Program</p>
+            <p class="text-sm text-slate-500">
+              Approved participant in the DoD SkillBridge program, supporting transitioning service members.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Virginia Values Veterans -->
+        <div class="certification-card bg-slate-50 rounded-xl p-8 border border-slate-200 hover:shadow-lg transition-all duration-300">
+          <div class="text-center">
+            <img 
+              src="/src/assets/certification-logos/virginia-values-veterans.jpg" 
+              alt="Virginia Values Veterans"
+              class="w-24 h-24 mx-auto mb-6 rounded-lg object-cover"
+            />
+            <h3 class="text-xl font-medium text-slate-800 mb-3">V3 Certified</h3>
+            <p class="text-slate-600 mb-4">Virginia Values Veterans</p>
+            <p class="text-sm text-slate-500">
+              Certified employer committed to recruiting, hiring, and retaining Virginia's veterans.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Additional Credentials Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-4">
+          Additional Credentials
+        </h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+          Beyond our formal certifications, WTI Solutions maintains additional credentials 
+          and partnerships that enhance our service delivery capabilities.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl p-8 border border-slate-200">
+          <h3 class="text-xl font-medium text-slate-800 mb-4">Government Contracting</h3>
+          <ul class="space-y-2 text-slate-600">
+            <li>• GSA Schedule 70 IT Services</li>
+            <li>• 8(a) Business Development Program</li>
+            <li>• Service-Disabled Veteran-Owned Small Business (SDVOSB)</li>
+            <li>• Woman-Owned Small Business (WOSB)</li>
+          </ul>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 border border-slate-200">
+          <h3 class="text-xl font-medium text-slate-800 mb-4">Industry Partnerships</h3>
+          <ul class="space-y-2 text-slate-600">
+            <li>• Microsoft Gold Partner</li>
+            <li>• AWS Advanced Consulting Partner</li>
+            <li>• Google Cloud Partner</li>
+            <li>• Palantir Technologies Partner</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout> 

@@ -27,9 +27,10 @@ export interface Props {
   overlayOpacity?: number;
   backgroundStyle?: string;
   id?: string;
+  centered?: boolean;
 }
 
-const { backgroundImage, overlayColor = 'black', overlayOpacity = 50, backgroundStyle, id } = Astro.props;
+const { backgroundImage, overlayColor = 'black', overlayOpacity = 50, backgroundStyle, id, centered = false } = Astro.props;
 
 // Convert percentage to decimal for CSS
 const overlayOpacityDecimal = overlayOpacity / 100;
@@ -69,14 +70,14 @@ const clientLogos = [
   // Component uses ScrollAnimator from IntroSection
 </script>
 
-<section class={backgroundImage ? "h-screen relative overflow-hidden" : "py-16"} data-section-type="clients" id={id} style={backgroundImage ? `background-image: url(${backgroundImage}); background-size: cover; background-position: center; background-repeat: no-repeat;` : (backgroundStyle || 'background: white;')}>
+<section class={backgroundImage ? "h-screen relative overflow-hidden" : "py-16 flex items-center"} data-section-type="clients" id={id} style={backgroundImage ? `background-image: url(${backgroundImage}); background-size: cover; background-position: center; background-repeat: no-repeat;` : (backgroundStyle || 'background: white;')}>
   {backgroundImage && (
     <div 
       class="absolute inset-0 z-0" 
       style={`background-color: ${overlayColor === 'white' ? 'rgba(255, 255, 255, ' : 'rgba(0, 0, 0, '}${overlayOpacityDecimal});`}
     ></div>
   )}
-  <div class={backgroundImage ? "relative z-10 w-full h-full flex items-center justify-center p-8" : "w-full px-4 sm:px-6 lg:px-8"}>
+  <div class={backgroundImage ? "relative z-10 w-full h-full flex items-center justify-center p-8" : "w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8"}>
     {backgroundImage ? (
       <div class="w-full max-w-7xl backdrop-blur-sm bg-white/20 border border-white/30 shadow-xl rounded-2xl p-12">
         <div class="text-center mb-16 bg-[#1a1a1a] p-8 border border-[var(--dark-accent-color)]">
