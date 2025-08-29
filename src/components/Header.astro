@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { transparent = false } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <header 
@@ -105,7 +106,7 @@ const { transparent = false } = Astro.props;
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-2xl font-bold transition-colors text-[#e5e5e5]" id="header-logo">
+        <a href={baseUrl} class="text-2xl font-bold transition-colors text-[#e5e5e5]" id="header-logo">
           WTI Solutions
         </a>
       </div>
@@ -114,62 +115,62 @@ const { transparent = false } = Astro.props;
       <nav class="hidden md:flex items-center space-x-8">
         <!-- Who We Are Dropdown -->
         <div class="dropdown-container">
-          <a href="/who-we-are" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+          <a href={`${baseUrl}team-wti`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
             Who We Are
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
           <div class="dropdown-menu">
-            <a href="/#intro" class="dropdown-item">Welcome</a>
-            <a href="/team-wti#leadership" class="dropdown-item">Leadership Team</a>
-            <a href="/team-wti#technical-advisory-board" class="dropdown-item">Technical Advisory Board</a>
-            <a href="/team-wti#advisory-board" class="dropdown-item">Advisory Board</a>
-            <a href="/#certifications" class="dropdown-item">Certifications</a>
+            <a href={`${baseUrl}#intro`} class="dropdown-item">Welcome</a>
+            <a href={`${baseUrl}team-wti#leadership`} class="dropdown-item">Leadership Team</a>
+            <a href={`${baseUrl}team-wti#technical-advisory-board`} class="dropdown-item">Technical Advisory Board</a>
+            <a href={`${baseUrl}team-wti#advisory-board`} class="dropdown-item">Advisory Board</a>
+            <a href={`${baseUrl}certifications`} class="dropdown-item">Certifications</a>
           </div>
         </div>
 
         <!-- What We Do Dropdown -->
         <div class="dropdown-container">
-          <a href="/what-we-do" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+          <a href={`${baseUrl}capabilities`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
             What We Do
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
           <div class="dropdown-menu">
-            <a href="/capabilities" class="dropdown-item">Capabilities</a>
-            <a href="/what-we-do/clients" class="dropdown-item">Clients</a>
-            <a href="/what-we-do/case-studies" class="dropdown-item">Case Studies</a>
+            <a href={`${baseUrl}capabilities`} class="dropdown-item">Capabilities</a>
+            <a href={`${baseUrl}what-we-do/clients`} class="dropdown-item">Clients</a>
+            <a href={`${baseUrl}capabilities`} class="dropdown-item">Case Studies</a>
           </div>
         </div>
 
         <!-- Contract Vehicles -->
-        <a href="/contract-vehicles" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
+        <a href={`${baseUrl}contract-vehicles`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
           Contract Vehicles
         </a>
 
         <!-- Careers Dropdown -->
         <div class="dropdown-container">
-          <a href="/careers" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
+          <a href={`${baseUrl}careers`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0] flex items-center">
             Careers
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
           <div class="dropdown-menu">
-            <a href="/careers/culture" class="dropdown-item">Culture & Benefits</a>
-            <a href="/careers/jobs" class="dropdown-item">Job Openings</a>
+            <a href={`${baseUrl}careers/culture`} class="dropdown-item">Culture & Benefits</a>
+            <a href={`${baseUrl}careers/jobs`} class="dropdown-item">Job Openings</a>
           </div>
         </div>
 
         <!-- News -->
-        <a href="/news" class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
+        <a href={`${baseUrl}news`} class="px-3 py-2 text-sm font-medium transition-colors nav-link text-[#b0b0b0]">
           News
         </a>
 
         <!-- Contact Button -->
-        <a href="/contact" class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-[#e5e5e5] border border-[#2a2a2a] hover:bg-[#2a2a2a] hover:text-[#e5e5e5]" id="header-cta">
+        <a href={`${baseUrl}contact`} class="px-4 py-2 rounded-lg text-sm font-medium transition-colors text-[#e5e5e5] border border-[#2a2a2a] hover:bg-[#2a2a2a] hover:text-[#e5e5e5]" id="header-cta">
           Contact
         </a>
       </nav>
@@ -198,11 +199,11 @@ const { transparent = false } = Astro.props;
             </svg>
           </button>
                      <div class="mobile-dropdown">
-             <a href="/#intro" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Welcome</a>
-             <a href="/team-wti#leadership" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Leadership Team</a>
-             <a href="/team-wti#technical-advisory-board" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Technical Advisory Board</a>
-             <a href="/team-wti#advisory-board" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Advisory Board</a>
-             <a href="/#certifications" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Certifications</a>
+             <a href={`${baseUrl}#intro`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Welcome</a>
+             <a href={`${baseUrl}team-wti#leadership`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Leadership Team</a>
+             <a href={`${baseUrl}team-wti#technical-advisory-board`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Technical Advisory Board</a>
+             <a href={`${baseUrl}team-wti#advisory-board`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Advisory Board</a>
+             <a href={`${baseUrl}#certifications`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Certifications</a>
            </div>
         </div>
 
@@ -215,14 +216,14 @@ const { transparent = false } = Astro.props;
             </svg>
           </button>
           <div class="mobile-dropdown">
-                         <a href="/capabilities" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Capabilities</a>
-            <a href="/what-we-do/clients" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Clients</a>
-            <a href="/what-we-do/case-studies" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Case Studies</a>
+                         <a href={`${baseUrl}capabilities`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Capabilities</a>
+            <a href={`${baseUrl}what-we-do/clients`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Clients</a>
+            <a href={`${baseUrl}what-we-do/case-studies`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Case Studies</a>
           </div>
         </div>
 
         <!-- Contract Vehicles Mobile -->
-        <a href="/contract-vehicles" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
+        <a href={`${baseUrl}contract-vehicles`} class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
           Contract Vehicles
         </a>
 
@@ -235,18 +236,18 @@ const { transparent = false } = Astro.props;
             </svg>
           </button>
           <div class="mobile-dropdown">
-            <a href="/careers/culture" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Culture & Benefits</a>
-            <a href="/careers/jobs" class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Job Openings</a>
+            <a href={`${baseUrl}careers/culture`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Culture & Benefits</a>
+            <a href={`${baseUrl}careers/jobs`} class="mobile-dropdown-item block px-3 py-2 text-base font-medium">Job Openings</a>
           </div>
         </div>
 
         <!-- News Mobile -->
-        <a href="/news" class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
+        <a href={`${baseUrl}news`} class="text-[#b0b0b0] hover:text-[#e5e5e5] block px-3 py-2 text-base font-medium">
           News
         </a>
 
         <!-- Contact Mobile -->
-        <a href="/contact" class="bg-[#2a2a2a] text-[#e5e5e5] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#1a1a1a]">
+        <a href={`${baseUrl}contact`} class="bg-[#2a2a2a] text-[#e5e5e5] block px-3 py-2 rounded-md text-base font-medium hover:bg-[#1a1a1a]">
           Contact
         </a>
       </div>
